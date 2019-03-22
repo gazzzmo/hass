@@ -406,7 +406,6 @@ views:
           title: Hass.io Host
           show_header_toggle: false
           entities:
-            - sensor.memory_free
             - sensor.uptime
         - type: horizontal-stack
           cards:
@@ -428,6 +427,15 @@ views:
               green: 0
               yellow: 50
               red: 80
+          - type: gauge
+            name: Memory Free
+            entity: sensor.memory_free
+            min: 0
+            max: 1024
+            severity:
+              green: 0
+              yellow: 500
+              red: 250
         - type: entity-button
           entity: sensor.uptime
           tap_action:
