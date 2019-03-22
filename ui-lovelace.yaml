@@ -408,8 +408,16 @@ views:
           entities:
             - sensor.disk_use_percent_home
             - sensor.memory_free
-            - sensor.processor_use
             - sensor.uptime
+        - type: gauge
+          name: CPU Use
+          entity: sensor.processor_use
+          min: 0
+          max: 100
+          severity:
+            green: 0
+            yellow: 50
+            red: 80
         - type: entity-button
           entity: sensor.uptime
           tap_action:
