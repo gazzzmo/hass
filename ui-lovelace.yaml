@@ -406,18 +406,28 @@ views:
           title: Hass.io Host
           show_header_toggle: false
           entities:
-            - sensor.disk_use_percent_home
             - sensor.memory_free
             - sensor.uptime
-        - type: gauge
-          name: CPU Use
-          entity: sensor.processor_use
-          min: 0
-          max: 100
-          severity:
-            green: 0
-            yellow: 50
-            red: 80
+        - type: horizontal-stack
+          cards:
+          - type: gauge
+            name: CPU Use
+            entity: sensor.processor_use
+            min: 0
+            max: 100
+            severity:
+              green: 0
+              yellow: 50
+              red: 80
+          - type: gauge
+            name: "Disk Use /home"
+            entity: sensor.disk_use_percent_home
+            min: 0
+            max: 100
+            severity:
+              green: 0
+              yellow: 50
+              red: 80
         - type: entity-button
           entity: sensor.uptime
           tap_action:
