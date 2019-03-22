@@ -1,0 +1,20 @@
+- alias: Tim Fan Speed (Fan to Slider)
+  trigger:
+    - platform: template
+      value_template: '{{states.fan.tim_bedroom.attributes.speed != 0}}'
+  action:
+     service: input_number.set_value
+     data_template:
+       entity_id: input_number.tim_fan_speed
+       value: '{{ state.attributes.speed }}'
+
+- alias: Tim Fan Speed (Slider to Fan)
+  trigger:
+    - platform: numeric_state
+      entity_id: input_number.tim_fan_speed
+      above: 0
+  action:
+     service: fan.set_speed
+     data_template:
+       entity_id: input_number.tim_fan_speed
+       value: '{{ state_attr(fan.tim_bedroom, speed) }}'

@@ -1,0 +1,82 @@
+'1546772347561':
+  alias: Media Room Volume Up
+  sequence:
+  - data:
+      command: VolumeUp
+      device: '35606759'
+      entity_id: remote.harmony_hub
+    service: remote.send_command
+'1546773068432':
+  alias: Media Room Volume Down
+  sequence:
+  - data:
+      command: VolumeDown
+      device: '35606759'
+      entity_id: remote.harmony_hub
+    service: remote.send_command
+'1546773277389':
+  alias: Media Room Shutdown
+  sequence:
+  - data:
+      entity_id: remote.harmony_hub
+    service: remote.turn_off
+  - data:
+      entity_id: light.media_room_left
+    service: light.turn_off
+  - data:
+      entity_id: light.media_room_right
+    service: light.turn_off
+'1546774194124':
+  alias: Media Room Watch Foxtel
+  sequence:
+  - data:
+      activity: Watch Foxtel
+      entity_id: remote.harmony_hub
+    service: remote.turn_on
+'1547214476595':
+  alias: Media Room Fox 8
+  sequence:
+  - condition: state
+    entity_id: sensor.mediaroom_activity
+    state: Watch Foxtel
+  - data:
+      command: '1'
+      device: 35606761
+    service: remote.send_command
+  - delay: '"00:0:02"'
+  - data:
+      command: '0'
+      device: 35606761
+    service: remote.send_command
+  - delay: '"00:00:02"'
+  - data:
+      command: '8'
+      device: 35606761
+    service: remote.send_command
+
+execute_cast_dropdown:
+  alias: Press to execute
+  sequence:
+    - service: media_player.play_media
+      data_template:
+        entity_id: >
+          {% if is_state("input_select.cast_to_screen_dropdown", "Media Room") %}
+            media_player.media_room_tv
+          {% elif is_state("input_select.cast_to_screen_dropdown", "Terrace") %}
+            media_player.terrace_chromcast
+          {% elif is_state("input_select.cast_to_screen_dropdown", "Tim Bedroom") %}
+             media_player.tim_chromecast
+          {% endif %}
+        media_content_id: >
+          {% if is_state("input_select.camera_dropdown", "Backyard") %}
+            http://192.168.1.21:81/mjpg/backyard/video.mjpg
+          {% elif is_state("input_select.camera_dropdown", "Frontdoor") %}
+            http://192.168.1.21:81/mjpg/frontdoor/video.mjpg
+          {% elif is_state("input_select.camera_dropdown", "Garage") %}
+            http://192.168.1.21:81/mjpg/garage/video.mjpg
+          {% elif is_state("input_select.camera_dropdown", "Cycle Cameras") %}
+            http://192.168.1.21:81/mjpg/@index?/video.mjpg
+          {% elif is_state("input_select.camera_dropdown", "All Cameras") %}
+            http://192.168.1.21:81/mjpg/index?/video.mjpg
+          {% endif %}
+        media_content_type: 'image/jpg'

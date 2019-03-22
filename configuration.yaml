@@ -1,0 +1,291 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 35
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Australia/Brisbane
+  # Customization file
+  customize: !include customize.yaml
+  # Auth Providers
+  auth_providers:
+   - type: legacy_api_password
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+# Automatically load default platforms
+default_config:
+
+# Use YAML for Lovelace UI
+lovelace:
+  mode: yaml
+  
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+   base_url: !secret base_url
+   api_password: !secret api_password
+   use_x_forwarded_for: true
+   trusted_proxies: !secret trusted_proxies
+   ip_ban_enabled: true
+   login_attempts_threshold: 5
+     
+# Checks for available updates
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  include_used_components: true
+
+# Force load of IOS component
+ios:
+
+# Sensors
+sensor:
+  - platform: template
+    sensors:
+      mediaroom_activity:
+        friendly_name: "Media Room Activity"
+        value_template: "{{ state_attr('remote.harmony_hub', 'current_activity') }}"
+      tim_fan_speed_sensor:
+        friendly_name: "Tim Fan Speed SENSOR"
+        value_template: "{{ state_attr('fan.tim_bedroom', 'speed') }}" 
+      weather_temperature:
+        friendly_name: "Weather Temperature"
+        unit_of_measurement: '°C'
+        value_template: "{{ state_attr('weather.weather', 'temperature') }}"
+  - platform: cert_expiry
+    host: unifi.howells.online
+    name: Unifi Cert
+  - platform: cert_expiry
+    host: cams.howells.online
+    name: Cams Cert
+  - platform: cert_expiry
+    host: hass.howells.online
+    name: Hass Cert
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /home
+      - type: memory_free
+      - type: processor_use
+  - platform: uptime
+
+# Zwave (not required for hassio)
+#zwave:
+#  usb_path: /dev/ttyACM0
+  
+# Weather prediction
+weather:
+  - platform: darksky
+    name: Weather
+    api_key: !secret darksky_api_key
+    mode: daily
+
+# Text to speech
+tts:
+  - platform: google
+
+
+# This platform allows you to detect presence by looking at devices connected to a Ubiquiti Unifi controller.
+device_tracker:
+  - platform: unifi
+    host: !secret unifi_host
+    username: !secret unifi_username
+    password: !secret unifi_password
+    verify_ssl: false
+  - platform: icloud
+    username: !secret icloud_username
+    password: !secret icloud_password
+
+# Cameras
+camera:
+  - platform: ffmpeg
+    input: !secret loungeroom_cam_url
+    name: Loungeroom
+  - platform: ffmpeg
+    input: !secret backyard_cam_url
+    name: Backyard
+  - platform: ffmpeg
+    input: !secret garage_cam_url
+    name: Garage
+  - platform: ffmpeg
+    input: !secret frontdoor_cam_url
+    name: Frontdoor
+  - platform: ffmpeg
+    input: !secret mediaroom_cam_url
+    name: Mediaroom
+
+# Dyson Platform
+dyson:
+  username: !secret dyson_username
+  password: !secret dyson_password
+  language: AU
+  devices:
+    - device_id: !secret dyson_fan1
+      device_ip: 192.168.1.165
+    - device_id: !secret dyson_fan2
+      device_ip: 192.168.1.123
+
+# MQTT Platform
+mqtt:
+  broker: !secret mqtt_broker
+  port: 1884
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  
+# MQTT Motion Sensors from BlueIris
+binary_sensor:
+  - platform: mqtt
+    name: "Front Door Motion"
+    state_topic: "BlueIris/motion/frontdoor/"
+    payload_on: "motion"
+    payload_off: "off"
+    availability_topic: "BlueIris/app"
+    payload_available: "running"
+    payload_not_available: "stopped"
+    qos: 0
+    device_class: motion
+    
+  - platform: mqtt
+    name: "Lounge Room Motion"
+    state_topic: "BlueIris/motion/loungeroom/"
+    payload_on: "motion"
+    payload_off: "off"
+    availability_topic: "BlueIris/app"
+    payload_available: "running"
+    payload_not_available: "stopped"
+    qos: 0
+    device_class: motion
+
+  - platform: mqtt
+    name: "Garage Motion"
+    state_topic: "BlueIris/motion/garage/"
+    payload_on: "motion"
+    payload_off: "off"
+    availability_topic: "BlueIris/app"
+    payload_available: "running"
+    payload_not_available: "stopped"
+    qos: 0
+    device_class: motion
+
+  - platform: mqtt
+    name: "Media Room Motion"
+    state_topic: "BlueIris/motion/mediaroom/"
+    payload_on: "motion"
+    payload_off: "off"
+    availability_topic: "BlueIris/app"
+    payload_available: "running"
+    payload_not_available: "stopped"
+    qos: 0
+    device_class: motion
+
+  - platform: mqtt
+    name: "Back Yard Motion"
+    state_topic: "BlueIris/motion/backyard/"
+    payload_on: "motion"
+    payload_off: "off"
+    availability_topic: "BlueIris/app"
+    payload_available: "running"
+    payload_not_available: "stopped"
+    qos: 0
+    device_class: motion
+
+# Media Players
+media_player:
+  - platform: samsungtv
+    name: "Lounge TV"
+    host: 192.168.1.204
+    port: 8001
+    
+  - platform: onkyo
+    host: 192.168.1.121
+    name: "Media Room Receiver"
+
+switch:
+# MQTT Switches
+  - platform: mqtt
+    name: "Garage Door"
+    state_topic: "home/doors/output/garagedoor"
+    state_on: "ON"
+    state_off: "OFF"
+    command_topic: "home/doors/output/garagedoor/set_on_ms"
+    payload_on: "500"
+    availability_topic: "home/doors/status"
+    payload_available: "running"
+    payload_not_available: "dead"
+    optimistic: false
+    qos: 0
+    retain: false
+
+  - platform: mqtt
+    name: "Front Door"
+    state_topic: "home/doors/output/frontdoor"
+    state_on: "ON"
+    state_off: "OFF"
+    command_topic: "home/doors/output/frontdoor/set_on_ms"
+    payload_on: "5000"
+    availability_topic: "home/doors/status"
+    payload_available: "running"
+    payload_not_available: "dead"
+    optimistic: false
+    qos: 0
+    retain: false
+
+# Template Entities
+  - platform: template
+    switches:
+      media_room_activity_foxtel:
+        value_template: "{{ is_state_attr('remote.harmony_hub', 'current_activity', 'Watch Foxtel') }}"
+        turn_on:
+          service: remote.turn_on
+          data:
+            entity_id: remote.harmony_hub
+            activity: 'Watch Foxtel'
+        turn_off:
+          service: remote.turn_off
+          data:
+            entity_id: remote.harmony_hub
+
+alarm_control_panel:
+  - platform: manual
+    code: !secret alarm_code
+
+input_number:
+  tim_fan_speed:
+    name: "Tim Fan Speed"
+    initial: 10
+    min: 1
+    max: 10
+    step: 1
+
+notify:
+  - name: fb-gazzzmo
+    platform: facebook
+    page_access_token: !secret facebook_token
+
+input_select:
+  camera_dropdown:
+    name: Cast camera
+    options:
+      - Backyard
+      - Frontdoor
+      - Garage
+      - Lounge Room
+      - Media Room
+      - Cycle Cameras
+      - All Cameras
+    initial: All Cameras
+    icon: mdi:webcam
+  cast_to_screen_dropdown:
+    name: To Screen
+    options:
+      - Media Room
+      - Terrace
+      - Tim Bedroom
+    initial: Media Room
+    icon: mdi:cast

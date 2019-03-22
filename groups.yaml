@@ -1,0 +1,7 @@
+  Cast_Cameras_Group:
+    name: Cast Camera to Screen
+    view: no
+    entities:
+     - input_select.camera_dropdown
+     - input_select.cast_to_screen_dropdown
+     - script.execute_cast_dropdown
