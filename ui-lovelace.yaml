@@ -433,7 +433,7 @@ views:
             min: 0
             max: 1024
             severity:
-              green: 0
+              green: 600
               yellow: 500
               red: 250
         - type: entity-button
