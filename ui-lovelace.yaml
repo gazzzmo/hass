@@ -402,11 +402,6 @@ views:
             - sensor.cams_cert
             - sensor.unifi_cert
             - sensor.hass_cert
-        - type: entities
-          title: Hass.io Host
-          show_header_toggle: false
-          entities:
-            - sensor.uptime
         - type: horizontal-stack
           cards:
           - type: gauge
@@ -427,6 +422,8 @@ views:
               green: 0
               yellow: 50
               red: 80
+        - type: horizontal-stack
+          cards:
           - type: gauge
             name: Memory Free
             entity: sensor.memory_free
@@ -436,6 +433,11 @@ views:
               green: 600
               yellow: 500
               red: 250
+          - type: entities
+            title: Hass.io Host
+            show_header_toggle: false
+            entities:
+              - sensor.uptime
         - type: entity-button
           entity: sensor.uptime
           tap_action:
