@@ -1,3 +1,4 @@
+# Automations go here...
 - alias: Tim Fan Speed (Fan to Slider)
   trigger:
     - platform: template
