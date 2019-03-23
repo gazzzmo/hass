@@ -15,6 +15,7 @@ homeassistant:
   # Auth Providers
   auth_providers:
    - type: legacy_api_password
+     api_password: !secret api_password
 
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -22,6 +23,7 @@ script: !include scripts.yaml
 
 # Automatically load default platforms
 default_config:
+discovery:
 
 # Use YAML for Lovelace UI
 lovelace:
@@ -30,7 +32,6 @@ lovelace:
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
    base_url: !secret base_url
-   api_password: !secret api_password
    use_x_forwarded_for: true
    trusted_proxies: !secret trusted_proxies
    ip_ban_enabled: true
