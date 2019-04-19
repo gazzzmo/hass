@@ -16,6 +16,7 @@ homeassistant:
   auth_providers:
    - type: legacy_api_password
      api_password: !secret api_password
+   - type: homeassistant
 
 group: !include groups.yaml
 automation: !include automations.yaml
