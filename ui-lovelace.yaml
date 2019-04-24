@@ -53,7 +53,8 @@ views:
         - entity: media_player.terrace
           icon: 'mdi:speaker'
         - media_player.terrace_chromcast
-        - switch.terrace_lights
+        - entity: switch.terrace_lights
+          icon: 'mdi:lightbulb'
 
 ### FAMILY TAB ###
 - title: Family
