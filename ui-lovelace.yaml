@@ -21,7 +21,8 @@ views:
       entities:
         - binary_sensor.media_room_motion
         - remote.harmony_hub
-        - sensor.mediaroom_activity
+        - entity: sensor.mediaroom_activity
+          icon: 'mdi:television'
         - light.media_room_left
         - light.media_room_right
 
