@@ -30,7 +30,8 @@ views:
       camera_image: camera.frontdoor
       entities:
         - binary_sensor.front_door_motion
-        - switch.front_door
+        - entity: switch.front_door
+          icon: 'mdi:door'
 
     - type: picture-glance
       title: Garage
@@ -39,7 +40,8 @@ views:
         - binary_sensor.garage_motion
         - entity: media_player.garage
           icon: 'mdi:speaker'
-        - switch.garage_door
+        - entity: switch.garage_door
+          icon: 'mdi:garage'
         - light.garage
 
     - type: picture-glance
