@@ -47,6 +47,7 @@ views:
         - binary_sensor.back_yard_motion
         - media_player.terrace
         - media_player.terrace_chromcast
+        - switch.terrace_lights
 
 ### FAMILY TAB ###
 - title: Family
