@@ -10,7 +10,8 @@ views:
       camera_image: camera.loungeroom
       entities:
         - binary_sensor.lounge_room_motion
-        - media_player.lounge
+        - entity: media_player.lounge
+          icon: 'mdi:speaker'
         - media_player.lounge_cast
         - light.lounge_room
 
@@ -36,7 +37,8 @@ views:
       camera_image: camera.garage
       entities:
         - binary_sensor.garage_motion
-        - media_player.garage
+        - entity: media_player.garage
+          icon: 'mdi:speaker'
         - switch.garage_door
         - light.garage
 
