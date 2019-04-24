@@ -45,7 +45,8 @@ views:
       camera_image: camera.backyard
       entities:
         - binary_sensor.back_yard_motion
-        - media_player.terrace
+        - entity: media_player.terrace
+          icon: 'mdi:speaker'
         - media_player.terrace_chromcast
         - switch.terrace_lights
 
