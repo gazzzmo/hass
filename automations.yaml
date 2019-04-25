@@ -19,3 +19,27 @@
      data_template:
        entity_id: input_number.tim_fan_speed
        value: '{{ state_attr(fan.tim_bedroom, speed) }}'
+
+- alias: Arm alarm when family away
+  trigger:
+    - platform: state
+      entity_id: group.family
+      from: "home"
+      to: "away"
+  action:
+    - service: alarm_control_panel.alarm_arm_away
+      data:
+        entity_id: alarm_control_panel.ha_alarm
+        code: !secret alarm_code
+
+- alias: Disarm alarm when family home
+  trigger:
+    - platform: state
+      entity_id: group.family
+      from: "away"
+      to: "home"
+  action:
+    - service:  alarm_control_panel.alarm_disarm
+      data:
+        entity_id: alarm_control_panel.ha_alarm
+        code: !secret alarm_code
