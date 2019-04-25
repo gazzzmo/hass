@@ -25,6 +25,10 @@ script: !include scripts.yaml
 # Automatically load default platforms
 default_config:
 discovery:
+# Use the recorder
+recorder:
+# Use the logbook
+logbook:
 
 # Use YAML for Lovelace UI
 lovelace:
@@ -42,9 +46,6 @@ http:
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   include_used_components: true
-
-# Use the logbook
-logbook:
 
 # Force load of IOS component
 ios:
