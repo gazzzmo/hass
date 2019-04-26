@@ -41,3 +41,30 @@
       data:
         entity_id: alarm_control_panel.ha_alarm
         code: !secret alarm_code
+
+- alias: Notify motion when alarm armed
+  trigger:
+    - platform: state
+      entity_id:  binary_sensor.media_room_motion
+      to: "on"
+    - platform:  state
+      entity_id: binary_sensor.lounge_room_motion
+      to: "on"
+    - platform: state
+      entity_id:  binary_sensor.garage_motion
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.front_door_motion
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.back_yard_motion
+      to: "on"
+  condition:
+    - condition: state
+      entity_id:  alarm_control_panel.ha_alarm
+      state: "armed_away"
+  action:
+    - service: notify.ios_gareth_iphone_beta
+      data:
+        title: "Warning: Motion Detected"
+        message: "Motion has been detected by sensor {{ trigger.entity_id.friendly_name }}"
