@@ -29,6 +29,8 @@ discovery:
 recorder:
 # Use the logbook
 logbook:
+# Activate the configuration editor
+config:
 
 # Use YAML for Lovelace UI
 lovelace:
