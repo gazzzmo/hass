@@ -67,4 +67,4 @@
     - service: notify.ios_gareth_iphone_beta
       data:
         title: "Warning: Motion Detected"
-        message: "Motion has been detected by sensor {{ trigger.entity_id.friendly_name }}"
+        message: "Motion has been detected by sensor {{ trigger.from_state.friendly_name }}"
