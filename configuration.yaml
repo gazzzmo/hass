@@ -99,7 +99,7 @@ weather:
 
 # Text to speech
 tts:
-  - platform: google
+  - platform: google_translate
 
 
 # This platform allows you to detect presence by looking at devices connected to a Ubiquiti Unifi controller.
