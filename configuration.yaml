@@ -52,6 +52,9 @@ updater:
 # Force load of IOS component
 ios:
 
+# Allow camera streaming
+stream:
+
 # InfluxDB for time series history
 influxdb:
   host: 192.168.1.72
