@@ -381,6 +381,13 @@ views:
           green: 0
           yellow: 50
           red: 80
+    - type: horizontal-stack
+      cards:
+      - type: picture-entity
+        name: Media Room Camera
+        entity: camera.mediaroom
+        camera_view: live
+        
 
 ### SONOS TAB ###
 - title: Sonos
