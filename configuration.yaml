@@ -67,9 +67,6 @@ sensor:
       mediaroom_activity:
         friendly_name: "Media Room Activity"
         value_template: "{{ state_attr('remote.harmony_hub', 'current_activity') }}"
-      tim_fan_speed_sensor:
-        friendly_name: "Tim Fan Speed SENSOR"
-        value_template: "{{ state_attr('fan.tim_bedroom', 'speed') }}" 
       weather_temperature:
         friendly_name: "Weather Temperature"
         unit_of_measurement: '°C'
@@ -270,14 +267,6 @@ switch:
 alarm_control_panel:
   - platform: manual
     code: !secret alarm_code
-
-input_number:
-  tim_fan_speed:
-    name: "Tim Fan Speed"
-    initial: 10
-    min: 1
-    max: 10
-    step: 1
 
 notify:
   - name: fb-gazzzmo
