@@ -5,28 +5,36 @@ views:
 - title: Main
   path: main
   cards:
-    - type: entity-button
-      entity: group.all_lights
-    - type: entity-button
-      entity: light.garage
-    - type: entity-button
-      entity: light.jess
-    - type: entity-button
-      entity: light.lounge_room
-    - type: entity-button
-      entity: light.media_room_left
-    - type: entity-button
-      entity: light.parents_bedhead
-    - type: entity-button
-      entity: light.parents_bedroom
-    - type: entity-button
-      entity: light.parents_bedroom_2
-    - type: entity-button
-      entity: light.tim_bedroom_left
-    - type: entity-button
-      entity: light.tim_bedroom_right
-    - type: entity-button
-      entity: light.lifx_mini_d_3de6c0
+    - type: horizontal-stack
+      cards:
+      - type: entity-button
+        entity: group.all_lights
+    - type: horizontal-stack
+      cards:
+      - type: light
+        entity: light.garage
+      - type: light
+        entity: light.jess
+      - type: light
+        entity: light.lounge_room
+      - type: light
+        entity: light.media_room_left
+    - type: horizontal-stack
+      cards:  
+      - type: light
+        entity: light.parents_bedhead
+      - type: light
+        entity: light.parents_bedroom
+      - type: light
+        entity: light.parents_bedroom_2
+    - type: horizontal-stack
+      cards:
+      - type: light
+        entity: light.tim_bedroom_left
+      - type: light
+        entity: light.tim_bedroom_right
+      - type: light
+        entity: light.lifx_mini_d_3de6c0
 
 ### OVERVIEW TAB ###
 - title: Overview
