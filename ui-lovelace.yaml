@@ -1,7 +1,7 @@
 title: Home
 views:
 
-### OVERVIEW TAB ###
+### MAIN TAB ###
 - title: Main
   path: main
   cards:
