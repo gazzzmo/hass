@@ -2,6 +2,33 @@ title: Home
 views:
 
 ### OVERVIEW TAB ###
+- title: Main
+  path: main
+  cards:
+    - type: entity-button
+      entity: group.all_lights
+    - type: entity-button
+      entity: light.garage
+    - type: entity-button
+      entity: light.jess
+    - type: entity-button
+      entity: light.lounge_room
+    - type: entity-button
+      entity: light.media_room_left
+    - type: entity-button
+      entity: light.parents_bedhead
+    - type: entity-button
+      entity: light.parents_bedroom
+    - type: entity-button
+      entity: light.parents_bedroom_2
+    - type: entity-button
+      entity: light.tim_bedroom_left
+    - type: entity-button
+      entity: light.tim_bedroom_right
+    - type: entity-button
+      entity: light.lifx_mini_d_3de6c0
+
+### OVERVIEW TAB ###
 - title: Overview
   path: overview
   cards:
