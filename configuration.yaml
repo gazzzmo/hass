@@ -92,7 +92,36 @@ sensor:
     name: Bed 1 Temp
     value_template: "{{ value_json['aircons']['ac1']['zones']['z01']['measuredTemp'] }}"
     unit_of_measurement: '°C' 
-
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Bed 2 Temp
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z02']['measuredTemp'] }}"
+    unit_of_measurement: '°C' 
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Bed 3 Temp
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z03']['measuredTemp'] }}"
+    unit_of_measurement: '°C'
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Bed 4 Temp
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z04']['measuredTemp'] }}"
+    unit_of_measurement: '°C'
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Media Room Temp
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z05']['measuredTemp'] }}"
+    unit_of_measurement: '°C'
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Lounge Room Temp
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z06']['measuredTemp'] }}"
+    unit_of_measurement: '°C'
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Kitchen Family Temp
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z07']['measuredTemp'] }}"
+    unit_of_measurement: '°C'
 # Zwave (not required for hassio)
 #zwave:
 #  usb_path: /dev/ttyACM0
