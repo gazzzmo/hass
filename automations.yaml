@@ -48,3 +48,15 @@
       data:
         title: "Warning: Motion Detected"
         message: "Motion has been detected by sensor {{ trigger.from_state.attributes.friendly_name }}"
+
+- alias: Remind Bin Day
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: group.family
+      to: "home"
+  action:
+    - service:  alarm_control_panel.alarm_disarm
+      data:
+        entity_id: alarm_control_panel.ha_alarm
+        code: !secret alarm_code
