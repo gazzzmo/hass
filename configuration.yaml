@@ -90,7 +90,7 @@ sensor:
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
     name: Bed 1 Temp
-    value_template: "{{ value_json['z01']['measuredTemp'] }}"
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z01']['measuredTemp'] }}"
     unit_of_measurement: '°C' 
 
 # Zwave (not required for hassio)
