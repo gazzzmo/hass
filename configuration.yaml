@@ -25,6 +25,8 @@ script: !include scripts.yaml
 # Automatically load default platforms
 default_config:
 discovery:
+ssdp:
+zeroconf:
 # Use the recorder
 recorder:
 # Use the logbook
