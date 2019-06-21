@@ -331,8 +331,3 @@ input_select:
       - Tim Bedroom
     initial: Media Room
     icon: mdi:cast
-
-# Enable Google Home for bluetooth device presence
-googlehome:
-  devices:
-    - host: 192.168.1.13
