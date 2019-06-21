@@ -1,0 +1,60 @@
+  - platform: template
+    sensors:
+      mediaroom_activity:
+        friendly_name: "Media Room Activity"
+        value_template: "{{ state_attr('remote.harmony_hub', 'current_activity') }}"
+      weather_temperature:
+        friendly_name: "Weather Temperature"
+        unit_of_measurement: '°C'
+        value_template: "{{ state_attr('weather.weather', 'temperature') }}"
+  - platform: cert_expiry
+    host: unifi.howells.online
+    name: Unifi Cert
+  - platform: cert_expiry
+    host: cams.howells.online
+    name: Cams Cert
+  - platform: cert_expiry
+    host: hass.howells.online
+    name: Hass Cert
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /home
+      - type: memory_free
+      - type: processor_use
+  - platform: uptime
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Bed 1 Temp
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z01']['measuredTemp'] }}"
+    unit_of_measurement: '°C' 
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Bed 2 Temp
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z02']['measuredTemp'] }}"
+    unit_of_measurement: '°C' 
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Bed 3 Temp
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z03']['measuredTemp'] }}"
+    unit_of_measurement: '°C'
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Bed 4 Temp
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z04']['measuredTemp'] }}"
+    unit_of_measurement: '°C'
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Media Room Temp
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z05']['measuredTemp'] }}"
+    unit_of_measurement: '°C'
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Lounge Room Temp
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z06']['measuredTemp'] }}"
+    unit_of_measurement: '°C'
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Kitchen Family Temp
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z07']['measuredTemp'] }}"
+    unit_of_measurement: '°C'

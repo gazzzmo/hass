@@ -1,0 +1,8 @@
+  - platform: unifi
+    host: !secret unifi_host
+    username: !secret unifi_username
+    password: !secret unifi_password
+    verify_ssl: false
+  - platform: icloud
+    username: !secret icloud_username
+    password: !secret icloud_password

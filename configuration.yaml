@@ -18,10 +18,6 @@ homeassistant:
      api_password: !secret api_password
    - type: homeassistant
 
-group: !include groups.yaml
-automation: !include automations.yaml
-script: !include scripts.yaml
-
 # Automatically load default platforms
 default_config:
 discovery:
@@ -33,19 +29,7 @@ recorder:
 logbook:
 # Activate the configuration editor
 config:
-
-# Use YAML for Lovelace UI
-lovelace:
-  mode: yaml
   
-# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-http:
-   base_url: !secret base_url
-   use_x_forwarded_for: true
-   trusted_proxies: !secret trusted_proxies
-   ip_ban_enabled: true
-   login_attempts_threshold: 5
-     
 # Checks for available updates
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
@@ -57,76 +41,20 @@ ios:
 # Allow camera streaming
 stream:
 
+# Use YAML for Lovelace UI
+lovelace:
+  mode: yaml
+
 # InfluxDB for time series history
 influxdb:
   host: 192.168.1.72
   database: hass
 
-# Sensors
-sensor:
-  - platform: template
-    sensors:
-      mediaroom_activity:
-        friendly_name: "Media Room Activity"
-        value_template: "{{ state_attr('remote.harmony_hub', 'current_activity') }}"
-      weather_temperature:
-        friendly_name: "Weather Temperature"
-        unit_of_measurement: '°C'
-        value_template: "{{ state_attr('weather.weather', 'temperature') }}"
-  - platform: cert_expiry
-    host: unifi.howells.online
-    name: Unifi Cert
-  - platform: cert_expiry
-    host: cams.howells.online
-    name: Cams Cert
-  - platform: cert_expiry
-    host: hass.howells.online
-    name: Hass Cert
-  - platform: systemmonitor
-    resources:
-      - type: disk_use_percent
-        arg: /home
-      - type: memory_free
-      - type: processor_use
-  - platform: uptime
-  - platform: rest
-    resource: http://192.168.1.131:2025/getSystemData
-    name: Bed 1 Temp
-    value_template: "{{ value_json['aircons']['ac1']['zones']['z01']['measuredTemp'] }}"
-    unit_of_measurement: '°C' 
-  - platform: rest
-    resource: http://192.168.1.131:2025/getSystemData
-    name: Bed 2 Temp
-    value_template: "{{ value_json['aircons']['ac1']['zones']['z02']['measuredTemp'] }}"
-    unit_of_measurement: '°C' 
-  - platform: rest
-    resource: http://192.168.1.131:2025/getSystemData
-    name: Bed 3 Temp
-    value_template: "{{ value_json['aircons']['ac1']['zones']['z03']['measuredTemp'] }}"
-    unit_of_measurement: '°C'
-  - platform: rest
-    resource: http://192.168.1.131:2025/getSystemData
-    name: Bed 4 Temp
-    value_template: "{{ value_json['aircons']['ac1']['zones']['z04']['measuredTemp'] }}"
-    unit_of_measurement: '°C'
-  - platform: rest
-    resource: http://192.168.1.131:2025/getSystemData
-    name: Media Room Temp
-    value_template: "{{ value_json['aircons']['ac1']['zones']['z05']['measuredTemp'] }}"
-    unit_of_measurement: '°C'
-  - platform: rest
-    resource: http://192.168.1.131:2025/getSystemData
-    name: Lounge Room Temp
-    value_template: "{{ value_json['aircons']['ac1']['zones']['z06']['measuredTemp'] }}"
-    unit_of_measurement: '°C'
-  - platform: rest
-    resource: http://192.168.1.131:2025/getSystemData
-    name: Kitchen Family Temp
-    value_template: "{{ value_json['aircons']['ac1']['zones']['z07']['measuredTemp'] }}"
-    unit_of_measurement: '°C'
-# Zwave (not required for hassio)
-#zwave:
-#  usb_path: /dev/ttyACM0
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+http: !include http.yaml
+sensor: !include sensors.yaml
   
 # Weather prediction
 weather:
@@ -141,34 +69,10 @@ tts:
 
 
 # This platform allows you to detect presence by looking at devices connected to a Ubiquiti Unifi controller.
-device_tracker:
-  - platform: unifi
-    host: !secret unifi_host
-    username: !secret unifi_username
-    password: !secret unifi_password
-    verify_ssl: false
-  - platform: icloud
-    username: !secret icloud_username
-    password: !secret icloud_password
+device_tracker: !include device_trackers.yaml
 
 # Cameras
-camera:
-  - platform: ffmpeg
-    input: !secret loungeroom_cam_url
-    name: Loungeroom
-  - platform: ffmpeg
-    input: !secret backyard_cam_url
-    name: Backyard
-  - platform: ffmpeg
-    input: !secret garage_cam_url
-    name: Garage
-  - platform: ffmpeg
-    input: !secret frontdoor_cam_url
-    name: Frontdoor
-  - platform: generic
-    still_image_url: http://192.168.1.218/snap.jpeg
-    stream_source: !secret mediaroom_cam_url
-    name: Mediaroom
+camera: !include cameras.yaml
 
 # Dyson Platform
 dyson:
