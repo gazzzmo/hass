@@ -1,24 +1,17 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: Home
-  # Location required to calculate the time the sun rises and sets
   latitude: !secret latitude
   longitude: !secret longitude
-  # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 35
-  # metric for Metric, imperial for Imperial
   unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Australia/Brisbane
-  # Customization file
   customize: !include customize.yaml
-  # Auth Providers
   auth_providers:
    - type: legacy_api_password
      api_password: !secret api_password
    - type: homeassistant
 
-# Automatically load default platforms
+# Load default platforms
 default_config:
 discovery:
 ssdp:
@@ -30,7 +23,7 @@ logbook:
 # Activate the configuration editor
 config:
   
-# Checks for available updates
+# Check for available updates
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   include_used_components: true
@@ -45,53 +38,22 @@ stream:
 lovelace:
   mode: yaml
 
-# InfluxDB for time series history
-influxdb:
-  host: 192.168.1.72
-  database: hass
-
+# !includes for platforms
+influxdb: !include influxdb.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 http: !include http.yaml
 sensor: !include sensors.yaml
-  
-# Weather prediction
-weather:
-  - platform: darksky
-    name: Weather
-    api_key: !secret darksky_api_key
-    mode: daily
-
-# Text to speech
-tts:
-  - platform: google_translate
-
-
-# This platform allows you to detect presence by looking at devices connected to a Ubiquiti Unifi controller.
+weather: !include weather.yaml
+tts: !include tts.yaml
 device_tracker: !include device_trackers.yaml
-
-# Cameras
 camera: !include cameras.yaml
-
-# Dyson Platform
 dyson: !include dyson.yaml
-
-# MQTT Platform
 mqtt: !include mqtt.yaml
-  
-# MQTT Motion Sensors from BlueIris
 binary_sensor: !include binary_sensors.yaml
-
-# Media Players
 media_player: media_players.yaml
-
 switch: !include switches.yaml
-
-alarm_control_panel:
-  - platform: manual
-    code: !secret alarm_code
-
+alarm_control_panel: !include alarm.yaml
 notify: !include notifiers.yaml
-
 input_select: !include input_selects.yaml
