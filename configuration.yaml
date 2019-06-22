@@ -1,3 +1,4 @@
+# Main home-assistant config
 homeassistant:
   name: Home
   latitude: !secret latitude
