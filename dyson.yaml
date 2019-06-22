@@ -1,0 +1,8 @@
+  username: !secret dyson_username
+  password: !secret dyson_password
+  language: AU
+  devices:
+    - device_id: !secret dyson_fan1
+      device_ip: 192.168.1.165
+    - device_id: !secret dyson_fan2
+      device_ip: 192.168.1.123

@@ -1,0 +1,54 @@
+  - platform: mqtt
+    name: "Front Door Motion"
+    state_topic: "BlueIris/motion/frontdoor/"
+    payload_on: "motion"
+    payload_off: "off"
+    availability_topic: "BlueIris/app"
+    payload_available: "running"
+    payload_not_available: "stopped"
+    qos: 0
+    device_class: motion
+    
+  - platform: mqtt
+    name: "Lounge Room Motion"
+    state_topic: "BlueIris/motion/loungeroom/"
+    payload_on: "motion"
+    payload_off: "off"
+    availability_topic: "BlueIris/app"
+    payload_available: "running"
+    payload_not_available: "stopped"
+    qos: 0
+    device_class: motion
+
+  - platform: mqtt
+    name: "Garage Motion"
+    state_topic: "BlueIris/motion/garage/"
+    payload_on: "motion"
+    payload_off: "off"
+    availability_topic: "BlueIris/app"
+    payload_available: "running"
+    payload_not_available: "stopped"
+    qos: 0
+    device_class: motion
+
+  - platform: mqtt
+    name: "Media Room Motion"
+    state_topic: "BlueIris/motion/mediaroom/"
+    payload_on: "motion"
+    payload_off: "off"
+    availability_topic: "BlueIris/app"
+    payload_available: "running"
+    payload_not_available: "stopped"
+    qos: 0
+    device_class: motion
+
+  - platform: mqtt
+    name: "Back Yard Motion"
+    state_topic: "BlueIris/motion/backyard/"
+    payload_on: "motion"
+    payload_off: "off"
+    availability_topic: "BlueIris/app"
+    payload_available: "running"
+    payload_not_available: "stopped"
+    qos: 0
+    device_class: motion

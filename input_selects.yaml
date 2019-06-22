@@ -1,0 +1,20 @@
+  camera_dropdown:
+    name: Cast camera
+    options:
+      - Backyard
+      - Frontdoor
+      - Garage
+      - Lounge Room
+      - Media Room
+      - Cycle Cameras
+      - All Cameras
+    initial: All Cameras
+    icon: mdi:webcam
+  cast_to_screen_dropdown:
+    name: To Screen
+    options:
+      - Media Room
+      - Terrace
+      - Tim Bedroom
+    initial: Media Room
+    icon: mdi:cast
