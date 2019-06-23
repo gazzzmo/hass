@@ -7,12 +7,11 @@ views:
   cards:
     - type: vertical-stack
       cards:
-        - type: guage
+        - type: gauge
           entity: sensor.bed_1_temp
-        - type: guage
+        - type: gauge
           entity: sensor.bed_2_temp
-        - type: guage
+        - type: gauge
           entity: sensor.bed_3_temp
-        - type: guage
+        - type: gauge
           entity: sensor.bed_4_temp
-          
