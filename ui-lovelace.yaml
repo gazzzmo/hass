@@ -8,6 +8,12 @@ views:
     - type: vertical-stack
       cards:
         - type: gauge
+          entity: sensor.kitchen_family_temp
+        - type: gauge
+          entity: sensor.media_room_temp
+        - type: gauge
+          entity: sensor.media_room_temp
+        - type: gauge
           entity: sensor.bed_1_temp
         - type: gauge
           entity: sensor.bed_2_temp
