@@ -23,6 +23,12 @@
       - type: memory_free
       - type: processor_use
   - platform: uptime
+
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Aircon Fan Speed
+    value_template: "{{ value_json['aircons']['ac1']['info']['fan'] }}"
+
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
     name: Bed 1 Temp
