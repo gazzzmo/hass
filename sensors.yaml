@@ -40,6 +40,11 @@
     unit_of_measurement: '°C' 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
+    name: Bed 1 State
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z01']['state'] }}"
+
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
     name: Bed 2 Temp
     value_template: "{{ value_json['aircons']['ac1']['zones']['z02']['measuredTemp'] }}"
     unit_of_measurement: '°C' 
