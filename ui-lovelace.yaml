@@ -7,6 +7,10 @@ views:
   cards:
     - type: vertical-stack
       cards:
+        - type: entity
+          entity: sensor.aircon_mode
+        - type: entity
+          entity: sensor.aircon_fan_speed
         - type: gauge
           entity: sensor.kitchen_family_temp
         - type: gauge
