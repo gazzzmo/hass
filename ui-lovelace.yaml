@@ -17,13 +17,17 @@ views:
           entity: sensor.media_room_temp
         - type: gauge
           entity: sensor.media_room_temp
-    - type: horizontal-stack
+    - type: vertical-stack
       cards:
-        - type: gauge
-          entity: sensor.bed_1_temp
-        - type: entities
-          entities:
-          - sensor.bed_1_state
+        - type: horizontal-stack
+          cards:
+            - type: gauge
+              entity: sensor.bed_1_temp
+            - type: entities
+              entities:
+              - sensor.bed_1_state
+    - type: vertical-stack
+      cards:
         - type: gauge
           entity: sensor.bed_2_temp
         - type: gauge
