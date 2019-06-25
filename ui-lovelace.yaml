@@ -9,7 +9,9 @@ views:
       cards:
         - type: entities
           entities:
+          - sensor.aircon_state
           - sensor.aircon_mode
+          - sensor.aircon_set_temperature
           - sensor.aircon_fan_speed
         - type: gauge
           entity: sensor.kitchen_family_temp
