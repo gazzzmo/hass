@@ -26,12 +26,20 @@
 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Aircon Fan Speed
-    value_template: "{{ value_json['aircons']['ac1']['info']['fan'] }}"
+    name: Aircon State
+    value_template: "{{ value_json['aircons']['ac1']['info']['state'] }}"
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Aircon Set Temperature
+    value_template: "{{ value_json['aircons']['ac1']['info']['setTemp'] }}"
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
     name: Aircon Mode
     value_template: "{{ value_json['aircons']['ac1']['info']['mode'] }}"
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Aircon Fan Speed
+    value_template: "{{ value_json['aircons']['ac1']['info']['fan'] }}"
 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
