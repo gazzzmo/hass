@@ -58,3 +58,4 @@ switch: !include switches.yaml
 alarm_control_panel: !include alarm.yaml
 notify: !include notifiers.yaml
 input_select: !include input_selects.yaml
+fan: !include fans.yaml

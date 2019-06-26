@@ -1,0 +1,18 @@
+  - platform: template
+    fans:
+      aircon_fan:
+        friendly_name: "Aircon fan"
+        value_template: "{{ states('sensor.aircon_state') }}"
+        speed_template: "{{ states('sensor.aircon_fan_speed') }}"
+        turn_on:
+          service: script.fan_on
+        turn_off:
+          service: script.fan_off
+        set_speed:
+          service: script.fan_speed
+          data_template:
+            speed: "{{ speed }}"
+        speeds:
+          - 'low'
+          - 'medium'
+          - 'high'
