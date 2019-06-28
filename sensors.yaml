@@ -58,9 +58,19 @@
     unit_of_measurement: '°C' 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
+    name: Bed 2 State
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z02']['state'] }}"
+
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
     name: Bed 3 Temp
     value_template: "{{ value_json['aircons']['ac1']['zones']['z03']['measuredTemp'] }}"
     unit_of_measurement: '°C'
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Bed 3 State
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z03']['state'] }}"
+
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
     name: Bed 4 Temp
@@ -68,9 +78,19 @@
     unit_of_measurement: '°C'
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
+    name: Bed 4 State
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z04']['state'] }}"
+
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
     name: Media Room Temp
     value_template: "{{ value_json['aircons']['ac1']['zones']['z05']['measuredTemp'] }}"
     unit_of_measurement: '°C'
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Media Room State
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z05']['state'] }}"
+
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
     name: Lounge Room Temp
@@ -78,6 +98,15 @@
     unit_of_measurement: '°C'
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
+    name: Lounge Room State
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z06']['state'] }}"
+
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
     name: Kitchen Family Temp
     value_template: "{{ value_json['aircons']['ac1']['zones']['z07']['measuredTemp'] }}"
     unit_of_measurement: '°C'
+  - platform: rest
+    resource: http://192.168.1.131:2025/getSystemData
+    name: Kitchen Family State
+    value_template: "{{ value_json['aircons']['ac1']['zones']['z07']['state'] }}"
