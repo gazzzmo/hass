@@ -24,10 +24,9 @@ views:
       cards:
         - type: horizontal-stack
           cards:
-            - type: gauge
-              entity: sensor.bed_1_temp
             - type: entities
               entities:
+              - sensor.bed_1_temp
               - sensor.bed_1_state
     - type: vertical-stack
       cards:
