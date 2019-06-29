@@ -53,7 +53,7 @@ camera: !include cameras.yaml
 dyson: !include dyson.yaml
 mqtt: !include mqtt.yaml
 binary_sensor: !include binary_sensors.yaml
-media_player: media_players.yaml
+media_player: !include media_players.yaml
 switch: !include switches.yaml
 alarm_control_panel: !include alarm.yaml
 notify: !include notifiers.yaml
