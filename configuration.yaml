@@ -39,6 +39,9 @@ stream:
 lovelace:
   mode: yaml
 
+frontend:
+  themes: !include themes.yaml
+
 # !includes for platforms
 influxdb: !include influxdb.yaml
 group: !include groups.yaml
