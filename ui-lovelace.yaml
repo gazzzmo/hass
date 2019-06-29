@@ -40,3 +40,6 @@ views:
     entities: 
     - sensor.bed_4_temp
     - sensor.bed_4_state
+  - type: light
+    entity: light.front_door
+  
