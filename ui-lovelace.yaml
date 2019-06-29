@@ -28,6 +28,6 @@ views:
     - sensor.bed_2_temp
     - sensor.bed_3_temp
     - sensor.bed_4_temp
-  - type: light
+  - type: entity-button
     entity: light.front_door
-  
+     
