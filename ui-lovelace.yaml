@@ -5,34 +5,38 @@ views:
 - title: Main
   path: main
   cards:
-    - type: vertical-stack
-      cards:
-        - type: entities
-          entities:
-          - sensor.aircon_state
-          - sensor.aircon_mode
-          - sensor.aircon_set_temperature
-          - sensor.aircon_fan_speed
-          - fan.aircon_fan
-        - type: gauge
-          entity: sensor.kitchen_family_temp
-        - type: gauge
-          entity: sensor.media_room_temp
-        - type: gauge
-          entity: sensor.media_room_temp
-    - type: vertical-stack
-      cards:
-        - type: horizontal-stack
-          cards:
-            - type: entities
-              entities:
-              - sensor.bed_1_temp
-              - sensor.bed_1_state
-    - type: vertical-stack
-      cards:
-        - type: gauge
-          entity: sensor.bed_2_temp
-        - type: gauge
-          entity: sensor.bed_3_temp
-        - type: gauge
-          entity: sensor.bed_4_temp
+  - type: entities
+    entities:
+    - sensor.aircon_state
+    - sensor.aircon_mode
+    - sensor.aircon_set_temperature
+    - sensor.aircon_fan_speed
+    - fan.aircon_fan
+  - type: entities
+    entities: 
+    - sensor.kitchen_family_temp
+    - sensor.kitchen_family_state
+  - type: entities
+    entities: 
+    - sensor.media_room_temp
+    - sensor.media_room_state
+  - type: entities
+    entities: 
+    - sensor.lounge_room_temp
+    - sensor.lounge_room_state
+  - type: entities
+    entities:
+    - sensor.bed_1_temp
+    - sensor.bed_1_state
+  - type: entities
+    entities: 
+    - sensor.bed_2_temp
+    - sensor.bed_2_state
+  - type: entities
+    entities: 
+    - sensor.bed_3_temp
+    - sensor.bed_3_state
+  - type: entities
+    entities: 
+    - sensor.bed_4_temp
+    - sensor.bed_4_state
