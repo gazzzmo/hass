@@ -30,4 +30,9 @@ views:
     - sensor.bed_4_temp
   - type: entity-button
     entity: light.front_door
-     
+  - type: entity-button
+    entity: light.garage
+  - type: entity-button
+    entity: light.media_room
+  - type: entity-button
+    entity: light.lounge_room
