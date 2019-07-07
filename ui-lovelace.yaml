@@ -7,6 +7,8 @@ views:
   cards:
   - type: weather-forecast
     entity: weather.weather
+  - type: light
+    entity: light.media_room
   - type: horizontal-stack
     cards:
       - type: entity-button
