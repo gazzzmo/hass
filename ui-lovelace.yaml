@@ -46,7 +46,9 @@ views:
   cards:
   - type: light
     entity: light.media_room
-  - type: sensor
-    entity: sensor.media_room_temp
+  - type: entities
+    entities:
+      - sensor.media_room_temp
+      - sensor.media_room_state
   - type: media-control
     entity: media_player.kitchen
