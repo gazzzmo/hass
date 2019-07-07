@@ -19,6 +19,8 @@ views:
       - sensor.aircon_set_temperature
       - sensor.aircon_fan_speed
       - fan.aircon_fan
+  - type: weather-forecast
+    entity: weather.weather
   - type: entities
     entities: 
     - sensor.kitchen_family_temp
