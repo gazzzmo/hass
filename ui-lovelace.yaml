@@ -7,8 +7,6 @@ views:
   cards:
   - type: weather-forecast
     entity: weather.weather
-  - type: light
-    entity: light.media_room
   - type: horizontal-stack
     cards:
       - type: entity-button
@@ -42,3 +40,13 @@ views:
     - sensor.bed_2_temp
     - sensor.bed_3_temp
     - sensor.bed_4_temp
+
+- title: Media Room
+  path: mediaroom
+  cards:
+  - type: light
+    entity: light.media_room
+  - type: sensor
+    entity: sensor.media_room_temp
+  - type: media-control
+    entity: media_player.kitchen
