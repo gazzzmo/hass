@@ -5,6 +5,18 @@ views:
 - title: Main
   path: main
   cards:
+  - type: weather-forecast
+    entity: weather.weather
+  - type: horizontal-stack
+    cards:
+      - type: entity-button
+        entity: light.front_door
+      - type: entity-button
+        entity: light.garage
+      - type: entity-button
+        entity: light.media_room
+      - type: entity-button
+        entity: light.lounge_room
   - type: entities
     entities:
     - sensor.aircon_state
@@ -19,8 +31,6 @@ views:
       - sensor.aircon_set_temperature
       - sensor.aircon_fan_speed
       - fan.aircon_fan
-  - type: weather-forecast
-    entity: weather.weather
   - type: entities
     entities: 
     - sensor.kitchen_family_temp
@@ -30,13 +40,3 @@ views:
     - sensor.bed_2_temp
     - sensor.bed_3_temp
     - sensor.bed_4_temp
-  - type: horizontal-stack
-    cards:
-      - type: entity-button
-        entity: light.front_door
-      - type: entity-button
-        entity: light.garage
-      - type: entity-button
-        entity: light.media_room
-      - type: entity-button
-        entity: light.lounge_room
