@@ -48,6 +48,5 @@ views:
     entity: light.media_room
   - type: sensor
     entity: sensor.media_room_temp
-    graph: line
   - type: media-control
     entity: media_player.kitchen
