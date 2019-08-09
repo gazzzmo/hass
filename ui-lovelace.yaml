@@ -57,6 +57,5 @@ views:
   path: cameras
   cards:
   - type: picture-entity
-    entity: camera.mediaroom
+    entity: camera.backyard
     aspect_ratio: 16:9
-    
