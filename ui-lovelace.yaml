@@ -59,3 +59,6 @@ views:
   - type: picture-entity
     entity: camera.backyard
     aspect_ratio: 16:9
+  - type: picture-entity
+    entity: camera.loungeroom
+    aspect_ratio: 16:9
