@@ -52,3 +52,11 @@ views:
       - sensor.media_room_state
   - type: media-control
     entity: media_player.kitchen
+
+- title: Cameras
+  path: cameras
+  cards:
+  - type: picture-entity
+    entity: camera.mediaroom
+    aspect_ratio: 16:9
+    
