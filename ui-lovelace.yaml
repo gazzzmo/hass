@@ -34,12 +34,17 @@ views:
   - type: entities
     entities: 
     - sensor.kitchen_family_temp
+    - type: section
     - sensor.media_room_temp
     - sensor.lounge_room_temp
+    - type: divider
     - sensor.bed_1_temp
     - sensor.bed_2_temp
     - sensor.bed_3_temp
     - sensor.bed_4_temp
+    - type: weblink
+      url: https://hass.howells.online
+      name: Home Assistant
 
 - title: Media Room
   path: mediaroom
