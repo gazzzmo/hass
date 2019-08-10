@@ -33,11 +33,13 @@ views:
       - fan.aircon_fan
   - type: entities
     entities: 
-    - sensor.kitchen_family_temp
     - type: section
+      label: Upstairs
+    - sensor.kitchen_family_temp
     - sensor.media_room_temp
     - sensor.lounge_room_temp
-    - type: divider
+    - type: section
+      label: Bedrooms
     - sensor.bed_1_temp
     - sensor.bed_2_temp
     - sensor.bed_3_temp
