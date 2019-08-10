@@ -44,9 +44,6 @@ views:
     - sensor.bed_2_temp
     - sensor.bed_3_temp
     - sensor.bed_4_temp
-    - type: weblink
-      url: https://hass.howells.online
-      name: Home Assistant
 
 - title: Media Room
   path: mediaroom
