@@ -17,6 +17,8 @@ views:
         entity: light.media_room
       - type: entity-button
         entity: light.lounge_room
+  - type: entity-button
+    entity: binary_sensor.lounge_room_motion
   - type: entities
     entities:
     - sensor.aircon_state
