@@ -1,4 +1,7 @@
-  home:
+  home_gareth:
     devices:
       - person.gareth
-      
+  
+  home_mandy:
+    devices:
+      - person.mandy
