@@ -74,7 +74,7 @@ views:
   # From: https://community.home-assistant.io/t/show-off-your-picture-elements-uses/63642/18?u=gazzzmo
   cards:
   - type: picture-elements
-    image: /local/ll_matte_home.png
+    image: /local/gareth.png
     elements:
       - style:
           top: 50%
