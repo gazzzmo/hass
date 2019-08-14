@@ -23,7 +23,7 @@ views:
     - type: horizontal-stack
       cards:
       - type: entity-button
-        entity: binary_sensor.lounge_room_motion
+        entity: binary_sensor.front_door_motion
         icon_height: 64px
       - type: entity-button
         entity: binary_sensor.garage_motion
@@ -32,7 +32,7 @@ views:
         entity: binary_sensor.media_room_motion
         icon_height: 64px      
       - type: entity-button
-        entity: binary_sensor.front_door_motion
+        entity: binary_sensor.lounge_room_motion
         icon_height: 64px  
 
   - type: vertical-stack
