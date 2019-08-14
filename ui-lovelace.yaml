@@ -7,32 +7,35 @@ views:
   cards:
   - type: weather-forecast
     entity: weather.weather
-  - type: horizontal-stack
-    cards:
-      - type: entity-button
-        entity: light.front_door
-      - type: entity-button
-        entity: light.garage
-      - type: entity-button
-        entity: light.media_room
-      - type: entity-button
-        entity: light.lounge_room
-  - type: horizontal-stack
-    cards:
-    - type: entity-button
-      entity: binary_sensor.lounge_room_motion
-      icon_height: 64px
-    - type: entity-button
-      entity: binary_sensor.garage_motion
-      icon_height: 64px
-    - type: entity-button
-      entity: binary_sensor.media_room_motion
-      icon_height: 64px      
-    - type: entity-button
-      entity: binary_sensor.front_door_motion
-      icon_height: 64px  
 
-  - type: horizontal-stack
+  - type: vertical-stack
+    cards:
+    - type: horizontal-stack
+      cards:
+        - type: entity-button
+          entity: light.front_door
+        - type: entity-button
+          entity: light.garage
+        - type: entity-button
+          entity: light.media_room
+        - type: entity-button
+          entity: light.lounge_room
+    - type: horizontal-stack
+      cards:
+      - type: entity-button
+        entity: binary_sensor.lounge_room_motion
+        icon_height: 64px
+      - type: entity-button
+        entity: binary_sensor.garage_motion
+        icon_height: 64px
+      - type: entity-button
+        entity: binary_sensor.media_room_motion
+        icon_height: 64px      
+      - type: entity-button
+        entity: binary_sensor.front_door_motion
+        icon_height: 64px  
+
+  - type: vertical-stack
     cards:
     - type: entities
       entities:
