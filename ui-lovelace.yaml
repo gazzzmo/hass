@@ -17,19 +17,21 @@ views:
         entity: light.media_room
       - type: entity-button
         entity: light.lounge_room
-  - type: entity-button
-    entity: binary_sensor.lounge_room_motion
-    icon_height: 64px
-  - type: entity-button
-    entity: binary_sensor.garage_motion
-    icon_height: 64px
-  - type: entities
-    entities:
-    - sensor.aircon_state
+  - type: horizontal-stack
+    cards:
+    - type: entity-button
+      entity: binary_sensor.lounge_room_motion
+      icon_height: 64px
+    - type: entity-button
+      entity: binary_sensor.garage_motion
+      icon_height: 64px
+    - type: entities
+      entities:
+      - sensor.aircon_state
   - type: conditional
     conditions:
       - entity: sensor.aircon_state
-        state:  "on"
+        state: "on"
     card:
       type: entities
       entities:
