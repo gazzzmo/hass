@@ -20,6 +20,9 @@ views:
   - type: entity-button
     entity: binary_sensor.lounge_room_motion
     icon_height: 64px
+  - type: entity-button
+    entity: binary_sensor.garage_motion
+    icon_height: 64px
   - type: entities
     entities:
     - sensor.aircon_state
