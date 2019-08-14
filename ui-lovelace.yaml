@@ -28,9 +28,10 @@ views:
     - type: entity-button
       entity: binary_sensor.media_room_motion
       icon_height: 64px      
-    - type: entity-button
+    - type: sensor
       entity: binary_sensor.front_door_motion
-      icon_height: 64px   
+      icon: mdi:run
+      graph: none   
   - type: entities
     entities:
       - sensor.aircon_state
