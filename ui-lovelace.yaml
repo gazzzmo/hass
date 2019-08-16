@@ -5,11 +5,26 @@ views:
 - title: Main
   path: main
   cards:
-  - type: weather-forecast
-    entity: weather.weather
-
   - type: vertical-stack
     cards:
+    - type: weather-forecast
+      entity: weather.weather
+    - type: horizontal-stack
+      cards:
+        - type: gauge
+          entity: sensor.aeotec_zw100_multisensor_6_temperature
+          min: 0
+          max: 50
+          severity:
+            yellow: 0
+            green: 20
+            red: 40
+        - type: gauge
+          entity: sensor.aeotec_zw100_multisensor_6_relative_humidity
+          severity:
+            yellow: 0
+            green: 50
+            red: 80
     - type: horizontal-stack
       cards:
         - type: entity-button
