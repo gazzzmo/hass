@@ -159,3 +159,13 @@ views:
           left: 12%
         type: state-label
         entity: sensor.matte_hem
+
+- title: Systems
+  # Monitor and control systems
+  cards:
+      - type: entities
+        entities:
+          - sensor.hass_cert
+          - sensor.cams_cert
+          - sensor.unifi_cert
+          
