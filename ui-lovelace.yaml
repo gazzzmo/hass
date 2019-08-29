@@ -165,12 +165,14 @@ views:
   cards:
       - type: entities
         title: "SSL Certificate Expiry"
+        show_header_toggle: off
         entities:
           - sensor.hass_cert
           - sensor.cams_cert
           - sensor.unifi_cert
       - type: entities
         title: "Hass Host"
+        show_header_toggle: off
         entities:
           - sensor.processor_use
           - sensor.memory_free
