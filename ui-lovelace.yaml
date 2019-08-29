@@ -50,35 +50,37 @@ views:
         entity: binary_sensor.lounge_room_motion
         icon_height: 64px  
 
-  - type: vertical-stack
-    cards:
-    - type: entities
-      entities:
-        - sensor.aircon_state
-    - type: conditional
-      conditions:
-        - entity: sensor.aircon_state
-          state: "on"
-      card:
-        type: entities
+- title: Aircon
+  cards:
+    - type: vertical-stack
+      cards:
+      - type: entities
         entities:
-        - sensor.aircon_mode
-        - sensor.aircon_set_temperature
-        - sensor.aircon_fan_speed
-        - fan.aircon_fan
-    - type: entities
-      entities: 
-      - type: section
-        label: Upstairs
-      - sensor.kitchen_family_temp
-      - sensor.media_room_temp
-      - sensor.lounge_room_temp
-      - type: section
-        label: Bedrooms
-      - sensor.bed_1_temp
-      - sensor.bed_2_temp
-      - sensor.bed_3_temp
-      - sensor.bed_4_temp
+        - sensor.aircon_state
+      - type: conditional
+        conditions:
+          - entity: sensor.aircon_state
+            state: "on"
+        card:
+          type: entities
+          entities:
+          - sensor.aircon_mode
+          - sensor.aircon_set_temperature
+          - sensor.aircon_fan_speed
+          - fan.aircon_fan
+      - type: entities
+        entities: 
+        - type: section
+          label: Upstairs
+            - sensor.kitchen_family_temp
+            - sensor.media_room_temp
+            - sensor.lounge_room_temp
+        - type: section
+          label: Bedrooms
+            - sensor.bed_1_temp
+            - sensor.bed_2_temp
+            - sensor.bed_3_temp
+            - sensor.bed_4_temp
 
 - title: Media Room
   path: mediaroom
