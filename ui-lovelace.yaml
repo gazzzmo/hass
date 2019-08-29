@@ -164,8 +164,14 @@ views:
   # Monitor and control systems
   cards:
       - type: entities
+        title: "SSL Certificate Expiry"
         entities:
           - sensor.hass_cert
           - sensor.cams_cert
           - sensor.unifi_cert
-          
+      - type: entities
+        title: "Hass Host"
+        entities:
+          - sensor.processor_use
+          - sensor.memory_free
+          - sensor.disk_use_percent_home
