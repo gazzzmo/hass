@@ -80,3 +80,13 @@ execute_cast_dropdown:
             http://192.168.1.21:81/mjpg/index?/video.mjpg
           {% endif %}
         media_content_type: 'image/jpg'
+
+activate_garage_door:
+  alias: Garage Door
+  description: "Sends a toggle signal to the garage door controller causing the door to go up / down"
+  sequence:
+    service: mqtt.publish
+    data_template:
+      topic: "home/doors/output/garagedoor/set_on_ms"
+      payload_template: "500"
+      
