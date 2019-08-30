@@ -50,6 +50,16 @@ views:
         entity: binary_sensor.lounge_room_motion
         icon_height: 64px  
 
+- title: Garage
+  cards:
+    - type: picture-glance
+      title: Garage
+      camera_image: camera.garage
+      camera_view: live
+      entities:
+        - switch.garage_door
+        - light.garage
+
 - title: Aircon
   cards:
     - type: vertical-stack

@@ -12,20 +12,6 @@
     qos: 0
     retain: false
 
-  - platform: mqtt
-    name: "Front Door"
-    state_topic: "home/doors/output/frontdoor"
-    state_on: "ON"
-    state_off: "OFF"
-    command_topic: "home/doors/output/frontdoor/set_on_ms"
-    payload_on: "5000"
-    availability_topic: "home/doors/status"
-    payload_available: "running"
-    payload_not_available: "dead"
-    optimistic: false
-    qos: 0
-    retain: false
-
 # Template Entities
   - platform: template
     switches:
