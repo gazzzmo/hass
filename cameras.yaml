@@ -1,15 +1,19 @@
   - platform: ffmpeg
-    input: !secret loungeroom_cam_url
     name: Loungeroom
+    input: !secret loungeroom_cam_url
+
   - platform: ffmpeg
-    input: !secret backyard_cam_url
     name: Backyard
+    input: !secret backyard_cam_url
+    
   - platform: ffmpeg
     input: !secret garage_cam_url
     name: Garage
+
   - platform: ffmpeg
     input: !secret frontdoor_cam_url
     name: Frontdoor
+    
   - platform: generic
     still_image_url: http://192.168.1.218/snap.jpeg
     stream_source: !secret mediaroom_cam_url
