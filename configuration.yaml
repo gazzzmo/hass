@@ -76,3 +76,4 @@ azure_event_hub:
     - light
     - media_player
     - sensor
+    - binary_sensor
