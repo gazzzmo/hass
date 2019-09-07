@@ -2,3 +2,6 @@
     name: Weather
     api_key: !secret darksky_api_key
     mode: daily
+  - platform: bom
+    name: BOM Weather
+    station: IDQ60901

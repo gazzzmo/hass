@@ -18,3 +18,8 @@
     still_image_url: http://192.168.1.218/snap.jpeg
     stream_source: !secret mediaroom_cam_url
     name: Mediaroom
+
+  - platform: bom
+    name: Brisbane Weather Radar
+    location: Brisbane
+    
