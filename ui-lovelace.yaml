@@ -8,7 +8,7 @@ views:
   - type: vertical-stack
     cards:
     - type: weather-forecast
-      entity: weather.weather
+      entity: weather.bom_bom_weather
     - type: horizontal-stack
       cards:
         - type: gauge
