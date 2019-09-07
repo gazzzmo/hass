@@ -25,6 +25,9 @@ views:
             yellow: 0
             green: 50
             red: 80
+    - type: picture-entity
+      entity: camera.brisbane_weather_radar
+      camera_view: live
     - type: horizontal-stack
       cards:
         - type: entity-button
