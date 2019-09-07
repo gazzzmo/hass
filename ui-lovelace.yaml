@@ -8,7 +8,7 @@ views:
   - type: vertical-stack
     cards:
     - type: weather-forecast
-      entity: weather.bom_bom_weather
+      entity: weather.bom_brisbane_weather
     - type: horizontal-stack
       cards:
         - type: gauge
