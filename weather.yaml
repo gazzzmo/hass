@@ -4,4 +4,4 @@
     mode: daily
   - platform: bom
     name: BOM Weather
-    station: IDQ60901
+    station: IDQ60901.94576
