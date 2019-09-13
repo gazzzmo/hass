@@ -1,7 +1,8 @@
-  home_gareth:
+  home:
     zone: home
     devices:
       - person.gareth
+      - person.mandy
     tolerance: 50
     unit_of_measurement: km
     
