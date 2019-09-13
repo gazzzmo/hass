@@ -41,19 +41,15 @@ views:
           entity: light.lounge_room
     - type: horizontal-stack
       cards:
-      - type: entity-button
-        entity: binary_sensor.front_door_motion
-        icon_height: 64px
-      - type: entity-button
-        entity: binary_sensor.garage_motion
-        icon_height: 64px
-      - type: entity-button
-        entity: binary_sensor.media_room_motion
-        icon_height: 64px      
-      - type: entity-button
-        entity: binary_sensor.lounge_room_motion
-        icon_height: 64px  
-
+      - type: entity
+        title: Motion
+        show_header_toggle: false
+        entities:
+        - binary_sensor.front_door_motion
+        - binary_sensor.garage_motion
+        - binary_sensor.media_room_motion
+        - binary_sensor.lounge_room_motion
+        
 - title: Garage
   cards:
     - type: picture-glance
