@@ -3,5 +3,5 @@
     devices:
       - person.gareth
     tolerance: 50
-    unit_of_measure: "km"
+    unit_of_measurement: km
     
