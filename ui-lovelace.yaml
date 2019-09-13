@@ -41,7 +41,7 @@ views:
           entity: light.lounge_room
     - type: horizontal-stack
       cards:
-      - type: entity
+      - type: entities
         title: Motion
         show_header_toggle: false
         entities:
