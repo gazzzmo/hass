@@ -3,6 +3,8 @@
     devices:
       - person.gareth
       - person.mandy
+      - person.jess
+      - person.tim
     tolerance: 50
     unit_of_measurement: km
     
