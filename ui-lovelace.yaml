@@ -44,11 +44,15 @@ views:
       - type: glance
         title: Motion
         entities:
-        - binary_sensor.front_door_motion
-        - binary_sensor.garage_motion
-        - binary_sensor.media_room_motion
-        - binary_sensor.lounge_room_motion
-        
+        - entity: binary_sensor.front_door_motion
+          name: Front Door
+        - entity: binary_sensor.garage_motion
+          name: Garage
+        - entity: binary_sensor.media_room_motion
+          name: Media Room
+        - entity: binary_sensor.lounge_room_motion
+          name: Lounge Room
+
 - title: Garage
   cards:
     - type: picture-glance
