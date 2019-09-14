@@ -41,9 +41,8 @@ views:
           entity: light.lounge_room
     - type: horizontal-stack
       cards:
-      - type: entities
+      - type: glance
         title: Motion
-        show_header_toggle: false
         entities:
         - binary_sensor.front_door_motion
         - binary_sensor.garage_motion
