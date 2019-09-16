@@ -10,4 +10,4 @@
   - platform: openweathermap
     name: Open Weather Map
     api_key: !secret openweathermap_api_key
-    
+    mode: freedaily    
