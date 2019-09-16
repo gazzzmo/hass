@@ -9,6 +9,7 @@ views:
     cards:
     - type: weather-forecast
       entity: weather.open_weather_map
+      mode: freedaily
       name: Brisbane Weather
     - type: horizontal-stack
       cards:
