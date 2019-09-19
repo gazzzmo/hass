@@ -52,6 +52,10 @@ views:
           name: Media Room
         - entity: binary_sensor.lounge_room_motion
           name: Lounge Room
+- title: Alarm
+  cards:
+  - type: alarm-panel
+    entity: alarm_control_panel.ha_alarm
 
 - title: Garage
   cards:
