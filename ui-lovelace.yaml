@@ -56,6 +56,11 @@ views:
   cards:
   - type: alarm-panel
     entity: alarm_control_panel.ha_alarm
+    name: Alarm
+    states:
+    - arm_home
+    - arm_away
+    - arm_night
 
 - title: Garage
   cards:
