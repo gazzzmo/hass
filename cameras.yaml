@@ -1,25 +1,32 @@
-  - platform: ffmpeg
-    name: Loungeroom
-    input: !secret loungeroom_cam_url
+#  - platform: ffmpeg
+#    name: Loungeroom
+#    input: !secret loungeroom_cam_url
 
-  - platform: ffmpeg
+#  - platform: ffmpeg
+#    name: Back Deck
+#    input: !secret backdeck_cam_url
+
+  - platform: mjpeg
+    mjpeg_url: http://http://192.168.1.21:81/mjpg/backdeck
     name: Back Deck
-    input: !secret backdeck_cam_url
-    
-  - platform: ffmpeg
-    input: !secret garage_cam_url
-    name: Garage
+    username: !secret blueiris_username
+    password: !secret blueiris_password
+    authentication: basic
 
-  - platform: ffmpeg
-    input: !secret frontdoor_cam_url
-    name: Frontdoor
-    
-  - platform: generic
-    still_image_url: http://192.168.1.218/snap.jpeg
-    stream_source: !secret mediaroom_cam_url
-    name: Mediaroom
+#  - platform: ffmpeg
+#    input: !secret garage_cam_url
+#    name: Garage
 
-  - platform: bom
-    name: Brisbane Weather Radar
-    location: Brisbane
+#  - platform: ffmpeg
+#    input: !secret frontdoor_cam_url
+#    name: Frontdoor
+#    
+#  - platform: generic
+#    still_image_url: http://192.168.1.218/snap.jpeg
+#    stream_source: !secret mediaroom_cam_url
+#    name: Mediaroom
+#
+#  - platform: bom
+#    name: Brisbane Weather Radar
+#    location: Brisbane
     
