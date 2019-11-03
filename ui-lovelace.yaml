@@ -121,7 +121,28 @@ views:
   cards:
   - type: picture-entity
     entity: camera.back_deck
-    aspect_ratio: 16:9
+    camera_image: camera.back_deck
+    camera_view: live
+  - type: picture-entity
+    entity: camera.driveway
+    camera_image: camera.driveway
+    camera_view: live
+  - type: picture-entity
+    entity: camera.lounge_room
+    camera_image: camera.lounge_room
+    camera_view: live
+  - type: picture-entity
+    entity: camera.front_door
+    camera_image: camera.front_door
+    camera_view: live
+  - type: picture-entity
+    entity: camera.side_stairs
+    camera_image: camera.side_stairs
+    camera_view: live
+  - type: picture-entity
+    entity: camera.garage
+    camera_image: camera.garage
+    camera_view: live
 
 - title: Gareth
   # From: https://community.home-assistant.io/t/show-off-your-picture-elements-uses/63642/18?u=gazzzmo
