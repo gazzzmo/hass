@@ -40,6 +40,7 @@ views:
           name: Media Room
         - entity: binary_sensor.lounge_room_motion
           name: Lounge Room
+
 - title: Alarm
   cards:
   - type: alarm-panel
@@ -132,63 +133,10 @@ views:
     camera_image: camera.garage
     camera_view: live
 
-- title: Gareth
-  # From: https://community.home-assistant.io/t/show-off-your-picture-elements-uses/63642/18?u=gazzzmo
+- title: Shopping List
   cards:
-  - type: picture-elements
-    image: /local/gareth.png
-    elements:
-      - style:
-          top: 50%
-          left: 50%
-          width: 100%
-        type: image
-        entity: input_select.matte_home_status
-        state_image:
-          "Home": /local/ll_matte_home.png
-          "Just Arrived": /local/ll_matte_home.png
-          "Away": /local/ll_matte_not_home.png
-          "Just Left": /local/ll_matte_not_home.png
-          "Extended Away": /local/ll_matte_not_home.png
-      - style:
-          top: 50%
-          left: 50%
-          width: 100%
-        type: image
-        entity: input_boolean.matte_charging
-        state_image:
-          "on": /local/ll_status_charging1.png
-          "off": /local/ll_status_blank.png
-      - style:
-          color: white
-          top: 9%
-          left: 12%
-        type: state-icon
-        entity: sensor.matte_battery
-      - style:
-          color: white
-          top: 92%
-          left: 50%
-        type: state-label
-        entity: sensor.matte_presence
-      - style:
-          color: white
-          top: 10%
-          left: 89%
-        type: state-label
-        entity: sensor.matte_battery
-      - style:
-          color: white
-          top: 73%
-          left: 88%
-        type: state-label
-        entity: proximity.home_gareth
-      - style:
-          color: white
-          top: 73%
-          left: 12%
-        type: state-label
-        entity: sensor.matte_hem
+  - type: shopping-list
+  
 
 - title: Systems
   # Monitor and control systems

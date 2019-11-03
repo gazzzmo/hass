@@ -35,6 +35,9 @@ ios:
 # Allow camera streaming
 stream:
 
+# Shopping List Intent
+shopping_list:
+
 # Use YAML for Lovelace UI
 lovelace:
   mode: yaml
@@ -63,17 +66,3 @@ notify: !include notifiers.yaml
 input_select: !include input_selects.yaml
 fan: !include fans.yaml
 proximity: !include proximity.yaml
-
-# Send events to Azure IoT Hub
-azure_event_hub:
-  event_hub_namespace: GarethHub.azure-devices.net
-  event_hub_instance_name: garethhub
-  event_hub_sas_policy: device
-  event_hub_sas_key: jp2PWICvsjNVAiK9V1acPqT/6vE+BtMUXH+GS6VRtfE=
-  filter:
-    include_domains:
-    - homeassistant
-    - light
-    - media_player
-    - sensor
-    - binary_sensor
