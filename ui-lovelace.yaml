@@ -122,9 +122,6 @@ views:
   - type: picture-entity
     entity: camera.back_deck
     aspect_ratio: 16:9
-  - type: picture-entity
-    entity: camera.loungeroom
-    aspect_ratio: 16:9
 
 - title: Gareth
   # From: https://community.home-assistant.io/t/show-off-your-picture-elements-uses/63642/18?u=gazzzmo

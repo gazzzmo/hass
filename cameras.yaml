@@ -7,7 +7,7 @@
 #    input: !secret backdeck_cam_url
 
   - platform: mjpeg
-    mjpeg_url: http://http://192.168.1.21:81/mjpg/backdeck
+    mjpeg_url: http://192.168.1.21:81/mjpg/backdeck/video.mjpeg
     name: Back Deck
     username: !secret blueiris_username
     password: !secret blueiris_password
