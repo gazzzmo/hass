@@ -120,7 +120,7 @@ views:
   path: cameras
   cards:
   - type: picture-entity
-    entity: camera.backdeck
+    entity: camera.back_deck
     aspect_ratio: 16:9
   - type: picture-entity
     entity: camera.loungeroom
