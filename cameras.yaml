@@ -3,8 +3,8 @@
     input: !secret loungeroom_cam_url
 
   - platform: ffmpeg
-    name: Backyard
-    input: !secret backyard_cam_url
+    name: Back Deck
+    input: !secret backdeck_cam_url
     
   - platform: ffmpeg
     input: !secret garage_cam_url
