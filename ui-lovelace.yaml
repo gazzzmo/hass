@@ -103,7 +103,12 @@ views:
       - sensor.media_room_temp
       - sensor.media_room_state
   - type: media-control
-    entity: media_player.kitchen
+    entity: media_player.upstairs
+  - type: media-control
+    entity: media_player.media_room_receiver
+  - type: entities
+    entities:
+      - sensor.mediaroom_activity
 
 - title: Cameras
   path: cameras
