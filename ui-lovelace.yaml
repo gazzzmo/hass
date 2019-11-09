@@ -60,6 +60,10 @@ views:
       entities:
         - switch.garage_door
         - light.garage
+    - type: entities
+      entities:
+        - switch.garage_door
+        - light.garage
 
 - title: Aircon
   cards:
