@@ -63,7 +63,7 @@ views:
       entities:
       - entity: switch.garage_door
         icon: garage
-      - entity: entity:light.garage
+      - entity: light.garage
 
 - title: Aircon
   path: aircon
