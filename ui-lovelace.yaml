@@ -55,17 +55,15 @@ views:
 - title: Garage
   path: garage
   cards:
-    - type: picture-glance
-      title: Garage
+    - type: picture-entity
+      entity: camera.garage
       camera_image: camera.garage
       camera_view: live
-      entities:
-        - switch.garage_door
-        - light.garage
     - type: entities
       entities:
-        - switch.garage_door
-        - light.garage
+      - entity: switch.garage_door
+        icon: garage
+      - entity:light.garage
 
 - title: Aircon
   path: aircon
