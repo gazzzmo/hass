@@ -62,7 +62,7 @@ views:
     - type: entities
       entities:
       - entity: switch.garage_door
-        icon: garage
+        icon: mdi:garage
       - entity: light.garage
 
 - title: Aircon
