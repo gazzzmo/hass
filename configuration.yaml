@@ -66,4 +66,4 @@ notify: !include notifiers.yaml
 input_select: !include input_selects.yaml
 fan: !include fans.yaml
 proximity: !include proximity.yaml
-person: !include pwerson.yaml
+person: !include person.yaml
