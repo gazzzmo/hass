@@ -1,0 +1,26 @@
+  - name: Gareth
+    id: 0b3687c6c9a7427996ca15050ecf7ba5
+    user_id: Gareth
+    device_trackers:
+      - device_tracker.gareth_iphone
+      - device_tracker.garethiphone
+
+  - name: Mandy
+    id: e8f58833c47a4baba2d2bf482bdce000
+    user_id: Mandy
+    device_trackers:
+      - device_tracker.mandy_iphone
+      - device_tracker.mandyiphone
+
+  - name: Tim
+    id: tim
+    user_id: 1bc097af5ffb40d3ac7c64c2ef7f9b83
+    device_trackers:
+      - device_tracker.tim_iphone
+
+  - name: Jess
+    id: jess
+    user_id: 35a7681eb4e14f3080cd58eff659f710
+    device_trackers:
+      - device_tracker.jessicas_iphone
+      - device_tracker.jessicasiphone
