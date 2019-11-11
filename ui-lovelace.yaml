@@ -43,15 +43,6 @@ views:
         - entity: binary_sensor.lounge_room_motion
           name: Lounge Room
 
-- title: Map
-  path: Map
-  cards:
-  - type: map
-    entities:
-      - device_tracker.garethiphone
-      - device_tracker.jessicasiphone
-      - device_tracker.mandyiphone
-
 - title: Media Room
   path: mediaroom
   cards:
@@ -96,11 +87,6 @@ views:
     entity: camera.garage
     camera_image: camera.garage
     camera_view: live
-
-- title: Shopping List
-  path: shoppinglist
-  cards:
-  - type: shopping-list
 
 - title: Alarm
   path: alarm
