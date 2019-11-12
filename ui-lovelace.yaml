@@ -56,6 +56,8 @@ views:
     entity: media_player.upstairs
   - type: media-control
     entity: media_player.media_room_receiver
+  - type: custom:mini-media-player
+    entity: media_player.media_room_receiver
   - type: entities
     entities:
       - sensor.mediaroom_activity
@@ -170,3 +172,7 @@ views:
           - sensor.processor_use
           - sensor.memory_free
           - sensor.disk_use_percent_home
+
+resources:
+  - url: /local/mini-media-player-bundle.js?v=1.4.2
+    type: module
