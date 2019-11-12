@@ -59,6 +59,13 @@ views:
   - type: entities
     entities:
       - sensor.mediaroom_activity
+  - type: entities
+    entities:
+      - sensor.media_room_temp
+      - sensor.media_room_state
+  - type: entities
+    entities:
+      - binary_sensor.media_room_motion
 
 - title: Cameras
   path: cameras
