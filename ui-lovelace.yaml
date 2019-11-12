@@ -73,7 +73,7 @@ views:
       - type: custom:mini-media-player
         entity: media_player.upstairs
       - type: custom:mini-media-player
-        entity: media_player.parents_bedroom
+        entity: media_player.ensuite
 
 - title: Cameras
   path: cameras
