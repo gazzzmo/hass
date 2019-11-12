@@ -46,18 +46,10 @@ views:
 - title: Media Room
   path: mediaroom
   cards:
-  - type: light
-    entity: light.media_room
-  - type: entities
-    entities:
-      - sensor.media_room_temp
-      - sensor.media_room_state
-  - type: media-control
-    entity: media_player.upstairs
-  - type: media-control
-    entity: media_player.media_room_receiver
   - type: custom:mini-media-player
     entity: media_player.media_room_receiver
+  - type: light
+    entity: light.media_room
   - type: entities
     entities:
       - sensor.mediaroom_activity
