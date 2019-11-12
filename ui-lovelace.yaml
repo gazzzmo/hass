@@ -68,27 +68,12 @@ views:
     entities:
       - type: custom:mini-media-player
         entity: media_player.lounge
-        group: true
-        source: icon
-        info: short
-        hide:
-          volume: true
-          power: true
       - type: custom:mini-media-player
         entity: media_player.terrace
-        group: true
-        hide:
-          controls: true
       - type: custom:mini-media-player
         entity: media_player.upstairs
-        group: true
-        hide:
-          controls: true
       - type: custom:mini-media-player
         entity: media_player.parents_bedroom
-        group: true
-        hide:
-          controls: true
 
 - title: Cameras
   path: cameras
