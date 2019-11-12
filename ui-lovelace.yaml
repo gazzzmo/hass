@@ -68,13 +68,17 @@ views:
     entities:
       - type: custom:mini-media-player
         entity: media_player.lounge
+        icon: mdi:cast-audio
       - type: custom:mini-media-player
         entity: media_player.terrace
+        icon: mdi:cast-audio
       - type: custom:mini-media-player
         entity: media_player.upstairs
+        icon: mdi:cast-audio
       - type: custom:mini-media-player
         entity: media_player.ensuite
-
+        icon: mdi:cast-audio
+        
 - title: Cameras
   path: cameras
   cards:
