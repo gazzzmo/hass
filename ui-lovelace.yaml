@@ -69,50 +69,56 @@ views:
 - title: Security
   path: security
   cards:
-  - type: alarm-panel
-    entity: alarm_control_panel.ha_alarm
-    name: Alarm
-    states:
-    - arm_home
-    - arm_away
-    - arm_night
+  - type: vertical-stack
+    cards:
+    - type: alarm-panel
+      entity: alarm_control_panel.ha_alarm
+      name: Alarm
+      states:
+      - arm_home
+      - arm_away
+      - arm_night
+    - type: horizontal-stack
+      cards:
+      - type: glance
+        title: Motion
+        entities:
+        - entity: binary_sensor.front_door_motion
+          name: Front Door
+        - entity: binary_sensor.garage_motion
+          name: Garage
+        - entity: binary_sensor.media_room_motion
+          name: Media Room
+        - entity: binary_sensor.lounge_room_motion
+          name: Lounge Room
   - type: horizontal-stack
     cards:
-    - type: glance
-      title: Motion
-      entities:
-      - entity: binary_sensor.front_door_motion
-        name: Front Door
-      - entity: binary_sensor.garage_motion
-        name: Garage
-      - entity: binary_sensor.media_room_motion
-        name: Media Room
-      - entity: binary_sensor.lounge_room_motion
-        name: Lounge Room
-  - type: picture-entity
-    entity: camera.back_deck
-    camera_image: camera.back_deck
-    camera_view: live
-  - type: picture-entity
-    entity: camera.driveway
-    camera_image: camera.driveway
-    camera_view: live
-  - type: picture-entity
-    entity: camera.lounge_room
-    camera_image: camera.lounge_room
-    camera_view: live
-  - type: picture-entity
-    entity: camera.front_door
-    camera_image: camera.front_door
-    camera_view: live
-  - type: picture-entity
-    entity: camera.side_stairs
-    camera_image: camera.side_stairs
-    camera_view: live
-  - type: picture-entity
-    entity: camera.garage
-    camera_image: camera.garage
-    camera_view: live
+    - type: picture-entity
+      entity: camera.back_deck
+      camera_image: camera.back_deck
+      camera_view: live
+    - type: picture-entity
+      entity: camera.driveway
+      camera_image: camera.driveway
+      camera_view: live
+    - type: picture-entity
+      entity: camera.lounge_room
+      camera_image: camera.lounge_room
+      camera_view: live
+  - type: horizontal-stack
+    cards:
+    - type: picture-entity
+      entity: camera.front_door
+      camera_image: camera.front_door
+      camera_view: live
+    - type: picture-entity
+      entity: camera.side_stairs
+      camera_image: camera.side_stairs
+      camera_view: live
+    - type: picture-entity
+      entity: camera.garage
+      camera_image: camera.garage
+      camera_view: live
 
 - title: Garage
   path: garage
