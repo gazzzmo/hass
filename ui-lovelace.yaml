@@ -95,6 +95,7 @@ views:
           name: Back Deck
         - entity: binary_sensor.side_stairs_motion
           name: Side Stairs
+
 - title: Cameras
   path: cameras
   cards:
