@@ -87,11 +87,14 @@ views:
           name: Front Door
         - entity: binary_sensor.garage_motion
           name: Garage
-        - entity: binary_sensor.media_room_motion
-          name: Media Room
+        - entity: binary_sensor.driveway_motion
+          name: Driveway
         - entity: binary_sensor.lounge_room_motion
           name: Lounge Room
-
+        - entity: binary_sensor.back_deck_motion
+          name: Back Deck
+        - entity: binary_sensor.side_stairs_motion
+          name: Side Stairs
 - title: Cameras
   path: cameras
   cards:
@@ -119,7 +122,7 @@ views:
       entity: camera.garage
       camera_image: camera.garage
       camera_view: live
-        
+
 - title: Garage
   path: garage
   cards:
