@@ -29,19 +29,6 @@ views:
           entity: light.media_room
         - type: entity-button
           entity: light.lounge_room
-    - type: horizontal-stack
-      cards:
-      - type: glance
-        title: Motion
-        entities:
-        - entity: binary_sensor.front_door_motion
-          name: Front Door
-        - entity: binary_sensor.garage_motion
-          name: Garage
-        - entity: binary_sensor.media_room_motion
-          name: Media Room
-        - entity: binary_sensor.lounge_room_motion
-          name: Lounge Room
 
 - title: Media Room
   path: mediaroom
@@ -78,10 +65,30 @@ views:
       - type: custom:mini-media-player
         entity: media_player.ensuite
         icon: mdi:cast-audio
-        
-- title: Cameras
-  path: cameras
+
+- title: Security
+  path: security
   cards:
+  - type: alarm-panel
+    entity: alarm_control_panel.ha_alarm
+    name: Alarm
+    states:
+    - arm_home
+    - arm_away
+    - arm_night
+  - type: horizontal-stack
+    cards:
+    - type: glance
+      title: Motion
+      entities:
+      - entity: binary_sensor.front_door_motion
+        name: Front Door
+      - entity: binary_sensor.garage_motion
+        name: Garage
+      - entity: binary_sensor.media_room_motion
+        name: Media Room
+      - entity: binary_sensor.lounge_room_motion
+        name: Lounge Room
   - type: picture-entity
     entity: camera.back_deck
     camera_image: camera.back_deck
@@ -106,17 +113,6 @@ views:
     entity: camera.garage
     camera_image: camera.garage
     camera_view: live
-
-- title: Alarm
-  path: alarm
-  cards:
-  - type: alarm-panel
-    entity: alarm_control_panel.ha_alarm
-    name: Alarm
-    states:
-    - arm_home
-    - arm_away
-    - arm_night
 
 - title: Garage
   path: garage
