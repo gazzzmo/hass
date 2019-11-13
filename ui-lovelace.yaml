@@ -91,6 +91,10 @@ views:
           name: Media Room
         - entity: binary_sensor.lounge_room_motion
           name: Lounge Room
+
+- title: Cameras
+  path: cameras
+  cards:
     - type: picture-entity
       entity: camera.back_deck
       camera_image: camera.back_deck
@@ -115,7 +119,7 @@ views:
       entity: camera.garage
       camera_image: camera.garage
       camera_view: live
-
+        
 - title: Garage
   path: garage
   cards:
