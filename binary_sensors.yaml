@@ -32,8 +32,8 @@
     device_class: motion
 
   - platform: mqtt
-    name: "Media Room Motion"
-    state_topic: "BlueIris/motion/mediaroom/"
+    name: "Side Stairs Motion"
+    state_topic: "BlueIris/motion/sidestairs/"
     payload_on: "motion"
     payload_off: "off"
     availability_topic: "BlueIris/app"
@@ -43,8 +43,19 @@
     device_class: motion
 
   - platform: mqtt
-    name: "Back Yard Motion"
-    state_topic: "BlueIris/motion/backyard/"
+    name: "Back Deck Motion"
+    state_topic: "BlueIris/motion/backdeck/"
+    payload_on: "motion"
+    payload_off: "off"
+    availability_topic: "BlueIris/app"
+    payload_available: "running"
+    payload_not_available: "stopped"
+    qos: 0
+    device_class: motion
+
+  - platform: mqtt
+    name: "Driveway Motion"
+    state_topic: "BlueIris/motion/driveway/"
     payload_on: "motion"
     payload_off: "off"
     availability_topic: "BlueIris/app"
