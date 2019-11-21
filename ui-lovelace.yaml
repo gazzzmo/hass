@@ -33,13 +33,13 @@ views:
 - title: Media Room
   path: mediaroom
   cards:
+  - type: entities
+    entities:
+      - sensor.mediaroom_activity
   - type: custom:mini-media-player
     entity: media_player.media_room_receiver
   - type: light
     entity: light.media_room
-  - type: entities
-    entities:
-      - sensor.mediaroom_activity
   - type: entities
     entities:
       - sensor.media_room_temp
