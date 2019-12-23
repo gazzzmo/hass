@@ -67,3 +67,9 @@ input_select: !include input_selects.yaml
 fan: !include fans.yaml
 proximity: !include proximity.yaml
 person: !include person.yaml
+
+tuya:
+  username: !secret tuya_username
+  password: !secret tuya_password
+  country_code: !secret tuya_countrycode
+  
