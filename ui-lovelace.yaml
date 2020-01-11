@@ -15,7 +15,7 @@ views:
   - type: custom:auto-entities
     show_empty: false
     card:
-      type: entity-button
+      type: entities
       title: Lights
     filter:
       include:
