@@ -20,9 +20,9 @@ views:
     filter:
       include:
        - domain: light
-      options:
-        tap_action:
-          action: toggle
+    options:
+      tap_action:
+        action: toggle
 
 ### MAIN TAB ###
 - title: Main
