@@ -31,8 +31,7 @@ views:
       title: Motion
     filter:
       include:
-       - domain: binary_sensor
-       - entity_id: "*motion"
+       - entity_id: "binary_sensor.*motion"
     sort: name
 
 ### MAIN TAB ###
