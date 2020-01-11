@@ -23,6 +23,7 @@ views:
          options:
           tap_action:
             action: toggle
+    sort: name
 
 ### MAIN TAB ###
 - title: Main
@@ -124,30 +125,30 @@ views:
 - title: Cameras
   path: cameras
   cards:
-    - type: picture-entity
-      entity: camera.back_deck
-      camera_image: camera.back_deck
-      camera_view: live
-    - type: picture-entity
-      entity: camera.driveway
-      camera_image: camera.driveway
-      camera_view: live
-    - type: picture-entity
-      entity: camera.lounge_room
-      camera_image: camera.lounge_room
-      camera_view: live
-    - type: picture-entity
-      entity: camera.front_door
-      camera_image: camera.front_door
-      camera_view: live
-    - type: picture-entity
-      entity: camera.side_stairs
-      camera_image: camera.side_stairs
-      camera_view: live
-    - type: picture-entity
-      entity: camera.garage
-      camera_image: camera.garage
-      camera_view: live
+  - type: picture-entity
+    entity: camera.back_deck
+    camera_image: camera.back_deck
+    camera_view: live
+  - type: picture-entity
+    entity: camera.driveway
+    camera_image: camera.driveway
+    camera_view: live
+  - type: picture-entity
+    entity: camera.lounge_room
+    camera_image: camera.lounge_room
+    camera_view: live
+  - type: picture-entity
+    entity: camera.front_door
+    camera_image: camera.front_door
+    camera_view: live
+  - type: picture-entity
+    entity: camera.side_stairs
+    camera_image: camera.side_stairs
+    camera_view: live
+  - type: picture-entity
+    entity: camera.garage
+    camera_image: camera.garage
+    camera_view: live
 
 - title: Garage
   path: garage
