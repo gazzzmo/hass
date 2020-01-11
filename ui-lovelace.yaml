@@ -1,5 +1,28 @@
 title: Home
+
+resources:
+  - url: /local/mini-media-player-bundle.js?v=1.4.2
+    type: module
+  - url: /local/auto-entities.js
+    type: module
+
 views:
+
+### OVERVIEW TAB ###
+- title: Overview
+  path: overview
+  cards:
+  - type: custom:auto-entities
+    show_empty: false
+    card:
+      type: glance
+      title: Lights
+    filter:
+      include:
+       - domain: light
+      options:
+        tap_action:
+          action: toggle
 
 ### MAIN TAB ###
 - title: Main
@@ -190,7 +213,3 @@ views:
           - sensor.processor_use
           - sensor.memory_free
           - sensor.disk_use_percent_home
-
-resources:
-  - url: /local/mini-media-player-bundle.js?v=1.4.2
-    type: module
