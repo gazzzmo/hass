@@ -24,6 +24,16 @@ views:
           tap_action:
             action: toggle
     sort: name
+  - type: custom:auto-entities
+    show_empty: false
+    card:
+      type: glance
+      title: Motion
+    filter:
+      include:
+       - domain: binary_sensor
+       - entity_id: "*motion"
+    sort: name
 
 ### MAIN TAB ###
 - title: Main
