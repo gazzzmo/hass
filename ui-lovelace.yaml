@@ -1,9 +1,9 @@
 title: Home
 
 resources:
-  - url: /local/mini-media-player-bundle.js?v=1.4.2
+  - url: /local/mini-media-player-bundle.js?v=142
     type: module
-  - url: /local/auto-entities.js
+  - url: /local/auto-entities.js?v=13
     type: module
 
 views:
