@@ -42,6 +42,9 @@ shopping_list:
 lovelace:
   mode: yaml
 
+# HomeKit setup
+homekit:
+
 frontend:
   themes: !include themes.yaml
 
