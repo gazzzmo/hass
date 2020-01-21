@@ -43,62 +43,62 @@
 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Bed 1 Temp
+    name: Parents Bedroom Temp
     value_template: "{{ value_json['aircons']['ac1']['zones']['z01']['measuredTemp'] }}"
     unit_of_measurement: '°C' 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Bed 1 State
+    name: Parents Bedroom State
     value_template: "{{ value_json['aircons']['ac1']['zones']['z01']['state'] }}"
 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Bed 2 Temp
+    name: Tim Bedroom Temp
     value_template: "{{ value_json['aircons']['ac1']['zones']['z02']['measuredTemp'] }}"
     unit_of_measurement: '°C' 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Bed 2 State
+    name: Tim Bedroom State
     value_template: "{{ value_json['aircons']['ac1']['zones']['z02']['state'] }}"
 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Bed 3 Temp
+    name: Study Temp
     value_template: "{{ value_json['aircons']['ac1']['zones']['z03']['measuredTemp'] }}"
     unit_of_measurement: '°C'
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Bed 3 State
+    name: Study State
     value_template: "{{ value_json['aircons']['ac1']['zones']['z03']['state'] }}"
 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Bed 4 Temp
+    name: Jess Bedroom Temp
     value_template: "{{ value_json['aircons']['ac1']['zones']['z04']['measuredTemp'] }}"
     unit_of_measurement: '°C'
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Bed 4 State
+    name: Jess Bedroom State
     value_template: "{{ value_json['aircons']['ac1']['zones']['z04']['state'] }}"
 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Media Room Temp
+    name: Office Temp
     value_template: "{{ value_json['aircons']['ac1']['zones']['z05']['measuredTemp'] }}"
     unit_of_measurement: '°C'
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Media Room State
+    name: Office State
     value_template: "{{ value_json['aircons']['ac1']['zones']['z05']['state'] }}"
 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Office Temp
+    name: Media Room Temp
     value_template: "{{ value_json['aircons']['ac1']['zones']['z06']['measuredTemp'] }}"
     unit_of_measurement: '°C'
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Office State
+    name: Media Room State
     value_template: "{{ value_json['aircons']['ac1']['zones']['z06']['state'] }}"
 
   - platform: rest
