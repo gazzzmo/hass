@@ -200,10 +200,10 @@ views:
         - sensor.office_temp
         - type: section
           label: Bedrooms
-        - sensor.bed_1_temp
-        - sensor.bed_2_temp
-        - sensor.bed_3_temp
-        - sensor.bed_4_temp  
+        - sensor.parents_bedroom_temp
+        - sensor.tim_bedroom_temp
+        - sensor.study_temp
+        - sensor.jess_bedroom_temp  
 
 - title: Systems
   path: systems
