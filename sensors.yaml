@@ -93,20 +93,20 @@
 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Lounge Room Temp
+    name: Office Temp
     value_template: "{{ value_json['aircons']['ac1']['zones']['z06']['measuredTemp'] }}"
     unit_of_measurement: '°C'
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Lounge Room State
+    name: Office State
     value_template: "{{ value_json['aircons']['ac1']['zones']['z06']['state'] }}"
 
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Kitchen Family Temp
+    name: Kitchen Temp
     value_template: "{{ value_json['aircons']['ac1']['zones']['z07']['measuredTemp'] }}"
     unit_of_measurement: '°C'
   - platform: rest
     resource: http://192.168.1.131:2025/getSystemData
-    name: Kitchen Family State
+    name: Kitchen State
     value_template: "{{ value_json['aircons']['ac1']['zones']['z07']['state'] }}"
