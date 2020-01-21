@@ -46,7 +46,8 @@ lovelace:
 homekit:
   ip_address: "192.168.1.79"
   filter:
-    include_domain: light
+    include_domains: 
+      - light
 
 frontend:
   themes: !include themes.yaml
