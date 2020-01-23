@@ -82,5 +82,4 @@ tuya:
 
 speedtestdotnet:
   serverid: 2604
-  scan_interval:
-    minutes: 15
+  scan_interval: 00:15
