@@ -229,6 +229,10 @@ views:
         name: Speedtest
         group_by: hour
         decimals: 1
+        lower_bound: 0
+        upper_bound: 100
+        lower_bound_secondary: 0
+        upper_bound_secondary: 500
         entities:
           - entity: sensor.speedtest_download
             name: Download
@@ -239,3 +243,4 @@ views:
           - entity: sensor.speedtest_ping
             name: Ping
             color: gray
+            y_axis: secondary
