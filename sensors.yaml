@@ -7,21 +7,26 @@
         friendly_name: "Weather Temperature"
         unit_of_measurement: '°C'
         value_template: "{{ state_attr('weather.weather', 'temperature') }}"
+
   - platform: cert_expiry
     host: unifi.howells.online
     name: Unifi Cert
+
   - platform: cert_expiry
     host: cams.howells.online
     name: Cams Cert
+
   - platform: cert_expiry
     host: hass.howells.online
     name: Hass Cert
+
   - platform: systemmonitor
     resources:
       - type: disk_use_percent
         arg: /home
       - type: memory_free
       - type: processor_use
+
   - platform: uptime
 
   - platform: rest
