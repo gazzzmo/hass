@@ -81,5 +81,3 @@ tuya:
   country_code: !secret tuya_countrycode
 
 speedtestdotnet:
-  serverid: 2604
-  scan_interval: 00:15
