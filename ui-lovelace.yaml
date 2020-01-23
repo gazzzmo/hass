@@ -5,6 +5,8 @@ resources:
     type: module
   - url: /local/auto-entities.js?v=13
     type: module
+  - url: /local/mini-graph-card-bundle.js?v=0.8.2
+    type: module
 
 views:
 
@@ -223,3 +225,8 @@ views:
           - sensor.processor_use
           - sensor.memory_free
           - sensor.disk_use_percent_home
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.speedtest_download
+          - sensor.speedtest_upload
+          - sensor.speedtest_ping
