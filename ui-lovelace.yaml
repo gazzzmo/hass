@@ -226,7 +226,16 @@ views:
           - sensor.memory_free
           - sensor.disk_use_percent_home
       - type: custom:mini-graph-card
+        name: Speedtest
+        group_by: hour
+        decimals: 1
         entities:
-          - sensor.speedtest_download
-          - sensor.speedtest_upload
-          - sensor.speedtest_ping
+          - entity: sensor.speedtest_download
+            name: Download
+            color: red
+          - entity: sensor.speedtest_upload
+            name: Upload
+            color: orange
+          - entity: sensor.speedtest_ping
+            name: Ping
+            color: gray
