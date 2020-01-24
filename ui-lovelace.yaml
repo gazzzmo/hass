@@ -39,6 +39,7 @@ views:
 ### MAIN TAB ###
 - title: Main
   path: main
+  theme: Google - Light
   cards:
   - type: vertical-stack
     cards:
