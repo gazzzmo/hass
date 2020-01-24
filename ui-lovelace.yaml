@@ -18,9 +18,17 @@ views:
   - type: weather-forecast
     entity: weather.darksky_weather
     name: "Brisbane"
-  - type: entity-button
-    entity: switch.garage_door
-    icon: mdi:garage
+  - type: picture-glance
+    title: Garage
+    camera_image: camera.garage
+    camera_view: live
+    entities:
+      - switch.garage_door
+    tap_action:
+      action: call-service
+      service: switch.turn_on
+      service_data:
+        entity_id: switch.garage_door
   - type: custom:auto-entities
     show_empty: false
     card:
@@ -51,18 +59,6 @@ views:
       name: Ping
       color: gray
       y_axis: secondary
-  - type: picture-glance
-    title: Garage
-    camera_image: camera.garage
-    camera_view: live
-    entities:
-      - switch.garage_door
-    tap_action:
-      action: call-service
-      service: switch.turn_on
-      service_data:
-        entity_id: switch.garage_door
-
 
 - title: Media Room
   path: mediaroom
