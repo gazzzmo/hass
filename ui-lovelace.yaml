@@ -22,8 +22,8 @@ views:
     cards:
       - type: markdown
         content: |
-          #H3 Media Room
-          #H1 {{ states('sensor.parents_bedroom_temp') }}º
+          ###Media Room
+          #{{ states('sensor.parents_bedroom_temp') }}º
       - type: gauge
         entity: sensor.kitchen_temp
       - type: gauge
