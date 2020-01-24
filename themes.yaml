@@ -69,7 +69,7 @@ dark:
   lumo-tertiary-text-color: "var(--secondary-text-color)"
   lumo-primary-contrast-color: "var(--primary-text-color)"
 
-Google - Light:
+google-light:
   ### Fonts ###
   primary-font-family: "'Open Sans','Rubik',Roboto,sans-serif"
   paper-font-common-base_-_font-family: "var(--primary-font-family)"
@@ -141,7 +141,8 @@ Google - Light:
   switch-unchecked-button-color: "var(--paper-toggle-button-unchecked-button-color)"
   switch-unchecked-color: "var(--paper-toggle-button-unchecked-bar-color)"
   switch-unchecked-track-color: "var(--paper-toggle-button-unchecked-bar-color)"
-Google - Dark:
+
+google-dark:
   ### Fonts ###
   primary-font-family: "'Open Sans','Rubik',Roboto,sans-serif"
   paper-font-common-base_-_font-family: "var(--primary-font-family)"
