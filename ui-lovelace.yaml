@@ -66,15 +66,15 @@ views:
       - sensor.aircon_state
     - type: conditional
       conditions:
-      - entity: sensor.aircon_state
-        state: "on"
+        - entity: sensor.aircon_state
+          state: "on"
       card:
-      - type: entities
+        type: entities
         entities:
-        - sensor.aircon_mode
-        - sensor.aircon_set_temperature
-        - sensor.aircon_fan_speed
-        - fan.aircon_fan
+          - sensor.aircon_mode
+          - sensor.aircon_set_temperature
+          - sensor.aircon_fan_speed
+          - fan.aircon_fan
     - type: entities
       entities: 
       - sensor.media_room_temp
