@@ -15,11 +15,13 @@ views:
   path: main
   theme: google-light
   cards:
-  - type: weather-forecast
-    entity: weather.darksky_weather
-    name: "Brisbane"
-  - type: horizontal-stack
+  - type: vertical-stack
     cards:
+    - type: weather-forecast
+      entity: weather.darksky_weather
+      name: "Brisbane"
+    - type: horizontal-stack
+      cards:
       - type: markdown
         content: |
           ### Media Room
@@ -35,65 +37,69 @@ views:
           ### Main Bedroom
 
           # {{ states('sensor.parents_bedroom_temp') }}º
+    - type: vertical-stack
+      cards:
+      - type: entities
+        entities:
+        - sensor.aircon_state
+      - type: conditional
+        conditions:
+          - entity: sensor.aircon_state
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - sensor.aircon_mode
+            - sensor.aircon_set_temperature
+            - sensor.aircon_fan_speed
+            - fan.aircon_fan
   - type: vertical-stack
     cards:
-    - type: entities
+    - type: custom:mini-graph-card
+      name: NBN
+      group_by: hour
+      decimals: 1
+      lower_bound: 0
+      upper_bound: 100
+      lower_bound_secondary: 0
+      upper_bound_secondary: 500
       entities:
-      - sensor.aircon_state
-    - type: conditional
-      conditions:
-        - entity: sensor.aircon_state
-          state: "on"
+      - entity: sensor.speedtest_download
+        name: Download
+        color: red
+      - entity: sensor.speedtest_upload
+        name: Upload
+        color: orange
+      - entity: sensor.speedtest_ping
+        name: Ping
+        color: gray
+        y_axis: secondary
+    - type: custom:auto-entities
+      show_empty: false
       card:
         type: entities
-        entities:
-          - sensor.aircon_mode
-          - sensor.aircon_set_temperature
-          - sensor.aircon_fan_speed
-          - fan.aircon_fan
-  - type: custom:mini-graph-card
-    name: NBN
-    group_by: hour
-    decimals: 1
-    lower_bound: 0
-    upper_bound: 100
-    lower_bound_secondary: 0
-    upper_bound_secondary: 500
-    entities:
-    - entity: sensor.speedtest_download
-      name: Download
-      color: red
-    - entity: sensor.speedtest_upload
-      name: Upload
-      color: orange
-    - entity: sensor.speedtest_ping
-      name: Ping
-      color: gray
-      y_axis: secondary
-  - type: custom:auto-entities
-    show_empty: false
-    card:
-      type: entities
-      title: Lights
-    filter:
-      include:
-       - domain: light
-         options:
-          tap_action:
-            action: toggle
-  - type: picture-glance
-    title: Garage
-    camera_image: camera.garage
-    camera_view: live
-    entities:
-      - switch.garage_door
-    tap_action:
-      action: call-service
-      service: switch.turn_on
-      service_data:
-        entity_id: switch.garage_door
+        title: Lights
+      filter:
+        include:
+         - domain: light
+           options:
+            tap_action:
+              action: toggle
+  - type: vertical-stack
+    cards:
+    - type: picture-glance
+      title: Garage
+      camera_image: camera.garage
+      camera_view: live
+      entities:
+        - switch.garage_door
+      tap_action:
+        action: call-service
+        service: switch.turn_on
+        service_data:
+          entity_id: switch.garage_door
 
-
+### MEDIA ROOM TAB ###
 - title: Media Room
   path: mediaroom
   cards:
@@ -111,6 +117,7 @@ views:
         - sensor.media_room_temp
         - sensor.media_room_state
 
+### SONOS TAB ###
 - title: Sonos
   path: sonos
   cards:
@@ -132,6 +139,7 @@ views:
         entity: media_player.foyer
         icon: mdi:cast-audio
 
+### SECURITY TAB ###
 - title: Security
   path: security
   cards:
@@ -162,6 +170,7 @@ views:
         - entity: binary_sensor.side_stairs_motion
           name: Side Stairs
 
+### CAMERAS TAB ###
 - title: Cameras
   path: cameras
   cards:
@@ -190,6 +199,7 @@ views:
     camera_image: camera.garage
     camera_view: live
 
+### GARAGE TAB ###
 - title: Garage
   path: garage
   cards:
@@ -203,6 +213,7 @@ views:
         icon: mdi:garage
       - entity: light.garage
 
+### AIRCON TAB ###
 - title: Aircon
   path: aircon
   cards:
@@ -236,9 +247,9 @@ views:
         - sensor.study_temp
         - sensor.jess_bedroom_temp  
 
+### SYSTEMS TAB ###
 - title: Systems
   path: systems
-  # Monitor and control systems
   cards:
       - type: entities
         title: "SSL Certificate Expiry"
