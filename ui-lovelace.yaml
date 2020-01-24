@@ -48,9 +48,6 @@ views:
   - type: entity-button
     entity: switch.garage_door
     icon: mdi:garage
-  - type: picture-entity
-    entity: camera.brisbane_weather_radar
-    camera_view: live
   - type: custom:auto-entities
     show_empty: false
     card:
