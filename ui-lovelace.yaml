@@ -33,7 +33,7 @@ views:
           tap_action:
             action: toggle
   - type: custom:mini-graph-card
-    name: Speedtest
+    name: NBN
     group_by: hour
     decimals: 1
     lower_bound: 0
