@@ -42,30 +42,26 @@ views:
   path: main
   theme: google-light
   cards:
-  - type: vertical-stack
-    cards:
-    - type: weather-forecast
-      entity: weather.darksky_weather
-      name: "Brisbane"
-    - type: horizontal-stack
-      cards:
-      - type: entity-button
-        entity: switch.garage_door
-        icon: mdi:garage
-        icon_height: 50
-    - type: picture-entity
-      entity: camera.brisbane_weather_radar
-      camera_view: live
-    - type: horizontal-stack
-      cards:
-        - type: entity-button
-          entity: light.front_door
-        - type: entity-button
-          entity: light.garage
-        - type: entity-button
-          entity: light.media_room
-        - type: entity-button
-          entity: light.lounge_room
+  - type: weather-forecast
+    entity: weather.darksky_weather
+    name: "Brisbane"
+  - type: entity-button
+    entity: switch.garage_door
+    icon: mdi:garage
+  - type: picture-entity
+    entity: camera.brisbane_weather_radar
+    camera_view: live
+  - type: custom:auto-entities
+    show_empty: false
+    card:
+      type: entities
+      title: Lights
+    filter:
+      include:
+       - domain: light
+         options:
+          tap_action:
+            action: toggle
 
 - title: Media Room
   path: mediaroom
