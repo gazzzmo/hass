@@ -30,7 +30,7 @@ views:
           ### Kitchen
 
           # {{ states('sensor.kitchen_temp') }}º
-        - type: markdown
+      - type: markdown
         content: |
           ### Parents Bedroom
 
