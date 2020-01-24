@@ -37,6 +37,14 @@ views:
       name: Ping
       color: gray
       y_axis: secondary
+  - type: horizontal-stack
+    cards:
+      - type: gauge
+        entity: sensor.media_room_temp
+      - type: guage
+        entity: sensor.kitchen_temp
+      - type: guage
+        entity: sensor.parents_bedroom_temp
   - type: custom:auto-entities
     show_empty: false
     card:
@@ -75,11 +83,6 @@ views:
           - sensor.aircon_set_temperature
           - sensor.aircon_fan_speed
           - fan.aircon_fan
-    - type: entities
-      entities: 
-      - sensor.media_room_temp
-      - sensor.kitchen_temp
-      - sensor.parents_bedroom_temp
 
 - title: Media Room
   path: mediaroom
