@@ -19,7 +19,7 @@ views:
     cards:
     - type: weather-forecast
       entity: weather.darksky_weather
-      name: "Brisbane"
+      name: "Weather"
     - type: horizontal-stack
       cards:
       - type: markdown
@@ -34,7 +34,7 @@ views:
           # {{ states('sensor.kitchen_temp') }}º
       - type: markdown
         content: |
-          ### Main Bedroom
+          ### Bedrooms
 
           # {{ states('sensor.parents_bedroom_temp') }}º
     - type: vertical-stack
