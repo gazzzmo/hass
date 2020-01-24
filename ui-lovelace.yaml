@@ -32,7 +32,7 @@ views:
           # {{ states('sensor.kitchen_temp') }}º
       - type: markdown
         content: |
-          ### Parents Bedroom
+          ### Main Bedroom
 
           # {{ states('sensor.parents_bedroom_temp') }}º
   - type: custom:mini-graph-card
