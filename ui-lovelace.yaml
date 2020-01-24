@@ -44,6 +44,7 @@ views:
     cards:
     - type: weather-forecast
       entity: weather.darksky_weather
+      name: ""
     - type: horizontal-stack
       cards:
       - type: entity-button
