@@ -20,11 +20,12 @@ views:
     name: "Brisbane"
   - type: horizontal-stack
     cards:
-      - type: gauge
-        entity: sensor.media_room_temp
+      - type: markdown
+        content: |
+          {{ states('sensor.parents_bedroom_temp') }}º
       - type: gauge
         entity: sensor.kitchen_temp
-      - type: guage
+      - type: gauge
         entity: sensor.parents_bedroom_temp
   - type: custom:mini-graph-card
     name: NBN
