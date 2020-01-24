@@ -51,6 +51,18 @@ views:
       name: Ping
       color: gray
       y_axis: secondary
+  - type: picture-glance
+    title: Garage
+    camera_image: camera.garage
+    camera_view: live
+    entities:
+      - switch.garage_door
+    tap_action:
+      action: call-service
+      service: switch.turn_on
+      service_data:
+        entity_id: switch.garage_door
+
 
 - title: Media Room
   path: mediaroom
