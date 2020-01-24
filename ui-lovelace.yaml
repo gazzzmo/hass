@@ -24,11 +24,17 @@ views:
         content: |
           ### Media Room
 
+          # {{ states('sensor.media_room_temp') }}º
+      - type: markdown
+        content: |
+          ### Kitchen
+
+          # {{ states('sensor.kitchen_temp') }}º
+        - type: markdown
+        content: |
+          ### Parents Bedroom
+
           # {{ states('sensor.parents_bedroom_temp') }}º
-      - type: gauge
-        entity: sensor.kitchen_temp
-      - type: gauge
-        entity: sensor.parents_bedroom_temp
   - type: custom:mini-graph-card
     name: NBN
     group_by: hour
