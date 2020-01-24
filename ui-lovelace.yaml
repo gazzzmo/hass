@@ -13,6 +13,7 @@ views:
 ### OVERVIEW TAB ###
 - title: Overview
   path: overview
+  theme: google-dark
   cards:
   - type: custom:auto-entities
     show_empty: false
@@ -39,7 +40,7 @@ views:
 ### MAIN TAB ###
 - title: Main
   path: main
-  theme: Google - Light
+  theme: google-light
   cards:
   - type: vertical-stack
     cards:
