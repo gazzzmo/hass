@@ -2,12 +2,4 @@
     name: DarkSky Weather
     api_key: !secret darksky_api_key
     mode: daily
-
-  - platform: bom
-    name: Brisbane Weather
-    station: IDQ60901.94576
-
-  - platform: openweathermap
-    name: Open Weather Map
-    api_key: !secret openweathermap_api_key
-    mode: daily    
+ 

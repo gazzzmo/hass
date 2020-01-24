@@ -43,14 +43,7 @@ views:
   - type: vertical-stack
     cards:
     - type: weather-forecast
-      entity: weather.open_weather_map
-      name: Open Weather Map
-    - type: weather-forecast
       entity: weather.darksky_weather
-      name: Darksky Weather
-    - type: weather-forecast
-      entity: weather.bom_brisbane_weather
-      name: BOM Weather
     - type: horizontal-stack
       cards:
       - type: entity-button
