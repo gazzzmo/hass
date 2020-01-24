@@ -18,6 +18,14 @@ views:
   - type: weather-forecast
     entity: weather.darksky_weather
     name: "Brisbane"
+  - type: horizontal-stack
+    cards:
+      - type: gauge
+        entity: sensor.media_room_temp
+      - type: gauge
+        entity: sensor.kitchen_temp
+      - type: guage
+        entity: sensor.parents_bedroom_temp
   - type: custom:mini-graph-card
     name: NBN
     group_by: hour
@@ -37,14 +45,6 @@ views:
       name: Ping
       color: gray
       y_axis: secondary
-  - type: horizontal-stack
-    cards:
-      - type: gauge
-        entity: sensor.media_room_temp
-      - type: guage
-        entity: sensor.kitchen_temp
-      - type: guage
-        entity: sensor.parents_bedroom_temp
   - type: custom:auto-entities
     show_empty: false
     card:
