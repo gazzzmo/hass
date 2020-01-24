@@ -10,33 +10,6 @@ resources:
 
 views:
 
-### OVERVIEW TAB ###
-- title: Overview
-  path: overview
-  theme: google-dark
-  cards:
-  - type: custom:auto-entities
-    show_empty: false
-    card:
-      type: glance
-      title: Lights
-    filter:
-      include:
-       - domain: light
-         options:
-          tap_action:
-            action: toggle
-    sort: name
-  - type: custom:auto-entities
-    show_empty: false
-    card:
-      type: glance
-      title: Motion
-    filter:
-      include:
-       - entity_id: "binary_sensor.*motion"
-    sort: name
-
 ### MAIN TAB ###
 - title: Main
   path: main
@@ -59,6 +32,25 @@ views:
          options:
           tap_action:
             action: toggle
+  - type: custom:mini-graph-card
+    name: Speedtest
+    group_by: hour
+    decimals: 1
+    lower_bound: 0
+    upper_bound: 100
+    lower_bound_secondary: 0
+    upper_bound_secondary: 500
+    entities:
+    - entity: sensor.speedtest_download
+      name: Download
+      color: red
+    - entity: sensor.speedtest_upload
+      name: Upload
+      color: orange
+    - entity: sensor.speedtest_ping
+      name: Ping
+      color: gray
+      y_axis: secondary
 
 - title: Media Room
   path: mediaroom
