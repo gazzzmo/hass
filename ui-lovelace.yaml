@@ -90,7 +90,6 @@ views:
     - type: picture-glance
       title: Garage
       camera_image: camera.garage
-      camera_view: live
       entities:
         - switch.garage_door
       tap_action:
@@ -101,13 +100,11 @@ views:
     - type: picture-glance
       title: Driveway
       camera_image: camera.driveway
-      camera_view: live
       entities:
         - camera.driveway
     - type: picture-glance
       title: Back Deck
       camera_image: camera.back_deck
-      camera_view: live
       entities:
         - camera.back_deck
 
