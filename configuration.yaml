@@ -53,7 +53,7 @@ frontend:
   themes: !include themes.yaml
 
 # !includes for platforms
-influxdb: !include influxdb.yaml
+# influxdb: !include influxdb.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
