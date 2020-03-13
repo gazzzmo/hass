@@ -29,9 +29,9 @@ views:
           # {{ states('sensor.media_room_temp') }}º
       - type: markdown
         content: |
-          <p style="color:DimGrey; font-family:roboto; font-size:32px">Kitchen</p>
+          ### Kitchen
 
-          {{ states('sensor.kitchen_temp') }}º
+          # {{ states('sensor.kitchen_temp') }}º
       - type: markdown
         content: |
           ### Bedrooms
