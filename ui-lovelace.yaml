@@ -120,7 +120,7 @@ views:
     - type: custom:mini-media-player
       entity: media_player.media_room_receiver
     - type: light
-      entity: light.media_room
+      entity: light.media_room_lamp
     - type: entities
       entities:
         - sensor.media_room_temp
@@ -214,13 +214,12 @@ views:
   cards:
     - type: picture-entity
       entity: camera.garage
-      camera_image: camera.garage
       camera_view: live
     - type: entities
       entities:
       - entity: switch.garage_door
         icon: mdi:garage
-      - entity: light.garage
+      - entity: light.garage_lamp
 
 ### AIRCON TAB ###
 - title: Aircon
