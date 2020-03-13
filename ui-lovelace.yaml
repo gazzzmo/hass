@@ -29,7 +29,7 @@ views:
           # {{ states('sensor.media_room_temp') }}º
       - type: markdown
         content: |
-          <p style="font-family:roboto; font-size:16.7px;">Kitchen</p>
+          <p style="font-family:roboto; font-size:18px;"><b>Kitchen</b></p>
 
           # {{ states('sensor.kitchen_temp') }}º
       - type: markdown
