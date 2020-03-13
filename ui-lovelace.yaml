@@ -30,8 +30,7 @@ views:
       - type: markdown
         content: |
           <p style="font-family:roboto; font-size:21px;">Kitchen></p>
-
-          # {{ states('sensor.kitchen_temp') }}º
+          <p style="font-family:roboto; font-size:18px;"> {{ states('sensor.kitchen_temp') }}º </p>
       - type: markdown
         content: |
           ### Bedrooms
