@@ -267,6 +267,11 @@ views:
           - sensor.cams_cert
           - sensor.unifi_cert
       - type: entities
+        title: "HASS Update"
+        show_header_toggle: off
+        entities:
+          - binary_sensor.updater
+      - type: entities
         title: "Hass Host"
         show_header_toggle: off
         entities:
