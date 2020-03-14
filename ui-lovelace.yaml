@@ -20,21 +20,6 @@ views:
     - type: weather-forecast
       entity: weather.darksky_weather
       name: "Weather"
-    - type: custom:mini-graph-card
-      name: Coronavirus
-      entities:
-      - entity: sensor.australia_coronavirus_confirmed
-        name: Confirmed
-        color: gray
-      - entity: sensor.australia_coronavirus_current
-        name: Current
-        color: orange
-      - entity: sensor.australia_coronavirus_deaths
-        name: Deaths
-        color: red
-      - entity: sensor.australia_coronavirus_recovered
-        name: Recovered
-        color: green
     - type: horizontal-stack
       cards:
       - type: markdown
@@ -102,6 +87,23 @@ views:
               action: toggle
   - type: vertical-stack
     cards:
+    - type: custom:mini-graph-card
+      name: Coronavirus
+      group_by: date
+      icon: hospital-marker
+      entities:
+      - entity: sensor.australia_coronavirus_confirmed
+        name: Confirmed
+        color: gray
+      - entity: sensor.australia_coronavirus_current
+        name: Current
+        color: orange
+      - entity: sensor.australia_coronavirus_deaths
+        name: Deaths
+        color: red
+      - entity: sensor.australia_coronavirus_recovered
+        name: Recovered
+        color: green
     - type: picture-glance
       title: Garage
       camera_image: camera.garage
