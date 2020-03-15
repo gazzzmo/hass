@@ -125,6 +125,17 @@ views:
       entities:
         - camera.back_deck
 
+### FAMILY TAB
+- title: Family
+  path: family
+  cards:
+  - type: map
+    entities:
+      - person.gareth
+      - person.mandy
+      - person.jess
+      - person.jess
+
 ### MEDIA ROOM TAB ###
 - title: Media Room
   path: mediaroom
