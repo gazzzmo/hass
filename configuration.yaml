@@ -54,26 +54,27 @@ frontend:
 
 # !includes for platforms
 # influxdb: !include influxdb.yaml
-group: !include groups.yaml
-automation: !include automations.yaml
-script: !include scripts.yaml
-http: !include http.yaml
-sensor: !include sensors.yaml
-weather: !include weather.yaml
-tts: !include tts.yaml
-device_tracker: !include device_trackers.yaml
-camera: !include cameras.yaml
-dyson: !include dyson.yaml
-mqtt: !include mqtt.yaml
-binary_sensor: !include binary_sensors.yaml
-media_player: !include media_players.yaml
-switch: !include switches.yaml
 alarm_control_panel: !include alarm.yaml
-notify: !include notifiers.yaml
-input_select: !include input_selects.yaml
+automation: !include automations.yaml
+binary_sensor: !include binary_sensors.yaml
+camera: !include cameras.yaml
+device_tracker: !include device_trackers.yaml
+dyson: !include dyson.yaml
 fan: !include fans.yaml
-proximity: !include proximity.yaml
+group: !include groups.yaml
+http: !include http.yaml
+input_select: !include input_selects.yaml
+media_player: !include media_players.yaml
+mqtt: !include mqtt.yaml
+notify: !include notifiers.yaml
 person: !include person.yaml
+proximity: !include proximity.yaml
+script: !include scripts.yaml
+sensor: !include sensors.yaml
+switch: !include switches.yaml
+tts: !include tts.yaml
+weather: !include weather.yaml
+zone: !include zones.yaml
 
 tuya:
   username: !secret tuya_username
