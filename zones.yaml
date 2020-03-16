@@ -3,3 +3,21 @@
     longitude: !secret school_longitude
     radius: 250
     icon: mdi:school
+
+  - name: City
+    latitude: -27.469700
+    longitude: 153.025267
+    radius: 500
+    icon: mdi:city
+
+  - name: University
+    latitude: !secret university_latitude
+    longitude: !secret university_longitude
+    radius: 250
+    icon: mdi:school
+
+  - name: KCA
+    latitude: !secret kca_latitude
+    longitude: !secret kca_longitude
+    radius: 250
+    icon: mdi:factory
