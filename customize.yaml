@@ -1,11 +1,11 @@
   person.gareth:
     entity_picture: "/local/gareth.png"
 
-  person_mandy:
+  person.mandy:
     entity_picture: "/local/mandy.png"
 
-  person_tim:
+  person.tim:
     entity_picture: "/local/tim.png"
 
-  person_jess:
+  person.jess:
     entity_picture: "/local/jess.png"
