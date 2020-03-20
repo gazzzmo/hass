@@ -90,6 +90,7 @@ views:
     - type: custom:mini-graph-card
       name: Coronavirus
       group_by: date
+      hours_to_show: 168
       icon: mdi:hospital-marker
       entities:
       - entity: sensor.australia_coronavirus_confirmed
