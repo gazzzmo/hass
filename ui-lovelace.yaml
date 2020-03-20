@@ -150,9 +150,11 @@ views:
 - title: Sonos
   path: sonos
   cards:
+  - type: media-control
+    entity: media_player.lounge
   - type: entities
     entities:
-      - type: media-control
+      - type: custom:mini-media-player
         entity: media_player.lounge
         icon: mdi:cast-audio
       - type: custom:mini-media-player
