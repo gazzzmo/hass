@@ -137,7 +137,7 @@ views:
     - type: entities
       entities:
         - sensor.mediaroom_activity
-    - type: media-control
+    - type: custom:mini-media-player
       entity: media_player.media_room_receiver
     - type: light
       entity: light.media_room_lamp
@@ -152,7 +152,7 @@ views:
   cards:
   - type: entities
     entities:
-      - type: custom:mini-media-player
+      - type: media-control
         entity: media_player.lounge
         icon: mdi:cast-audio
       - type: custom:mini-media-player
