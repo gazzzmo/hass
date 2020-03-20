@@ -137,7 +137,7 @@ views:
     - type: entities
       entities:
         - sensor.mediaroom_activity
-    - type: custom:mini-media-player
+    - type: media-control
       entity: media_player.media_room_receiver
     - type: light
       entity: light.media_room_lamp
