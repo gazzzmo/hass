@@ -41,6 +41,13 @@ shopping_list:
 # Use YAML for Lovelace UI
 lovelace:
   mode: yaml
+  resources:
+  - url: /local/mini-media-player-bundle.js?v=142
+    type: module
+  - url: /local/auto-entities.js?v=16
+    type: module
+  - url: /local/mini-graph-card-bundle.js?v=0.9.3
+    type: module
 
 # HomeKit setup
 #homekit:
