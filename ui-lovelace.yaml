@@ -189,7 +189,7 @@ views:
 #        name: Back Deck
 #      - entity: binary_sensor.side_stairs_motion
 #        name: Side Stairs
-    - type: vertical-stack
+    - type: horizontal-stack
       cards:
       - type: picture-entity
         entity: camera.back_deck
@@ -203,7 +203,7 @@ views:
         entity: camera.lounge_room
         camera_image: camera.lounge_room
         camera_view: live
-    - type: vertical-stack
+    - type: horizontal-stack
       cards:
       - type: picture-entity
         entity: camera.front_door
