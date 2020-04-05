@@ -78,6 +78,7 @@ person: !include person.yaml
 proximity: !include proximity.yaml
 script: !include scripts.yaml
 sensor: !include sensors.yaml
+sonos: !include sonos.yaml
 switch: !include switches.yaml
 tts: !include tts.yaml
 weather: !include weather.yaml
