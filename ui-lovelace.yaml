@@ -226,11 +226,11 @@ views:
     - type: picture-entity
       entity: camera.garage
       camera_view: live
-    - type: entities
-      entities:
-      - entity: switch.garage_door
-        icon: mdi:garage
-      - entity: light.garage_lamp
+    - type: button
+      entity: switch.garage_door
+      icon: mdi:garage
+    - type: light
+      entity: light.garage_lamp
 
 ### AIRCON TAB ###
 - title: Aircon
