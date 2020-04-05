@@ -171,9 +171,38 @@ views:
 ### SECURITY TAB ###
 - title: Security
   path: security
+  theme: google-light
   cards:
   - type: vertical-stack
     cards:
+      - type: picture-entity
+        entity: camera.back_deck
+        camera_image: camera.back_deck
+        camera_view: live
+      - type: picture-entity
+        entity: camera.driveway
+        camera_image: camera.driveway
+        camera_view: live
+  - type: vertical-stack
+    cards:
+    - type: picture-entity
+      entity: camera.lounge_room
+      camera_image: camera.lounge_room
+      camera_view: live
+    - type: picture-entity
+      entity: camera.front_door
+      camera_image: camera.front_door
+      camera_view: live
+  - type: vertical-stack
+    cards:
+    - type: picture-entity
+      entity: camera.side_stairs
+      camera_image: camera.side_stairs
+      camera_view: live
+    - type: picture-entity
+      entity: camera.garage
+      camera_image: camera.garage
+      camera_view: live
 #    - type: glance
 #      title: Motion
 #      entities:
@@ -189,36 +218,6 @@ views:
 #        name: Back Deck
 #      - entity: binary_sensor.side_stairs_motion
 #        name: Side Stairs
-    - type: horizontal-stack
-      cards:
-      - type: picture-entity
-        entity: camera.back_deck
-        camera_image: camera.back_deck
-        camera_view: live
-      - type: picture-entity
-        entity: camera.driveway
-        camera_image: camera.driveway
-        camera_view: live
-    - type: horizontal-stack
-      cards:
-      - type: picture-entity
-        entity: camera.lounge_room
-        camera_image: camera.lounge_room
-        camera_view: live
-      - type: picture-entity
-        entity: camera.front_door
-        camera_image: camera.front_door
-        camera_view: live
-    - type: horizontal-stack
-      cards:
-      - type: picture-entity
-        entity: camera.side_stairs
-        camera_image: camera.side_stairs
-        camera_view: live
-      - type: picture-entity
-        entity: camera.garage
-        camera_image: camera.garage
-        camera_view: live
 
 ### GARAGE TAB ###
 - title: Garage
