@@ -222,6 +222,7 @@ views:
 ### GARAGE TAB ###
 - title: Garage
   path: garage
+  theme: google-light
   cards:
     - type: picture-entity
       entity: camera.garage
@@ -235,6 +236,7 @@ views:
 ### AIRCON TAB ###
 - title: Aircon
   path: aircon
+  theme: google-light
   cards:
     - type: vertical-stack
       cards:
