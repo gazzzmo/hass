@@ -9,3 +9,28 @@
 
   person.jess:
     entity_picture: "/local/jess.png"
+
+  media_player.ensuite:
+    friendly_name: "Ensuite Sonos"
+    device_class: speaker
+    icon: mdi:speaker
+
+  media_player.foyer:
+    friendly_name: "Foyer Sonos"
+    device_class: speaker
+    icon: mdi:speaker
+
+  media_player.lounge:
+    friendly_name: "Lounge Sonos"
+    device_class: speaker
+    icon: mdi:speaker
+
+  media_player.terrace:
+    friendly_name: "Terrace Sonos"
+    device_class: speaker
+    icon: mdi:speaker
+
+  media_player.upstairs:
+    friendly_name: "Upstairs Sonos"
+    device_class: speaker
+    icon: mdi:speaker
