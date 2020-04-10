@@ -145,12 +145,22 @@ views:
       volume_stateless: true
     - type: horizontal-stack
       cards:
-        - type: button
-          entity: script.1546774194124
-          icon: mdi:television
-        - type: button
-          entity: script.1546773277389
-          icon: mdi:power-off
+      - type: button
+        name: Watch Foxtel
+        icon: mdi:television
+        tap_action:
+          action: call-service
+          service: script.turn_on
+          service_data:
+            entity_id: script.1546774194124
+      - type: button
+        name: Turn Off
+        icon: mdi:power-off
+        tap_action:
+          action: call-service
+          service: script.turn_on
+          service_data:
+            entity_id: script.1546773277389
   - type: vertical-stack
     cards:
     - type: light
