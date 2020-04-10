@@ -203,6 +203,20 @@ views:
       icon: mdi:weather-windy
     - entity: sensor.jess_bedroom_temp
       name: Temp
+  - type: entities
+    entities:
+    - sensor.aircon_state
+  - type: conditional
+    conditions:
+    - entity: sensor.aircon_state
+      state: "on"
+    card:
+      type: entities
+      entities:
+      - sensor.aircon_mode
+      - sensor.aircon_set_temperature
+      - sensor.aircon_fan_speed
+      - fan.aircon_fan
 
 ### SONOS TAB ###
 - title: Sonos
