@@ -182,24 +182,17 @@ views:
   - type: custom:mini-media-player
     entity: media_player.samsung_ua43mu6100
     icon: mdi:cast
-  - type: button
-    name: Fan
-    icon: mdi:fan
-    tap_action:
-      action: call-service
-      service: fan.toggle
-      service_data:
-        entity_id: fan.jess_bedroom
   - type: entities
     entities:
-      - fan.jess_bedroom
-      - sensor.jess_bedroom_aqi
-      - sensor.jess_bedroom_dust
-      - sensor.jess_bedroom_humidity
-      - sensor.jess_bedroom_filter_life
-      - sensor.jess_bedroom_temperature
-  - type: entities
-    entities: 
+    - type: section
+      label: Fan
+    - fan.jess_bedroom
+    - sensor.jess_bedroom_aqi
+    - sensor.jess_bedroom_dust
+    - sensor.jess_bedroom_humidity
+    - sensor.jess_bedroom_filter_life
+    - sensor.jess_bedroom_temperature
+    - type: divider
     - type: section
       label: Aircon
     - sensor.jess_bedroom_state
