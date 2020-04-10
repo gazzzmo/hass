@@ -174,20 +174,24 @@ views:
 - title: Jess
   path: jess
   cards:
+  - type: light
+    entity: light.jess_bedside
+  - type: custom:mini-media-player
+    entity: media_player.jess_chromecast
+    icon: mdi:television
+  - type: custom:mini-media-player
+    entity: media_player.samsung_ua43mu6100
+    icon: mdi:cast
   - type: entities
     entities:
-    - light.jess_bedside
-    - media_player.jess_chromecast
-    - media_player.samsung_ua43mu6100
-    - fan.jess_bedroom
-    - sensor.jess_bedroom_aqi
-    - sensor.jess_bedroom_dust
-    - sensor.jess_bedroom_humidity
-    - sensor.jess_bedroom_filter_life
-    - sensor.jess_bedroom_state
-    - sensor.jess_bedroom_temp
-    - sensor.jess_bedroom_temperature
-    - device_tracker.jessicas_iphone
+      - fan.jess_bedroom
+      - sensor.jess_bedroom_aqi
+      - sensor.jess_bedroom_dust
+      - sensor.jess_bedroom_humidity
+      - sensor.jess_bedroom_filter_life
+      - sensor.jess_bedroom_state
+      - sensor.jess_bedroom_temp
+      - sensor.jess_bedroom_temperature
 
 ### SONOS TAB ###
 - title: Sonos
