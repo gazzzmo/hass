@@ -188,6 +188,8 @@ views:
     tap_action:
       action: call-service
       service: fan.toggle
+      service_data:
+        entity_id: fan.jess_bedroom
   - type: entities
     entities:
       - fan.jess_bedroom
