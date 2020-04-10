@@ -139,9 +139,14 @@ views:
         ### Activity
 
         # {{ states('sensor.mediaroom_activity') }}
-    - type: entities
-      entities:
-        - sensor.mediaroom_activity
+  - type: horizontal-stack
+    cards:
+      - type: button
+        entity: script.1546774194124
+      - type: button
+        entity: script.1546773277389
+  - type: vertical-stack
+    cards:
     - type: custom:mini-media-player
       entity: media_player.media_room_receiver
     - type: light
