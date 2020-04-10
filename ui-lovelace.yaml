@@ -176,12 +176,15 @@ views:
   cards:
   - type: light
     entity: light.jess_bedside
-  - type: custom:mini-media-player
-    entity: media_player.jess_chromecast
-    icon: mdi:television
+    name: Lamp
   - type: custom:mini-media-player
     entity: media_player.samsung_ua43mu6100
+    name: TV
+    icon: mdi:television
+  - type: custom:mini-media-player
+    entity: media_player.jess_chromecast
     icon: mdi:cast
+    name: Chromecast
   - type: entities
     entities:
     - type: section
