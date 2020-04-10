@@ -134,6 +134,11 @@ views:
   cards:
   - type: vertical-stack
     cards:
+    - type: markdown
+      content: |
+        ### Activity
+
+        # {{ states('sensor.mediaroom_activity') }}
     - type: entities
       entities:
         - sensor.mediaroom_activity
