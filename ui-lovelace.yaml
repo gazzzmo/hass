@@ -197,6 +197,7 @@ views:
       label: Aircon
     - entity: sensor.jess_bedroom_state
       name: Vent
+      icon: mdi:weather-windy
     - entity: sensor.jess_bedroom_temp
       name: Temp
 
