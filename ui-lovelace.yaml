@@ -195,8 +195,10 @@ views:
     - type: divider
     - type: section
       label: Aircon
-    - sensor.jess_bedroom_state
-    - sensor.jess_bedroom_temp
+    - entity: sensor.jess_bedroom_state
+      name: Vent
+    - entity: sensor.jess_bedroom_temp
+      name: Temp
 
 ### SONOS TAB ###
 - title: Sonos
