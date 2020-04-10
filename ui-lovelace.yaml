@@ -147,8 +147,10 @@ views:
     cards:
       - type: button
         entity: script.1546774194124
+        icon: mdi:television
       - type: button
         entity: script.1546773277389
+        icon: mdi:power-off
   - type: vertical-stack
     cards:
     - type: light
