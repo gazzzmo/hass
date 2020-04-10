@@ -186,6 +186,7 @@ views:
     icon: mdi:cast
     name: Chromecast
   - type: entities
+    title: Fan
     entities:
     - type: section
       label: Fan
@@ -201,17 +202,15 @@ views:
       name: Filter Life
     - entity: sensor.jess_bedroom_temperature
       name: Temp
-    - type: divider
-    - type: section
-      label: Aircon
+  - type: entities
+    title: Aircon
+    entities:
+    - sensor.aircon_state
     - entity: sensor.jess_bedroom_state
       name: Vent
       icon: mdi:weather-windy
     - entity: sensor.jess_bedroom_temp
       name: Temp
-  - type: entities
-    entities:
-    - sensor.aircon_state
   - type: conditional
     conditions:
     - entity: sensor.aircon_state
