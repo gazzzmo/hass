@@ -188,8 +188,6 @@ views:
   - type: entities
     title: Fan
     entities:
-    - type: section
-      label: Fan
     - entity: fan.jess_bedroom
       name: Fan
     - entity: sensor.jess_bedroom_aqi
