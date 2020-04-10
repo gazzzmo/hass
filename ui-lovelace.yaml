@@ -189,12 +189,18 @@ views:
     entities:
     - type: section
       label: Fan
-    - fan.jess_bedroom
-    - sensor.jess_bedroom_aqi
-    - sensor.jess_bedroom_dust
-    - sensor.jess_bedroom_humidity
-    - sensor.jess_bedroom_filter_life
-    - sensor.jess_bedroom_temperature
+    - entity: fan.jess_bedroom
+      name: Fan
+    - entity: sensor.jess_bedroom_aqi
+      name: Air Quality
+    - entity: sensor.jess_bedroom_dust
+      name: Dust
+    - entity: sensor.jess_bedroom_humidity
+      name: Humidity
+    - entity: sensor.jess_bedroom_filter_life
+      name: Filter Life
+    - entity: sensor.jess_bedroom_temperature
+      name: Temp
     - type: divider
     - type: section
       label: Aircon
