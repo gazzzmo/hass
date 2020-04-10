@@ -176,9 +176,10 @@ views:
   cards:
   - type: entities
     entities:
-    - fan.jess_bedroom
     - light.jess_bedside
     - media_player.jess_chromecast
+    - media_player.samsung_ua43mu6100
+    - fan.jess_bedroom
     - sensor.jess_bedroom_aqi
     - sensor.jess_bedroom_dust
     - sensor.jess_bedroom_humidity
