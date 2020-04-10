@@ -170,6 +170,24 @@ views:
         - sensor.media_room_temp
         - sensor.media_room_state
 
+### JESS
+- title: Jess
+  path: jess
+  cards:
+  - type: entities
+    entities:
+    - fan.jess_bedroom
+    - light.jess_bedside
+    - media_player.jess_chromecast
+    - sensor.jess_bedroom_aqi
+    - sensor.jess_bedroom_dust
+    - sensor.jess_bedroom_humidity
+    - sensor.jess_bedroom_filter_life
+    - sensor.jess_bedroom_state
+    - sensor.jess_bedroom_temp
+    - sensor.jess_bedroom_temperature
+    - device_tracker.jessicas_iphone
+
 ### SONOS TAB ###
 - title: Sonos
   path: sonos
