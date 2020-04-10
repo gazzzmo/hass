@@ -143,14 +143,14 @@ views:
       entity: media_player.media_room_receiver
       icon: mdi:amplifier
       volume_stateless: true
-  - type: horizontal-stack
-    cards:
-      - type: button
-        entity: script.1546774194124
-        icon: mdi:television
-      - type: button
-        entity: script.1546773277389
-        icon: mdi:power-off
+    - type: horizontal-stack
+      cards:
+        - type: button
+          entity: script.1546774194124
+          icon: mdi:television
+        - type: button
+          entity: script.1546773277389
+          icon: mdi:power-off
   - type: vertical-stack
     cards:
     - type: light
