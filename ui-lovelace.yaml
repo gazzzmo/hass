@@ -182,6 +182,12 @@ views:
   - type: custom:mini-media-player
     entity: media_player.samsung_ua43mu6100
     icon: mdi:cast
+  - type: button
+    name: Fan
+    icon: mdi:fan
+    tap_action:
+      action: call-service
+      service: fan.toggle
   - type: entities
     entities:
       - fan.jess_bedroom
