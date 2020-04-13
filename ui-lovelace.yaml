@@ -176,7 +176,10 @@ views:
   cards:
   - type: light
     entity: light.jess_bedside
-    name: Lamp
+    name: Bedside Lamp
+  - type: entity-button
+    entity: switch.jess_tv_lamp
+    name: TV Lamp
   - type: custom:mini-media-player
     entity: media_player.samsung_ua43mu6100
     name: TV
