@@ -48,6 +48,8 @@ lovelace:
     type: module
   - url: /local/mini-graph-card-bundle.js?v=0.9.3
     type: module
+  - url: https://cdn.jsdelivr.net/gh/bramkragten/weather-card/dist/weather-card.min.js
+    type: module
 
 # HomeKit setup
 #homekit:
