@@ -92,7 +92,7 @@ views:
           name: Full
           show_label: true
           icon: mdi:lamp
-          color: rgb(255,255,255)
+          color: rgb(222, 238, 255)
           tap_action:
             action: call-service
             service: light.turn_on
