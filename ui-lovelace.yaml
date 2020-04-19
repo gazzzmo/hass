@@ -68,7 +68,7 @@ views:
     - type: horizontal-stack
       cards:
         - type: "custom:button-card"
-          entity: group.all_lights
+          entity: light.all_lights
           show_label: true
           icon: mdi:lamp
           color: rgb(255,172,105)
