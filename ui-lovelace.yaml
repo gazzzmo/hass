@@ -541,7 +541,7 @@ views:
             name:
               - font-weight: bold
               - font-size: 13px
-              - color: white
+              #- color: white
               - align-self: middle
               - justify-self: start
               - padding-bottom: 4px
