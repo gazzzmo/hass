@@ -73,9 +73,6 @@ views:
           show_label: true
           icon: mdi:lamp
           color: rgb(255,172,105)
-          state:
-            - value: "off"
-              color: rgb(192,192,192)
         - type: "custom:button-card"
           entity: light.all_lights
           name: Warm
@@ -93,6 +90,23 @@ views:
                 - 172
                 - 105
               brightness_pct: 50
+        - type: "custom:button-card"
+          entity: light.all_lights
+          name: Full
+          show_label: true
+          icon: mdi:lamp
+          color: rgb(255,255,255)
+          tap_action:
+            action: call-service
+            service: light.turn_on
+            service_data:
+              entity_id: light.all_lights
+              transition: 5
+              rgb_color: 
+                - 255
+                - 255
+                - 255
+              brightness_pct: 100
 
     - type: custom:auto-entities
       show_empty: false
