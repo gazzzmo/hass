@@ -1,6 +1,5 @@
 - platform: group
   name: All Lights
-  view: no
   entities:
     - light.family_room_lamp
     - light.family_room_lamp_2
