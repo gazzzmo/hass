@@ -527,7 +527,7 @@ views:
           name: Gaz Server
           styles:
             card:
-              #- background-color: '#000044'
+              - background-color: '#000044'
               - border-radius: 10%
               - padding: 10%
               - color: ivory
@@ -541,7 +541,7 @@ views:
             name:
               - font-weight: bold
               - font-size: 13px
-              - color: '#212121'
+              - color: white
               - align-self: middle
               - justify-self: start
               - padding-bottom: 4px
@@ -588,20 +588,20 @@ views:
               [[[
                 return `<ha-icon
                   icon="mdi:server"
-                  style="width: 12px; height: 12px; color: black;">
+                  style="width: 12px; height: 12px; color: deepskyblue;">
                   </ha-icon><span>CPU: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_svr_cpu_usage'].state}%</span></span>`
               ]]]
             ram: >
               [[[
                 return `<ha-icon
                   icon="mdi:memory"
-                  style="width: 12px; height: 12px; color: black;">
+                  style="width: 12px; height: 12px; color: deepskyblue;">
                   </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_svr_memory_usage'].state}%</span></span>`
               ]]]
             hdd: >
               [[[
                 return `<ha-icon
                   icon="mdi:harddisk"
-                  style="width: 12px; height: 12px; color: black;">
+                  style="width: 12px; height: 12px; color: deepskyblue;">
                   </ha-icon><span>HDD: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_svr_storage_c_usage'].state}%</span></span>`
               ]]]
