@@ -8,6 +8,9 @@ views:
   cards:
   - type: vertical-stack
     cards:
+    - type: custom:weather-card
+      entity: weather.darksky_weather
+      name: Custom Weather
     - type: weather-forecast
       entity: weather.darksky_weather
       name: "Weather"
