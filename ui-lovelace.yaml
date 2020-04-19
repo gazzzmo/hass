@@ -447,7 +447,7 @@ views:
             - text-shadow: 0px 0px 5px black
             - text-transform: capitalize
           grid:
-            - grid-template-areas: '"i temp" "n n" "cpu cpu" "ram ram" "hdd hdd"'
+            - grid-template-areas: '"i batt" "n n" "cpu cpu" "ram ram" "hdd hdd"'
             - grid-template-columns: 1fr 1fr
             - grid-template-rows: 1fr min-content min-content min-content min-content
           name:
@@ -464,14 +464,14 @@ views:
           icon:
             - color: >
                 [[[
-                  if (entity.state < 60) return 'lime';
+                  if (entity.state < 60) return 'red';
                   if (entity.state >= 60 && entity.state < 80) return 'orange';
-                  else return 'red';
+                  else return 'lime';
                 ]]]
             - width: 70%
             - margin-top: -10%
           custom_fields:
-            temp:
+            batt:
               - align-self: start
               - justify-self: end
             cpu:
@@ -489,12 +489,12 @@ views:
               - justify-self: start
               - --text-color-sensor: '[[[ if (states["sensor.gazzzmo_surface_storage_c_usage"].state > 80) return "red"; ]]]'
         custom_fields:
-          temp: >
+          batt: >
             [[[
               return `<ha-icon
-                icon="mdi:thermometer"
+                icon="mdi:battery"
                 style="width: 12px; height: 12px; color: yellow;">
-                </ha-icon><span>${entity.state}°C</span>`
+                </ha-icon><span>${entity.state}%</span>`
             ]]]
           cpu: >
             [[[
