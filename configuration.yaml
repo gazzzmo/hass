@@ -50,6 +50,8 @@ lovelace:
     type: module
   - url: https://cdn.jsdelivr.net/gh/bramkragten/weather-card/dist/weather-card.min.js
     type: module
+  - url: /local/button-card.js
+    type: module
 
 # HomeKit setup
 #homekit:
