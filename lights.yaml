@@ -1,0 +1,14 @@
+- platform: group
+  name: All Lights
+  view: no
+  entities:
+    - light.family_room_lamp
+    - light.family_room_lamp_2
+    - light.garage_lamp
+    - light.jess_bedside
+    - light.media_room_lamp
+    - light.office_lamp
+    - light.parents_bedroom_lamp
+    - light.tim_bedside_lamp_right
+    - light.tim_desk_lamp
+    - light.tim_tv_lamp

@@ -75,6 +75,7 @@ fan: !include fans.yaml
 group: !include groups.yaml
 http: !include http.yaml
 input_select: !include input_selects.yaml
+light: !include lights.yaml
 media_player: !include media_players.yaml
 mqtt: !include mqtt.yaml
 notify: !include notifiers.yaml
