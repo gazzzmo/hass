@@ -112,14 +112,3 @@
     resource: http://192.168.1.131:2025/getSystemData
     name: Kitchen State
     value_template: "{{ value_json['aircons']['ac1']['zones']['z07']['state'] }}"
-
-  - platform: mqtt
-    name: "Gazzzmo-Surface - CPU Usage"
-    state_topic: "iotlink/workgroup/gazzzmo-surface/windows-monitor/stats/cpu/usage"
-    unit_of_measurement: '%'
-    icon: mdi:speedometer
-    value_template: "{{ value }}"
-    availability_topic: "iotlink/workgroup/gazzzmo-surface/lwt"
-    payload_available: "ON"
-    payload_not_available: "OFF"
-    qos: 1
