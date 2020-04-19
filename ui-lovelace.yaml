@@ -69,11 +69,12 @@ views:
       cards:
         - type: "custom:button-card"
           entity: group.all_lights
+          show_label: true
           icon: mdi:lamp
-          color: rgb(28, 128, 199)
+          color: rgb(255,172,105)
           state:
             - value: "off"
-              color: rgb(255, 0, 0)
+              color: rgb(192,192,192)
 
     - type: custom:auto-entities
       show_empty: false
