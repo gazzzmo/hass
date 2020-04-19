@@ -72,7 +72,7 @@ views:
           name: Toggle
           show_label: true
           icon: mdi:lamp
-          color: rgb(255,172,105)
+          color: auto
         - type: "custom:button-card"
           entity: light.all_lights
           name: Warm
@@ -85,11 +85,8 @@ views:
             service_data:
               entity_id: light.all_lights
               transition: 5
-              rgb_color: 
-                - 255
-                - 172
-                - 105
-              brightness_pct: 50
+              brightness: 128
+              color_temp: 400
         - type: "custom:button-card"
           entity: light.all_lights
           name: Full
