@@ -69,12 +69,6 @@ views:
       cards:
         - type: "custom:button-card"
           entity: light.all_lights
-          name: Toggle
-          show_label: true
-          icon: mdi:lamp
-          color: auto
-        - type: "custom:button-card"
-          entity: light.all_lights
           name: Warm
           show_label: true
           icon: mdi:lamp
@@ -104,6 +98,18 @@ views:
                 - 255
                 - 255
               brightness_pct: 100
+        - type: "custom:button-card"
+          entity: light.all_lights
+          name: "Off"
+          show_label: true
+          icon: mdi:lamp
+          color: rgb(192,192,192)
+          tap_action:
+            action: call-service
+            service: light.turn_off
+            service_data:
+              entity_id: light.all_lights
+              transition: 5
 
     - type: custom:auto-entities
       show_empty: false
