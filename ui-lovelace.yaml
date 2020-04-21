@@ -468,7 +468,7 @@ views:
                   [[[
                     if (entity.state < 60) return 'red';
                     if (entity.state >= 60 && entity.state < 80) return 'orange';
-                    else return 'lime';
+                    else return 'green';
                   ]]]
               - width: 70%
               - margin-top: -10%
@@ -550,7 +550,7 @@ views:
                   [[[
                     if (entity.state < 60) return 'red';
                     if (entity.state >= 60 && entity.state < 80) return 'orange';
-                    else return 'lime';
+                    else return 'green';
                   ]]]
               - width: 70%
               - margin-top: -10%
