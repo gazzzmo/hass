@@ -495,28 +495,28 @@ views:
               [[[
                 return `<ha-icon
                   icon="mdi:battery"
-                  style="width: 12px; height: 12px; color: yellow;">
+                  style="width: 12px; height: 12px; color: steelblue;">
                   </ha-icon><span>${entity.state}%</span>`
               ]]]
             cpu: >
               [[[
                 return `<ha-icon
                   icon="mdi:server"
-                  style="width: 12px; height: 12px; color: deepskyblue;">
+                  style="width: 12px; height: 12px; color: steelblue;">
                   </ha-icon><span>CPU: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_surface_cpu_usage'].state}%</span></span>`
               ]]]
             ram: >
               [[[
                 return `<ha-icon
                   icon="mdi:memory"
-                  style="width: 12px; height: 12px; color: deepskyblue;">
+                  style="width: 12px; height: 12px; color: steelblue;">
                   </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_surface_memory_usage'].state}%</span></span>`
               ]]]
             hdd: >
               [[[
                 return `<ha-icon
                   icon="mdi:harddisk"
-                  style="width: 12px; height: 12px; color: deepskyblue;">
+                  style="width: 12px; height: 12px; color: steelblue;">
                   </ha-icon><span>HDD: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_surface_storage_c_usage'].state}%</span></span>`
               ]]]
 
@@ -577,27 +577,27 @@ views:
               [[[
                 return `<ha-icon
                   icon="mdi:battery"
-                  style="width: 12px; height: 12px; color: yellow;">
+                  style="width: 12px; height: 12px; color: steelblue;">
                   </ha-icon><span>${entity.state}%</span>`
               ]]]
             cpu: >
               [[[
                 return `<ha-icon
                   icon="mdi:server"
-                  style="width: 12px; height: 12px; color: deepskyblue;">
+                  style="width: 12px; height: 12px; color: steelblue;">
                   </ha-icon><span>CPU: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_svr_cpu_usage'].state}%</span></span>`
               ]]]
             ram: >
               [[[
                 return `<ha-icon
                   icon="mdi:memory"
-                  style="width: 12px; height: 12px; color: deepskyblue;">
+                  style="width: 12px; height: 12px; color: steelblue;">
                   </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_svr_memory_usage'].state}%</span></span>`
               ]]]
             hdd: >
               [[[
                 return `<ha-icon
                   icon="mdi:harddisk"
-                  style="width: 12px; height: 12px; color: deepskyblue;">
+                  style="width: 12px; height: 12px; color: steelblue;">
                   </ha-icon><span>HDD: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_svr_storage_c_usage'].state}%</span></span>`
               ]]]
