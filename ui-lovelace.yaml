@@ -606,7 +606,7 @@ views:
           entity: sensor.blueiris_battery_remaining
           icon: mdi:desktop-tower
           aspect_ratio: 1/1
-          name: Gaz Server
+          name: BlueIris
           styles:
             card:
               - padding: 10%
