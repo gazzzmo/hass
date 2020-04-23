@@ -176,6 +176,7 @@ views:
   ## Gareth Button/Card
   - type: custom:button-card
     entity: sensor.gareth_iphone_battery_level
+    show_icon: false
     entity_picture: /local/gareth.png
     aspect_ratio: 1/1
     name: Gareth
