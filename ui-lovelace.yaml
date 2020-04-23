@@ -186,7 +186,7 @@ views:
         - font-size: 10px
         - text-transform: capitalize
       grid:
-        - grid-template-areas: '"i batt" "n n" "dist dist" "loc loc" "hdd hdd"'
+        - grid-template-areas: '"i batt" "n n" "steps steps" "loc loc" "hdd hdd"'
         - grid-template-columns: 1fr 1fr
         - grid-template-rows: 1fr min-content min-content min-content min-content
       name:
@@ -212,7 +212,7 @@ views:
         batt:
           - align-self: start
           - justify-self: end
-        dist:
+        steps:
           - padding-bottom: 2px
           - align-self: middle
           - justify-self: start
@@ -234,19 +234,19 @@ views:
             style="width: 12px; height: 12px; color: steelblue;">
             </ha-icon><span>${entity.state}%</span>`
         ]]]
-      dist: >
+      steps: >
         [[[
           return `<ha-icon
             icon="mdi:hiking"
             style="width: 12px; height: 12px; color: steelblue;">
-            </ha-icon><span>DIST: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_distance'].state} ${states['sensor.gareth_iphone_distance'].attributes.unit_of_measurement}</span></span>`
+            </ha-icon><span>Steps: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_steps'].state}</span></span>`
         ]]]
       loc: >
         [[[
           return `<ha-icon
             icon="mdi:map"
             style="width: 12px; height: 12px; color: steelblue;">
-            </ha-icon><span>LOCN: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_geocoded_location'].attributes.Name} ${states['sensor.gareth_iphone_geocoded_location'].attributes.Locality}</span></span>`
+            </ha-icon><span>Address: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_geocoded_location'].attributes.Name} ${states['sensor.gareth_iphone_geocoded_location'].attributes.Locality}</span></span>`
         ]]]
       hdd: >
         [[[
