@@ -186,7 +186,7 @@ views:
         - font-size: 10px
         - text-transform: capitalize
       grid:
-        - grid-template-areas: '"i batt" "n n" "dist dist" "ram ram" "hdd hdd"'
+        - grid-template-areas: '"i batt" "n n" "dist dist" "loc loc" "hdd hdd"'
         - grid-template-columns: 1fr 1fr
         - grid-template-rows: 1fr min-content min-content min-content min-content
       name:
@@ -217,7 +217,7 @@ views:
           - align-self: middle
           - justify-self: start
           - --text-color-sensor: '[[[ if (states["sensor.blueiris_cpu_usage"].state > 80) return "red"; ]]]'
-        ram:
+        loc:
           - padding-bottom: 2px
           - align-self: middle
           - justify-self: start
@@ -241,12 +241,12 @@ views:
             style="width: 12px; height: 12px; color: steelblue;">
             </ha-icon><span>Dist: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_distance'].state} ${states['sensor.gareth_iphone_distance'].attributes.unit_of_measurement}</span></span>`
         ]]]
-      ram: >
+      loc: >
         [[[
           return `<ha-icon
-            icon="mdi:memory"
+            icon="mdi:map"
             style="width: 12px; height: 12px; color: steelblue;">
-            </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['sensor.blueiris_memory_usage'].state}%</span></span>`
+            </ha-icon><span>LOC: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_geocoded_location'].attributes.Name}</span></span>`
         ]]]
       hdd: >
         [[[
