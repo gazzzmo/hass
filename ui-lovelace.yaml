@@ -239,7 +239,7 @@ views:
           return `<ha-icon
             icon="mdi:hiking"
             style="width: 12px; height: 12px; color: steelblue;">
-            </ha-icon><span>Dist: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_distance'].state} ${states['sensor.gareth_iphone_distance']..attributes.unit_of_measurement}</span></span>`
+            </ha-icon><span>Dist: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_distance'].state} ${states['sensor.gareth_iphone_distance'].attributes.unit_of_measurement}</span></span>`
         ]]]
       ram: >
         [[[
