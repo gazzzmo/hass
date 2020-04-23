@@ -239,14 +239,14 @@ views:
           return `<ha-icon
             icon="mdi:hiking"
             style="width: 12px; height: 12px; color: steelblue;">
-            </ha-icon><span>Dist: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_distance'].state} ${states['sensor.gareth_iphone_distance'].attributes.unit_of_measurement}</span></span>`
+            </ha-icon><span>DIST: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_distance'].state} ${states['sensor.gareth_iphone_distance'].attributes.unit_of_measurement}</span></span>`
         ]]]
       loc: >
         [[[
           return `<ha-icon
             icon="mdi:map"
             style="width: 12px; height: 12px; color: steelblue;">
-            </ha-icon><span>LOC: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_geocoded_location'].attributes.Name}</span></span>`
+            </ha-icon><span>LOCN: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_geocoded_location'].attributes.Name} ${states['sensor.gareth_iphone_geocoded_location'].attributes.Locality}</span></span>`
         ]]]
       hdd: >
         [[[
