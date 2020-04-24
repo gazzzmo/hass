@@ -1,9 +1,9 @@
-  - platform: mjpeg
-    mjpeg_url: !secret driveway_cam_url
+  - platform: generic
+    stream_source: !secret driveway_cam_url
     name: Driveway
-    username: !secret blueiris_username
-    password: !secret blueiris_password
-    authentication: basic
+    #username: !secret blueiris_username
+    #password: !secret blueiris_password
+    #authentication: basic
 
   - platform: mjpeg
     mjpeg_url: !secret frontdoor_cam_url
