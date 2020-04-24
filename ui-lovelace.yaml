@@ -155,6 +155,7 @@ views:
     - type: picture-glance
       title: Driveway
       camera_image: camera.driveway
+      camera_view: live
       entities:
         - camera.driveway
     - type: picture-glance
