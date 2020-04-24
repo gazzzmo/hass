@@ -62,6 +62,7 @@ lovelace:
 
 frontend:
   themes: !include themes.yaml
+  javascript_version: latest
 
 # !includes for platforms
 # influxdb: !include influxdb.yaml
