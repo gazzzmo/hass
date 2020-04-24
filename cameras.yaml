@@ -26,12 +26,12 @@
     password: !secret blueiris_password
     authentication: basic
 
-  - platform: mjpeg
-    mjpeg_url: !secret garage_cam_url
+  - platform: ffmpeg
+    input: !secret garage_cam_url
     name: Garage
-    username: !secret blueiris_username
-    password: !secret blueiris_password
-    authentication: basic
+    #username: !secret blueiris_username
+    #password: !secret blueiris_password
+    #authentication: basic
 
   - platform: mjpeg
     mjpeg_url: !secret loungeroom_cam_url
