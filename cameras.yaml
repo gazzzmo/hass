@@ -33,12 +33,12 @@
     #password: !secret blueiris_password
     #authentication: basic
 
-  - platform: mjpeg
+  - platform: ffmpeg
     mjpeg_url: !secret loungeroom_cam_url
     name: Lounge Room
-    username: !secret blueiris_username
-    password: !secret blueiris_password
-    authentication: basic
+    #username: !secret blueiris_username
+    #password: !secret blueiris_password
+    #authentication: basic
 
   - platform: bom
     name: Brisbane Weather Radar
