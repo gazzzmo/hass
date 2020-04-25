@@ -34,7 +34,7 @@
     #authentication: basic
 
   - platform: ffmpeg
-    mjpeg_url: !secret loungeroom_cam_url
+    input: !secret loungeroom_cam_url
     name: Lounge Room
     #username: !secret blueiris_username
     #password: !secret blueiris_password
