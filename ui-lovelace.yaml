@@ -484,6 +484,13 @@ views:
 - title: Systems
   path: systems
   cards:
+
+      - type: markdown
+        content: |
+          ### Hass
+
+          # {{ states('sensor.hass_cert') }} Days
+
       - type: entities
         title: "SSL Certificate Expiry"
         show_header_toggle: off

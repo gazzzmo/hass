@@ -1,9 +1,6 @@
   - platform: ffmpeg
     input: !secret driveway_cam_url
     name: Driveway
-    #username: !secret blueiris_username
-    #password: !secret blueiris_password
-    #authentication: basic
 
   - platform: ffmpeg
     input: !secret frontdoor_cam_url
