@@ -8,39 +8,20 @@
   - platform: ffmpeg
     input: !secret frontdoor_cam_url
     name: Front Door
-    #username: !secret blueiris_username
-    #password: !secret blueiris_password
-    #authentication: basic
 
   - platform: ffmpeg
     input: !secret sidestairs_cam_url
     name: Side Stairs
-    #username: !secret blueiris_username
-    #password: !secret blueiris_password
-    #authentication: basic
 
   - platform: ffmpeg
     input: !secret backdeck_cam_url
     name: Back Deck
-    #username: !secret blueiris_username
-    #password: !secret blueiris_password
-    #authentication: basic
 
   - platform: ffmpeg
     input: !secret garage_cam_url
     name: Garage
-    #username: !secret blueiris_username
-    #password: !secret blueiris_password
-    #authentication: basic
 
   - platform: ffmpeg
     input: !secret loungeroom_cam_url
     name: Lounge Room
-    #username: !secret blueiris_username
-    #password: !secret blueiris_password
-    #authentication: basic
-
-  - platform: bom
-    name: Brisbane Weather Radar
-    location: Brisbane
     
