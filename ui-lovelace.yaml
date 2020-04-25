@@ -490,17 +490,17 @@ views:
           content: |
             ### Hass
 
-            # {{ states('sensor.hass_cert') }} Days
+            ## {{ states('sensor.hass_cert') }} Days
         - type: markdown
           content: |
-            ### Hass
+            ### Cams
 
-            # {{ states('sensor.cams_cert') }} Days
+            ## {{ states('sensor.cams_cert') }} Days
         - type: markdown
           content: |
-            ### Hass
+            ### Unifi
 
-            # {{ states('sensor.unifi_cert') }} Days
+            ## {{ states('sensor.unifi_cert') }} Days
     - type: entities
       title: "HASS Update"
       show_header_toggle: off
