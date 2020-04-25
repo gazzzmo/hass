@@ -484,293 +484,293 @@ views:
 - title: Systems
   path: systems
   cards:
+    - type: horizontal-stack
+      cards:
+        - type: markdown
+          content: |
+            ### Hass
 
-      - type: markdown
-        content: |
-          ### Hass
+            # {{ states('sensor.hass_cert') }} Days
+        - type: markdown
+          content: |
+            ### Hass
 
-          # {{ states('sensor.hass_cert') }} Days
+            # {{ states('sensor.cams_cert') }} Days
+        - type: markdown
+          content: |
+            ### Hass
 
-      - type: entities
-        title: "SSL Certificate Expiry"
-        show_header_toggle: off
-        entities:
-          - sensor.hass_cert
-          - sensor.cams_cert
-          - sensor.unifi_cert
-      - type: entities
-        title: "HASS Update"
-        show_header_toggle: off
-        entities:
-          - binary_sensor.updater
-      - type: entities
-        title: "Hass Host"
-        show_header_toggle: off
-        entities:
-          - sensor.processor_use
-          - sensor.memory_free
-          - sensor.disk_use_percent_home
-      - type: custom:mini-graph-card
-        name: Speedtest
-        group_by: hour
-        decimals: 1
-        lower_bound: 0
-        upper_bound: 100
-        lower_bound_secondary: 0
-        upper_bound_secondary: 500
-        entities:
-          - entity: sensor.speedtest_download
-            name: Download
-            color: red
-          - entity: sensor.speedtest_upload
-            name: Upload
-            color: orange
-          - entity: sensor.speedtest_ping
-            name: Ping
-            color: gray
-            y_axis: secondary
-      - type: horizontal-stack
-        cards:
-        - type: custom:button-card
-          entity: sensor.gazzzmo_surface_battery_remaining
-          icon: mdi:laptop-windows
-          aspect_ratio: 1/1
-          name: Gaz Surface
-          styles:
-            card:
-              - padding: 10%
-              - font-size: 10px
-              - text-transform: capitalize
-            grid:
-              - grid-template-areas: '"i batt" "n n" "cpu cpu" "ram ram" "hdd hdd"'
-              - grid-template-columns: 1fr 1fr
-              - grid-template-rows: 1fr min-content min-content min-content min-content
-            name:
-              - font-weight: bold
-              - font-size: 13px
-              - align-self: middle
-              - justify-self: start
-              - padding-bottom: 4px
-            img_cell:
-              - justify-content: start
-              - align-items: start
-              - margin: none
-            icon:
-              - color: >
-                  [[[
-                    if (entity.state < 60) return 'red';
-                    if (entity.state >= 60 && entity.state < 80) return 'orange';
-                    else return 'green';
-                  ]]]
-              - width: 70%
-              - margin-top: -10%
-            custom_fields:
-              batt:
-                - align-self: start
-                - justify-self: end
-              cpu:
+            # {{ states('sensor.unifi_cert') }} Days
+    - type: entities
+      title: "HASS Update"
+      show_header_toggle: off
+      entities:
+        - binary_sensor.updater
+    - type: entities
+      title: "Hass Host"
+      show_header_toggle: off
+      entities:
+        - sensor.processor_use
+        - sensor.memory_free
+        - sensor.disk_use_percent_home
+    - type: custom:mini-graph-card
+      name: Speedtest
+      group_by: hour
+      decimals: 1
+      lower_bound: 0
+      upper_bound: 100
+      lower_bound_secondary: 0
+      upper_bound_secondary: 500
+      entities:
+        - entity: sensor.speedtest_download
+          name: Download
+          color: red
+        - entity: sensor.speedtest_upload
+          name: Upload
+          color: orange
+        - entity: sensor.speedtest_ping
+          name: Ping
+          color: gray
+          y_axis: secondary
+    - type: horizontal-stack
+      cards:
+      - type: custom:button-card
+        entity: sensor.gazzzmo_surface_battery_remaining
+        icon: mdi:laptop-windows
+        aspect_ratio: 1/1
+        name: Gaz Surface
+        styles:
+          card:
+            - padding: 10%
+            - font-size: 10px
+            - text-transform: capitalize
+          grid:
+            - grid-template-areas: '"i batt" "n n" "cpu cpu" "ram ram" "hdd hdd"'
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+          name:
+            - font-weight: bold
+            - font-size: 13px
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 4px
+          img_cell:
+            - justify-content: start
+            - align-items: start
+            - margin: none
+          icon:
+            - color: >
+                [[[
+                  if (entity.state < 60) return 'red';
+                  if (entity.state >= 60 && entity.state < 80) return 'orange';
+                  else return 'green';
+                ]]]
+            - width: 70%
+            - margin-top: -10%
+          custom_fields:
+            batt:
+              - align-self: start
+              - justify-self: end
+            cpu:
                 - padding-bottom: 2px
                 - align-self: middle
                 - justify-self: start
                 - --text-color-sensor: '[[[ if (states["sensor.gazzzmo_surface_cpu_usage"].state > 80) return "red"; ]]]'
-              ram:
-                - padding-bottom: 2px
-                - align-self: middle
-                - justify-self: start
-                - --text-color-sensor: '[[[ if (states["sensor.gazzzmo_surface_memory_usage"].state > 80) return "red"; ]]]'
-              hdd:
-                - align-self: middle
-                - justify-self: start
-                - --text-color-sensor: '[[[ if (states["sensor.gazzzmo_surface_storage_c_usage"].state > 80) return "red"; ]]]'
-          custom_fields:
-            batt: >
-              [[[
-                return `<ha-icon
-                  icon="mdi:battery"
-                  style="width: 12px; height: 12px; color: steelblue;">
-                  </ha-icon><span>${entity.state}%</span>`
-              ]]]
-            cpu: >
-              [[[
-                return `<ha-icon
-                  icon="mdi:server"
-                  style="width: 12px; height: 12px; color: steelblue;">
-                  </ha-icon><span>CPU: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_surface_cpu_usage'].state}%</span></span>`
-              ]]]
-            ram: >
-              [[[
-                return `<ha-icon
-                  icon="mdi:memory"
-                  style="width: 12px; height: 12px; color: steelblue;">
-                  </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_surface_memory_usage'].state}%</span></span>`
-              ]]]
-            hdd: >
-              [[[
-                return `<ha-icon
-                  icon="mdi:harddisk"
-                  style="width: 12px; height: 12px; color: steelblue;">
-                  </ha-icon><span>HDD: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_surface_storage_c_usage'].state}%</span></span>`
-              ]]]
-
-
-        - type: custom:button-card
-          entity: sensor.gazzzmo_svr_battery_remaining
-          icon: mdi:desktop-tower
-          aspect_ratio: 1/1
-          name: Gaz Server
-          styles:
-            card:
-              - padding: 10%
-              - font-size: 10px
-              - text-transform: capitalize
-            grid:
-              - grid-template-areas: '"i batt" "n n" "cpu cpu" "ram ram" "hdd hdd"'
-              - grid-template-columns: 1fr 1fr
-              - grid-template-rows: 1fr min-content min-content min-content min-content
-            name:
-              - font-weight: bold
-              - font-size: 13px
+            ram:
+              - padding-bottom: 2px
               - align-self: middle
               - justify-self: start
-              - padding-bottom: 4px
-            img_cell:
-              - justify-content: start
-              - align-items: start
-              - margin: none
-            icon:
-              - color: >
-                  [[[
-                    if (entity.state < 60) return 'red';
-                    if (entity.state >= 60 && entity.state < 80) return 'orange';
-                    else return 'green';
-                  ]]]
-              - width: 70%
-              - margin-top: -10%
-            custom_fields:
-              batt:
-                - align-self: start
-                - justify-self: end
-              cpu:
-                - padding-bottom: 2px
-                - align-self: middle
-                - justify-self: start
-                - --text-color-sensor: '[[[ if (states["sensor.gazzzmo_svr_cpu_usage"].state > 80) return "red"; ]]]'
-              ram:
-                - padding-bottom: 2px
-                - align-self: middle
-                - justify-self: start
-                - --text-color-sensor: '[[[ if (states["sensor.gazzzmo_svr_memory_usage"].state > 80) return "red"; ]]]'
-              hdd:
-                - align-self: middle
-                - justify-self: start
-                - --text-color-sensor: '[[[ if (states["sensor.gazzzmo_svr_storage_c_usage"].state > 80) return "red"; ]]]'
-          custom_fields:
-            batt: >
-              [[[
-                return `<ha-icon
-                  icon="mdi:battery"
-                  style="width: 12px; height: 12px; color: steelblue;">
-                  </ha-icon><span>${entity.state}%</span>`
-              ]]]
-            cpu: >
-              [[[
-                return `<ha-icon
-                  icon="mdi:server"
-                  style="width: 12px; height: 12px; color: steelblue;">
-                  </ha-icon><span>CPU: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_svr_cpu_usage'].state}%</span></span>`
-              ]]]
-            ram: >
-              [[[
-                return `<ha-icon
-                  icon="mdi:memory"
-                  style="width: 12px; height: 12px; color: steelblue;">
-                  </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_svr_memory_usage'].state}%</span></span>`
-              ]]]
-            hdd: >
-              [[[
-                return `<ha-icon
-                  icon="mdi:harddisk"
-                  style="width: 12px; height: 12px; color: steelblue;">
-                  </ha-icon><span>HDD: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_svr_storage_c_usage'].state}%</span></span>`
-              ]]]
-
-        - type: custom:button-card
-          entity: sensor.blueiris_battery_remaining
-          icon: mdi:desktop-tower
-          aspect_ratio: 1/1
-          name: BlueIris
-          styles:
-            card:
-              - padding: 10%
-              - font-size: 10px
-              - text-transform: capitalize
-            grid:
-              - grid-template-areas: '"i batt" "n n" "cpu cpu" "ram ram" "hdd hdd"'
-              - grid-template-columns: 1fr 1fr
-              - grid-template-rows: 1fr min-content min-content min-content min-content
-            name:
-              - font-weight: bold
-              - font-size: 13px
+              - --text-color-sensor: '[[[ if (states["sensor.gazzzmo_surface_memory_usage"].state > 80) return "red"; ]]]'
+            hdd:
               - align-self: middle
               - justify-self: start
-              - padding-bottom: 4px
-            img_cell:
-              - justify-content: start
-              - align-items: start
-              - margin: none
-            icon:
-              - color: >
-                  [[[
-                    if (entity.state < 60) return 'red';
-                    if (entity.state >= 60 && entity.state < 80) return 'orange';
-                    else return 'green';
-                  ]]]
-              - width: 70%
-              - margin-top: -10%
-            custom_fields:
-              batt:
-                - align-self: start
-                - justify-self: end
-              cpu:
-                - padding-bottom: 2px
-                - align-self: middle
-                - justify-self: start
-                - --text-color-sensor: '[[[ if (states["sensor.blueiris_cpu_usage"].state > 80) return "red"; ]]]'
-              ram:
-                - padding-bottom: 2px
-                - align-self: middle
-                - justify-self: start
-                - --text-color-sensor: '[[[ if (states["sensor.blueiris_memory_usage"].state > 80) return "red"; ]]]'
-              hdd:
-                - align-self: middle
-                - justify-self: start
-                - --text-color-sensor: '[[[ if (states["sensor.blueiris_storage_c_usage"].state > 80) return "red"; ]]]'
-          custom_fields:
-            batt: >
+              - --text-color-sensor: '[[[ if (states["sensor.gazzzmo_surface_storage_c_usage"].state > 80) return "red"; ]]]'
+        custom_fields:
+          batt: >
+            [[[
+              return `<ha-icon
+                icon="mdi:battery"
+                style="width: 12px; height: 12px; color: steelblue;">
+                </ha-icon><span>${entity.state}%</span>`
+            ]]]
+          cpu: >
+            [[[
+              return `<ha-icon
+                icon="mdi:server"
+                style="width: 12px; height: 12px; color: steelblue;">
+                </ha-icon><span>CPU: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_surface_cpu_usage'].state}%</span></span>`
+            ]]]
+          ram: >
+            [[[
+              return `<ha-icon
+                icon="mdi:memory"
+                style="width: 12px; height: 12px; color: steelblue;">
+                </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_surface_memory_usage'].state}%</span></span>`
+            ]]]
+          hdd: >
+            [[[
+              return `<ha-icon
+                icon="mdi:harddisk"
+                style="width: 12px; height: 12px; color: steelblue;">
+                </ha-icon><span>HDD: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_surface_storage_c_usage'].state}%</span></span>`
+            ]]]
+    - type: custom:button-card
+      entity: sensor.gazzzmo_svr_battery_remaining
+      icon: mdi:desktop-tower
+      aspect_ratio: 1/1
+      name: Gaz Server
+      styles:
+        card:
+          - padding: 10%
+          - font-size: 10px
+          - text-transform: capitalize
+        grid:
+          - grid-template-areas: '"i batt" "n n" "cpu cpu" "ram ram" "hdd hdd"'
+          - grid-template-columns: 1fr 1fr
+          - grid-template-rows: 1fr min-content min-content min-content min-content
+        name:
+          - font-weight: bold
+          - font-size: 13px
+          - align-self: middle
+          - justify-self: start
+          - padding-bottom: 4px
+        img_cell:
+          - justify-content: start
+          - align-items: start
+          - margin: none
+        icon:
+          - color: >
               [[[
-                return `<ha-icon
-                  icon="mdi:battery"
-                  style="width: 12px; height: 12px; color: steelblue;">
-                  </ha-icon><span>${entity.state}%</span>`
+                if (entity.state < 60) return 'red';
+                if (entity.state >= 60 && entity.state < 80) return 'orange';
+                else return 'green';
               ]]]
-            cpu: >
+          - width: 70%
+          - margin-top: -10%
+        custom_fields:
+          batt:
+            - align-self: start
+            - justify-self: end
+          cpu:
+            - padding-bottom: 2px
+            - align-self: middle
+            - justify-self: start
+            - --text-color-sensor: '[[[ if (states["sensor.gazzzmo_svr_cpu_usage"].state > 80) return "red"; ]]]'
+          ram:
+            - padding-bottom: 2px
+            - align-self: middle
+            - justify-self: start
+            - --text-color-sensor: '[[[ if (states["sensor.gazzzmo_svr_memory_usage"].state > 80) return "red"; ]]]'
+          hdd:
+            - align-self: middle
+            - justify-self: start
+            - --text-color-sensor: '[[[ if (states["sensor.gazzzmo_svr_storage_c_usage"].state > 80) return "red"; ]]]'
+      custom_fields:
+        batt: >
+          [[[
+            return `<ha-icon
+              icon="mdi:battery"
+              style="width: 12px; height: 12px; color: steelblue;">
+              </ha-icon><span>${entity.state}%</span>`
+          ]]]
+        cpu: >
+          [[[
+            return `<ha-icon
+              icon="mdi:server"
+              style="width: 12px; height: 12px; color: steelblue;">
+              </ha-icon><span>CPU: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_svr_cpu_usage'].state}%</span></span>`
+          ]]]
+        ram: >
+          [[[
+            return `<ha-icon
+              icon="mdi:memory"
+              style="width: 12px; height: 12px; color: steelblue;">
+              </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_svr_memory_usage'].state}%</span></span>`
+          ]]]
+        hdd: >
+          [[[
+            return `<ha-icon
+              icon="mdi:harddisk"
+              style="width: 12px; height: 12px; color: steelblue;">
+              </ha-icon><span>HDD: <span style="color: var(--text-color-sensor);">${states['sensor.gazzzmo_svr_storage_c_usage'].state}%</span></span>`
+          ]]]
+    - type: custom:button-card
+      entity: sensor.blueiris_battery_remaining
+      icon: mdi:desktop-tower
+      aspect_ratio: 1/1
+      name: BlueIris
+      styles:
+        card:
+          - padding: 10%
+          - font-size: 10px
+          - text-transform: capitalize
+        grid:
+          - grid-template-areas: '"i batt" "n n" "cpu cpu" "ram ram" "hdd hdd"'
+          - grid-template-columns: 1fr 1fr
+          - grid-template-rows: 1fr min-content min-content min-content min-content
+        name:
+          - font-weight: bold
+          - font-size: 13px
+          - align-self: middle
+          - justify-self: start
+          - padding-bottom: 4px
+        img_cell:
+          - justify-content: start
+          - align-items: start
+          - margin: none
+        icon:
+          - color: >
               [[[
-                return `<ha-icon
-                  icon="mdi:server"
-                  style="width: 12px; height: 12px; color: steelblue;">
-                  </ha-icon><span>CPU: <span style="color: var(--text-color-sensor);">${states['sensor.blueiris_cpu_usage'].state}%</span></span>`
+                if (entity.state < 60) return 'red';
+                if (entity.state >= 60 && entity.state < 80) return 'orange';
+                else return 'green';
               ]]]
-            ram: >
-              [[[
-                return `<ha-icon
-                  icon="mdi:memory"
-                  style="width: 12px; height: 12px; color: steelblue;">
-                  </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['sensor.blueiris_memory_usage'].state}%</span></span>`
-              ]]]
-            hdd: >
-              [[[
-                return `<ha-icon
-                  icon="mdi:harddisk"
-                  style="width: 12px; height: 12px; color: steelblue;">
-                  </ha-icon><span>HDD: <span style="color: var(--text-color-sensor);">${states['sensor.blueiris_storage_c_usage'].state}%</span></span>`
-              ]]]
+          - width: 70%
+          - margin-top: -10%
+        custom_fields:
+          batt:
+            - align-self: start
+            - justify-self: end
+          cpu:
+            - padding-bottom: 2px
+            - align-self: middle
+            - justify-self: start
+            - --text-color-sensor: '[[[ if (states["sensor.blueiris_cpu_usage"].state > 80) return "red"; ]]]'
+          ram:
+            - padding-bottom: 2px
+            - align-self: middle
+            - justify-self: start
+            - --text-color-sensor: '[[[ if (states["sensor.blueiris_memory_usage"].state > 80) return "red"; ]]]'
+          hdd:
+            - align-self: middle
+            - justify-self: start
+            - --text-color-sensor: '[[[ if (states["sensor.blueiris_storage_c_usage"].state > 80) return "red"; ]]]'
+      custom_fields:
+        batt: >
+          [[[
+            return `<ha-icon
+              icon="mdi:battery"
+              style="width: 12px; height: 12px; color: steelblue;">
+              </ha-icon><span>${entity.state}%</span>`
+          ]]]
+        cpu: >
+          [[[
+            return `<ha-icon
+              icon="mdi:server"
+              style="width: 12px; height: 12px; color: steelblue;">
+              </ha-icon><span>CPU: <span style="color: var(--text-color-sensor);">${states['sensor.blueiris_cpu_usage'].state}%</span></span>`
+          ]]]
+        ram: >
+          [[[
+            return `<ha-icon
+              icon="mdi:memory"
+              style="width: 12px; height: 12px; color: steelblue;">
+              </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['sensor.blueiris_memory_usage'].state}%</span></span>`
+          ]]]
+        hdd: >
+          [[[
+            return `<ha-icon
+              icon="mdi:harddisk"
+              style="width: 12px; height: 12px; color: steelblue;">
+              </ha-icon><span>HDD: <span style="color: var(--text-color-sensor);">${states['sensor.blueiris_storage_c_usage'].state}%</span></span>`
+          ]]]
