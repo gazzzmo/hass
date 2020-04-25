@@ -19,12 +19,12 @@
     password: !secret blueiris_password
     authentication: basic
 
-  - platform: mjpeg
-    mjpeg_url: !secret backdeck_cam_url
+  - platform: ffmpeg
+    input: !secret backdeck_cam_url
     name: Back Deck
-    username: !secret blueiris_username
-    password: !secret blueiris_password
-    authentication: basic
+    #username: !secret blueiris_username
+    #password: !secret blueiris_password
+    #authentication: basic
 
   - platform: ffmpeg
     input: !secret garage_cam_url
