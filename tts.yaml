@@ -1,1 +1,10 @@
-  - platform: google_translate
+  - platform: microsoft
+    api_key: YOUR_API_KEY
+    language: en-au
+    gender: Female
+    type: Catherine
+    rate: 0
+    volume: 0
+    pitch: default
+    contour: (0, 0) (100, 100)
+    region: australiaeast
