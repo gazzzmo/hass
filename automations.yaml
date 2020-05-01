@@ -1,62 +1,24 @@
 # Automations go here...
 
-- alias: Arm alarm when family away
-  trigger:
-    - platform: state
-      entity_id: group.family
-      from: "home"
-  action:
-    - service: alarm_control_panel.alarm_arm_away
+  - alias: 'Lights on in the evening'
+    trigger:
+      - platform: sun
+        event: sunset
+        offset: '-01:00:00'
+      - platform: state
+        entity_id: all
+        to: 'home'
+    condition:
+      - condition: state
+        entity_id: all
+        state: 'home'
+      - condition: time
+        after: '16:00:00'
+        before: '23:00:00'
+    action:
+      service: light.turn_on
       data:
-        entity_id: alarm_control_panel.ha_alarm
-        code: !secret alarm_code
-
-- alias: Disarm alarm when family home
-  trigger:
-    - platform: state
-      entity_id: group.family
-      to: "home"
-  action:
-    - service:  alarm_control_panel.alarm_disarm
-      data:
-        entity_id: alarm_control_panel.ha_alarm
-        code: !secret alarm_code
-
-- alias: Notify motion when alarm armed
-  trigger:
-    - platform: state
-      entity_id:  binary_sensor.media_room_motion
-      to: "on"
-    - platform:  state
-      entity_id: binary_sensor.lounge_room_motion
-      to: "on"
-    - platform: state
-      entity_id:  binary_sensor.garage_motion
-      to: "on"
-    - platform: state
-      entity_id: binary_sensor.front_door_motion
-      to: "on"
-    - platform: state
-      entity_id: binary_sensor.back_yard_motion
-      to: "on"
-  condition:
-    - condition: state
-      entity_id:  alarm_control_panel.ha_alarm
-      state: "armed_away"
-  action:
-    - service: notify.ios_gareth_iphone_beta
-      data:
-        title: "Warning: Motion Detected"
-        message: "Motion has been detected by sensor {{ trigger.from_state.attributes.friendly_name }}"
-
-- alias: Remind Bin Day
-  initial_state: true
-  trigger:
-    - platform: state
-      entity_id: group.family
-      to: "home"
-  action:
-    - service:  alarm_control_panel.alarm_disarm
-      data:
-        entity_id: alarm_control_panel.ha_alarm
-        code: !secret alarm_code
+        entity_id: light.all_lights
+        transition: 1800
+        brightness: 130
+        color_temp: 370
