@@ -1,5 +1,5 @@
   - platform: microsoft
-    api_key: YOUR_API_KEY
+    api_key: !secret microsoft_tts_key
     language: en-au
     gender: Female
     type: Catherine
