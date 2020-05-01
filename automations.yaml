@@ -1,24 +1,23 @@
 # Automations go here...
-
-  - alias: 'Lights on in the evening'
-    trigger:
-      - platform: sun
-        event: sunset
-        offset: '-01:00:00'
-      - platform: state
-        entity_id: all
-        to: 'home'
-    condition:
-      - condition: state
-        entity_id: all
-        state: 'home'
-      - condition: time
-        after: '16:00:00'
-        before: '23:00:00'
-    action:
-      service: light.turn_on
-      data:
-        entity_id: light.all_lights
-        transition: 1800
-        brightness: 130
-        color_temp: 370
+- alias: 'Lights on in the evening'
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '-01:00:00'
+    - platform: state
+      entity_id: all
+      to: 'home'
+  condition:
+    - condition: state
+      entity_id: all
+      state: 'home'
+    - condition: time
+      after: '16:00:00'
+      before: '23:00:00'
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.all_lights
+      transition: 1800
+      brightness: 130
+      color_temp: 370
