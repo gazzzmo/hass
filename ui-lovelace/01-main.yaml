@@ -149,24 +149,6 @@ cards:
 
   - type: vertical-stack
     cards:
-    - type: custom:mini-graph-card
-      name: Coronavirus
-      group_by: date
-      hours_to_show: 168
-      icon: mdi:hospital-marker
-      entities:
-      - entity: sensor.australia_coronavirus_confirmed
-        name: Confirmed
-        color: gray
-      - entity: sensor.australia_coronavirus_current
-        name: Current
-        color: orange
-      - entity: sensor.australia_coronavirus_deaths
-        name: Deaths
-        color: red
-      - entity: sensor.australia_coronavirus_recovered
-        name: Recovered
-        color: green
     - type: picture-glance
       title: Garage
       camera_image: camera.garage
