@@ -1,0 +1,41 @@
+### MEDIA ROOM TAB ###
+- title: Media Room
+  path: mediaroom
+  cards:
+  - type: vertical-stack
+    cards:
+    - type: markdown
+      content: |
+        ### Activity
+
+        # {{ states('sensor.mediaroom_activity') }}
+    - type: custom:mini-media-player
+      entity: media_player.media_room_receiver
+      icon: mdi:amplifier
+      volume_stateless: true
+    - type: horizontal-stack
+      cards:
+      - type: button
+        name: Watch Foxtel
+        icon: mdi:television
+        tap_action:
+          action: call-service
+          service: script.turn_on
+          service_data:
+            entity_id: script.1546774194124
+      - type: button
+        name: Turn Off
+        icon: mdi:power-off
+        tap_action:
+          action: call-service
+          service: script.turn_on
+          service_data:
+            entity_id: script.1546773277389
+  - type: vertical-stack
+    cards:
+    - type: light
+      entity: light.media_room_lamp
+    - type: entities
+      entities:
+        - sensor.media_room_temp
+        - sensor.media_room_state

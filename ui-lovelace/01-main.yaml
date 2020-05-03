@@ -1,0 +1,164 @@
+### MAIN TAB ###
+- title: Main
+  path: main
+  theme: google-light
+  cards:
+  - type: vertical-stack
+    cards:
+    - type: custom:weather-card
+      entity: weather.darksky_weather
+    - type: horizontal-stack
+      cards:
+      - type: markdown
+        content: |
+          ### Media Room
+
+          # {{ states('sensor.media_room_temp') }}º
+      - type: markdown
+        content: |
+          ### Kitchen
+
+          # {{ states('sensor.kitchen_temp') }}º
+      - type: markdown
+        content: |
+          ### Bedrooms
+
+          # {{ states('sensor.parents_bedroom_temp') }}º
+    - type: vertical-stack
+      cards:
+      - type: entities
+        entities:
+        - sensor.aircon_state
+      - type: conditional
+        conditions:
+          - entity: sensor.aircon_state
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - sensor.aircon_mode
+            - sensor.aircon_set_temperature
+            - sensor.aircon_fan_speed
+            - fan.aircon_fan
+  - type: vertical-stack
+    cards:
+    - type: custom:mini-graph-card
+      name: NBN
+      group_by: hour
+      decimals: 1
+      lower_bound: 0
+      upper_bound: 100
+      lower_bound_secondary: 0
+      upper_bound_secondary: 500
+      entities:
+      - entity: sensor.speedtest_download
+        name: Download
+        color: red
+      - entity: sensor.speedtest_upload
+        name: Upload
+        color: orange
+      - entity: sensor.speedtest_ping
+        name: Ping
+        color: gray
+        y_axis: secondary
+
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          entity: light.all_lights
+          name: Warm
+          show_label: true
+          icon: mdi:lamp
+          color: rgb(255,172,105)
+          tap_action:
+            action: call-service
+            service: light.turn_on
+            service_data:
+              entity_id: light.all_lights
+              transition: 5
+              brightness: 128
+              color_temp: 400
+        - type: "custom:button-card"
+          entity: light.all_lights
+          name: Full
+          show_label: true
+          icon: mdi:lamp
+          color: rgb(222, 238, 255)
+          tap_action:
+            action: call-service
+            service: light.turn_on
+            service_data:
+              entity_id: light.all_lights
+              transition: 5
+              rgb_color: 
+                - 255
+                - 255
+                - 255
+              brightness_pct: 100
+        - type: "custom:button-card"
+          entity: light.all_lights
+          name: "Off"
+          show_label: true
+          icon: mdi:lamp
+          color: rgb(192,192,192)
+          tap_action:
+            action: call-service
+            service: light.turn_off
+            service_data:
+              entity_id: light.all_lights
+              transition: 5
+
+    - type: custom:auto-entities
+      show_empty: false
+      card:
+        type: entities
+        title: Lights
+      filter:
+        include:
+         - domain: light
+           options:
+            tap_action:
+              action: toggle
+  - type: vertical-stack
+    cards:
+    - type: custom:mini-graph-card
+      name: Coronavirus
+      group_by: date
+      hours_to_show: 168
+      icon: mdi:hospital-marker
+      entities:
+      - entity: sensor.australia_coronavirus_confirmed
+        name: Confirmed
+        color: gray
+      - entity: sensor.australia_coronavirus_current
+        name: Current
+        color: orange
+      - entity: sensor.australia_coronavirus_deaths
+        name: Deaths
+        color: red
+      - entity: sensor.australia_coronavirus_recovered
+        name: Recovered
+        color: green
+    - type: picture-glance
+      title: Garage
+      camera_image: camera.garage
+      camera_view: live
+      entities:
+        - switch.garage_door
+      tap_action:
+        action: call-service
+        service: switch.turn_on
+        service_data:
+          entity_id: switch.garage_door
+    - type: picture-glance
+      title: Driveway
+      camera_image: camera.driveway
+      camera_view: live
+      entities:
+        - camera.driveway
+    - type: picture-glance
+      title: Back Deck
+      camera_image: camera.back_deck
+      camera_view: live
+      entities:
+        - camera.back_deck

@@ -1,0 +1,15 @@
+### GARAGE TAB ###
+- title: Garage
+  path: garage
+  theme: google-light
+  cards:
+    - type: picture-entity
+      entity: camera.garage
+      camera_view: live
+    - type: horizontal-stack
+      cards:
+      - type: entity-button
+        entity: switch.garage_door
+        icon: mdi:garage
+      - type: light
+        entity: light.garage_lamp
