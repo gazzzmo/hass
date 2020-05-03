@@ -52,6 +52,8 @@ lovelace:
     type: module
   - url: /local/button-card.js
     type: module
+  - url: /local/slider-entity-row.js
+    type: module
 
 # HomeKit setup
 #homekit:

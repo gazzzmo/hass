@@ -119,6 +119,14 @@
            options:
             tap_action:
               action: toggle
+
+    - type: entities
+      title: Custom Slider Entity Row
+      entities:
+      - type: custom:slider-entity-row
+        entity: light.media_room_lamp
+        name: Media Room Lamp
+
   - type: vertical-stack
     cards:
     - type: custom:mini-graph-card
