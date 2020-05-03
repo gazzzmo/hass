@@ -134,6 +134,7 @@ cards:
         entity: light.jess_bedside
         name: Jess Bedside
         toggle: true
+      - switch.jess_tv_lamp
       - type: custom:slider-entity-row
         entity: light.tim_bedside_lamp_right
         name: Tim Bedside
@@ -146,7 +147,8 @@ cards:
         entity: light.tim_tv_lamp
         name: Tim TV
         toggle: true
-
+      - switch.01488556d8f15b92a376
+      - switch.01488556d8f15b92aa3b
   - type: vertical-stack
     cards:
     - type: picture-glance
