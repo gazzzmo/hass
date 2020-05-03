@@ -1,8 +1,8 @@
 ### MAIN TAB ###
-- title: Main
-  path: main
-  theme: google-light
-  cards:
+title: Main
+path: main
+theme: google-light
+cards:
   - type: vertical-stack
     cards:
     - type: custom:weather-card
