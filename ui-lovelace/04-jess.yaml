@@ -1,54 +1,54 @@
 ### JESS
-- title: Jess
-  path: jess
-  cards:
-  - type: light
-    entity: light.jess_bedside
-    name: Bedside Lamp
-  - type: entities
+title: Jess
+path: jess
+cards:
+- type: light
+  entity: light.jess_bedside
+  name: Bedside Lamp
+- type: entities
+  entities:
+    - entity: switch.jess_tv_lamp
+      name: TV Lamp
+- type: custom:mini-media-player
+  entity: media_player.samsung_ua43mu6100
+  name: TV
+  icon: mdi:television
+- type: custom:mini-media-player
+  entity: media_player.jess_chromecast
+  icon: mdi:cast
+  name: Chromecast
+- type: entities
+  title: Fan
+  entities:
+  - entity: fan.jess_bedroom
+    name: Fan
+  - entity: sensor.jess_bedroom_aqi
+    name: Air Quality
+  - entity: sensor.jess_bedroom_dust
+    name: Dust
+  - entity: sensor.jess_bedroom_humidity
+    name: Humidity
+  - entity: sensor.jess_bedroom_filter_life
+    name: Filter Life
+  - entity: sensor.jess_bedroom_temperature
+    name: Temp
+- type: entities
+  title: Aircon
+  entities:
+  - sensor.aircon_state
+  - entity: sensor.jess_bedroom_state
+    name: Vent
+    icon: mdi:weather-windy
+  - entity: sensor.jess_bedroom_temp
+    name: Temp
+- type: conditional
+  conditions:
+  - entity: sensor.aircon_state
+    state: "on"
+  card:
+    type: entities
     entities:
-      - entity: switch.jess_tv_lamp
-        name: TV Lamp
-  - type: custom:mini-media-player
-    entity: media_player.samsung_ua43mu6100
-    name: TV
-    icon: mdi:television
-  - type: custom:mini-media-player
-    entity: media_player.jess_chromecast
-    icon: mdi:cast
-    name: Chromecast
-  - type: entities
-    title: Fan
-    entities:
-    - entity: fan.jess_bedroom
-      name: Fan
-    - entity: sensor.jess_bedroom_aqi
-      name: Air Quality
-    - entity: sensor.jess_bedroom_dust
-      name: Dust
-    - entity: sensor.jess_bedroom_humidity
-      name: Humidity
-    - entity: sensor.jess_bedroom_filter_life
-      name: Filter Life
-    - entity: sensor.jess_bedroom_temperature
-      name: Temp
-  - type: entities
-    title: Aircon
-    entities:
-    - sensor.aircon_state
-    - entity: sensor.jess_bedroom_state
-      name: Vent
-      icon: mdi:weather-windy
-    - entity: sensor.jess_bedroom_temp
-      name: Temp
-  - type: conditional
-    conditions:
-    - entity: sensor.aircon_state
-      state: "on"
-    card:
-      type: entities
-      entities:
-      - sensor.aircon_mode
-      - sensor.aircon_set_temperature
-      - sensor.aircon_fan_speed
-      - fan.aircon_fan
+    - sensor.aircon_mode
+    - sensor.aircon_set_temperature
+    - sensor.aircon_fan_speed
+    - fan.aircon_fan

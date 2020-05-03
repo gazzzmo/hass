@@ -1,34 +1,34 @@
 ### AIRCON TAB ###
-- title: Aircon
-  path: aircon
-  theme: google-light
-  cards:
-    - type: vertical-stack
-      cards:
-      - type: entities
+title: Aircon
+path: aircon
+theme: google-light
+cards:
+  - type: vertical-stack
+    cards:
+    - type: entities
+      entities:
+      - sensor.aircon_state
+    - type: conditional
+      conditions:
+        - entity: sensor.aircon_state
+          state: "on"
+      card:
+        type: entities
         entities:
-        - sensor.aircon_state
-      - type: conditional
-        conditions:
-          - entity: sensor.aircon_state
-            state: "on"
-        card:
-          type: entities
-          entities:
-          - sensor.aircon_mode
-          - sensor.aircon_set_temperature
-          - sensor.aircon_fan_speed
-          - fan.aircon_fan
-      - type: entities
-        entities: 
-        - type: section
-          label: Upstairs
-        - sensor.kitchen_temp
-        - sensor.media_room_temp
-        - sensor.office_temp
-        - type: section
-          label: Bedrooms
-        - sensor.parents_bedroom_temp
-        - sensor.tim_bedroom_temp
-        - sensor.study_temp
-        - sensor.jess_bedroom_temp  
+        - sensor.aircon_mode
+        - sensor.aircon_set_temperature
+        - sensor.aircon_fan_speed
+        - fan.aircon_fan
+    - type: entities
+      entities: 
+      - type: section
+        label: Upstairs
+      - sensor.kitchen_temp
+      - sensor.media_room_temp
+      - sensor.office_temp
+      - type: section
+        label: Bedrooms
+      - sensor.parents_bedroom_temp
+      - sensor.tim_bedroom_temp
+      - sensor.study_temp
+      - sensor.jess_bedroom_temp  

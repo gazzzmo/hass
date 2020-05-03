@@ -1,92 +1,92 @@
 ### FAMILY TAB
-- title: Family
-  path: family
-  cards:
-  - type: map
-    entities:
-      - person.gareth
-      - person.mandy
-      - person.jess
-      - person.jess
-  ## Gareth Button/Card
-  - type: custom:button-card
-    entity: sensor.gareth_iphone_battery_level
-    entity_picture: /local/gareth.png
-    show_entity_picture: true
-    aspect_ratio: 1/1
-    name: Gareth
-    styles:
-      card:
-        - padding: 10%
-        - font-size: 10px
-        - text-transform: capitalize
-      grid:
-        - grid-template-areas: '"i batt" "n n" "steps steps" "loc loc" "hdd hdd"'
-        - grid-template-columns: 1fr 1fr
-        - grid-template-rows: 1fr min-content min-content min-content min-content
-      name:
-        - font-weight: bold
-        - font-size: 13px
+title: Family
+path: family
+cards:
+- type: map
+  entities:
+    - person.gareth
+    - person.mandy
+    - person.jess
+    - person.jess
+## Gareth Button/Card
+- type: custom:button-card
+  entity: sensor.gareth_iphone_battery_level
+  entity_picture: /local/gareth.png
+  show_entity_picture: true
+  aspect_ratio: 1/1
+  name: Gareth
+  styles:
+    card:
+      - padding: 10%
+      - font-size: 10px
+      - text-transform: capitalize
+    grid:
+      - grid-template-areas: '"i batt" "n n" "steps steps" "loc loc" "hdd hdd"'
+      - grid-template-columns: 1fr 1fr
+      - grid-template-rows: 1fr min-content min-content min-content min-content
+    name:
+      - font-weight: bold
+      - font-size: 13px
+      - align-self: middle
+      - justify-self: start
+      - padding-bottom: 4px
+    img_cell:
+      - justify-content: start
+      - align-items: start
+      - margin: none
+    icon:
+      - color: >
+          [[[
+            if (entity.state < 60) return 'red';
+            if (entity.state >= 60 && entity.state < 80) return 'orange';
+            else return 'green';
+          ]]]
+      - width: 70%
+      - margin-top: -10%
+    custom_fields:
+      batt:
+        - align-self: start
+        - justify-self: end
+      steps:
+        - padding-bottom: 2px
         - align-self: middle
         - justify-self: start
-        - padding-bottom: 4px
-      img_cell:
-        - justify-content: start
-        - align-items: start
-        - margin: none
-      icon:
-        - color: >
-            [[[
-              if (entity.state < 60) return 'red';
-              if (entity.state >= 60 && entity.state < 80) return 'orange';
-              else return 'green';
-            ]]]
-        - width: 70%
-        - margin-top: -10%
-      custom_fields:
-        batt:
-          - align-self: start
-          - justify-self: end
-        steps:
-          - padding-bottom: 2px
-          - align-self: middle
-          - justify-self: start
-          - --text-color-sensor: '[[[ if (states["sensor.blueiris_cpu_usage"].state > 80) return "red"; ]]]'
-        loc:
-          - padding-bottom: 2px
-          - align-self: middle
-          - justify-self: start
-          - --text-color-sensor: '[[[ if (states["sensor.blueiris_memory_usage"].state > 80) return "red"; ]]]'
-        hdd:
-          - align-self: middle
-          - justify-self: start
-          - --text-color-sensor: '[[[ if (states["sensor.blueiris_storage_c_usage"].state > 80) return "red"; ]]]'
-    custom_fields:
-      batt: >
-        [[[
-          return `<ha-icon
-            icon="mdi:battery"
-            style="width: 12px; height: 12px; color: steelblue;">
-            </ha-icon><span>${entity.state}%</span>`
-        ]]]
-      steps: >
-        [[[
-          return `<ha-icon
-            icon="mdi:hiking"
-            style="width: 12px; height: 12px; color: steelblue;">
-            </ha-icon><span>Steps: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_steps'].state}</span></span>`
-        ]]]
-      loc: >
-        [[[
-          return `<ha-icon
-            icon="mdi:map"
-            style="width: 12px; height: 12px; color: steelblue;">
-            </ha-icon><span>Address: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_geocoded_location'].attributes.Name} ${states['sensor.gareth_iphone_geocoded_location'].attributes.Locality}</span></span>`
-        ]]]
-      hdd: >
-        [[[
-          return `<ha-icon
-            icon="mdi:harddisk"
-            style="width: 12px; height: 12px; color: steelblue;">
-            </ha-icon><span>HDD: <span style="color: var(--text-color-sensor);">${states['sensor.blueiris_storage_c_usage'].state}%</span></span>`
-        ]]]
+        - --text-color-sensor: '[[[ if (states["sensor.blueiris_cpu_usage"].state > 80) return "red"; ]]]'
+      loc:
+        - padding-bottom: 2px
+        - align-self: middle
+        - justify-self: start
+        - --text-color-sensor: '[[[ if (states["sensor.blueiris_memory_usage"].state > 80) return "red"; ]]]'
+      hdd:
+        - align-self: middle
+        - justify-self: start
+        - --text-color-sensor: '[[[ if (states["sensor.blueiris_storage_c_usage"].state > 80) return "red"; ]]]'
+  custom_fields:
+    batt: >
+      [[[
+        return `<ha-icon
+          icon="mdi:battery"
+          style="width: 12px; height: 12px; color: steelblue;">
+          </ha-icon><span>${entity.state}%</span>`
+      ]]]
+    steps: >
+      [[[
+        return `<ha-icon
+          icon="mdi:hiking"
+          style="width: 12px; height: 12px; color: steelblue;">
+          </ha-icon><span>Steps: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_steps'].state}</span></span>`
+      ]]]
+    loc: >
+      [[[
+        return `<ha-icon
+          icon="mdi:map"
+          style="width: 12px; height: 12px; color: steelblue;">
+          </ha-icon><span>Address: <span style="color: var(--text-color-sensor);">${states['sensor.gareth_iphone_geocoded_location'].attributes.Name} ${states['sensor.gareth_iphone_geocoded_location'].attributes.Locality}</span></span>`
+      ]]]
+    hdd: >
+      [[[
+        return `<ha-icon
+          icon="mdi:harddisk"
+          style="width: 12px; height: 12px; color: steelblue;">
+          </ha-icon><span>HDD: <span style="color: var(--text-color-sensor);">${states['sensor.blueiris_storage_c_usage'].state}%</span></span>`
+      ]]]
