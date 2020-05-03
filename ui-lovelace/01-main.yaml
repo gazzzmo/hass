@@ -107,19 +107,6 @@ cards:
             service_data:
               entity_id: light.all_lights
               transition: 5
-
-    - type: custom:auto-entities
-      show_empty: false
-      card:
-        type: entities
-        title: Lights
-      filter:
-        include:
-         - domain: light
-           options:
-            tap_action:
-              action: toggle
-
     - type: entities
       title: Lights
       entities:
