@@ -1,0 +1,12 @@
+- alias: 'Lights on in the evening'
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '-01:00:00'
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.all_lights
+      transition: 1800
+      brightness: 130
+      color_temp: 370

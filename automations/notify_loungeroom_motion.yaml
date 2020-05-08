@@ -1,0 +1,36 @@
+- alias: "Notify Lounge Motion"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.lounge_room_motion
+      from: "off"
+      to: "on"
+#  condition:
+#    condition: state
+#    entity_id: group.phones
+#    state: "not_home"
+  action:
+    - service: notify.mobile_app_gareth_iphone
+      data_template:
+        message: "Motion detected in the Living Room!"
+        data:
+#          attachment:
+#            url: !secret lounge_image_url
+#            content-type: gif
+          push:
+            sound: "US-EN-Morgan-Freeman-Motion-In-Living-Room.wav"
+#    - service: media_player.sonos_snapshot
+#      data_template:
+#        entity_id: media_player.sonos_lounge
+#    - service: media_player.volume_set
+#      data_template:
+#        entity_id: media_player.sonos_lounge
+#        volume_level: 0.9
+#    - service: media_player.play_media
+#      data_template:
+#        entity_id: media_player.sonos_lounge
+#        media_content_id: !secret siren_url
+#        media_content_type: "MUSIC"
+#    - delay: 0:0:10
+#    - service: media_player.sonos_restore
+#      data_template:
+#        entity_id: media_player.sonos_lounge

@@ -69,7 +69,7 @@ frontend:
 # !includes for platforms
 # influxdb: !include influxdb.yaml
 alarm_control_panel: !include alarm.yaml
-automation: !include automations.yaml
+automation: !include_dir_list automations/
 binary_sensor: !include binary_sensors.yaml
 camera: !include cameras.yaml
 device_tracker: !include device_trackers.yaml
