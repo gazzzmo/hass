@@ -9,14 +9,16 @@ cards:
       entity: camera.back_deck
       camera_image: camera.back_deck
       camera_view: live
-    - type: entity
-      entity: binary_sensor.back_deck_motion
+    - type: entities
+      entities: 
+      - binary_sensor.back_deck_motion
     - type: picture-entity
       entity: camera.driveway
       camera_image: camera.driveway
       camera_view: live
     - type: entity
-      entity: binary_sensor.driveway_motion
+      entities: 
+      - binary_sensor.driveway_motion
 - type: vertical-stack
   cards:
   - type: picture-entity
