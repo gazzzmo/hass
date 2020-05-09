@@ -36,7 +36,7 @@ updater:
 stream:
 
 # Shopping List Intent
-shopping_list:
+#shopping_list:
 
 # Use YAML for Lovelace UI
 lovelace:
