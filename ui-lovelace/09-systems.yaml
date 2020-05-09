@@ -295,4 +295,5 @@ cards:
       type: entities
       title: "Automations"
     filter:
-      domain: automation
+      include:
+        - domain: automation
