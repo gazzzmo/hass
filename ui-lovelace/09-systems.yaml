@@ -289,3 +289,10 @@ cards:
               style="width: 12px; height: 12px; color: steelblue;">
               </ha-icon><span>HDD: <span style="color: var(--text-color-sensor);">${states['sensor.blueiris_storage_c_usage'].state}%</span></span>`
           ]]]
+
+  - type: custom:auto-entities
+    card:
+      type: entities
+      title: "Automations"
+    filter:
+      include: automation.*
