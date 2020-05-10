@@ -7,7 +7,6 @@
   Family:
     name: Family
     entities:
-     - device_tracker.garethiphone
-     - device_tracker.mandyiphone
-     - device_tracker.timiphone
-     - device_tracker.jessicasiphone
+     - device_tracker.gareth_iphone
+     - device_tracker.mandy_iphone
+     - device_tracker.jessicas_iphone
