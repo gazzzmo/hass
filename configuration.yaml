@@ -19,7 +19,6 @@ ssdp:
 zeroconf:
 # Use the recorder
 recorder:
-  purge_interval: 2
   purge_keep_days: 14
 # Use the logbook
 logbook:
