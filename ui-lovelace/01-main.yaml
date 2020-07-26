@@ -20,39 +20,6 @@ cards:
               {% endif %}   
         }      
 
-    - type: horizontal-stack
-      cards:
-      - type: markdown
-        content: |
-          ### Media Room
-
-          # {{ states('sensor.media_room_temp') }}º
-      - type: markdown
-        content: |
-          ### Kitchen
-
-          # {{ states('sensor.kitchen_temp') }}º
-      - type: markdown
-        content: |
-          ### Bedrooms
-
-          # {{ states('sensor.parents_bedroom_temp') }}º
-    - type: vertical-stack
-      cards:
-      - type: entities
-        entities:
-        - sensor.aircon_state
-      - type: conditional
-        conditions:
-          - entity: sensor.aircon_state
-            state: "on"
-        card:
-          type: entities
-          entities:
-            - sensor.aircon_mode
-            - sensor.aircon_set_temperature
-            - sensor.aircon_fan_speed
-            - fan.aircon_fan
   - type: vertical-stack
     cards:
     - type: custom:mini-graph-card
@@ -60,9 +27,9 @@ cards:
       group_by: hour
       decimals: 1
       lower_bound: 0
-      upper_bound: 100
+      upper_bound: 1000
       lower_bound_secondary: 0
-      upper_bound_secondary: 500
+      upper_bound_secondary: 250
       entities:
       - entity: sensor.speedtest_download
         name: Download
