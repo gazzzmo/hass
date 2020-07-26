@@ -32,23 +32,4 @@ cards:
     name: Filter Life
   - entity: sensor.jess_bedroom_temperature
     name: Temp
-- type: entities
-  title: Aircon
-  entities:
-  - sensor.aircon_state
-  - entity: sensor.jess_bedroom_state
-    name: Vent
-    icon: mdi:weather-windy
-  - entity: sensor.jess_bedroom_temp
-    name: Temp
-- type: conditional
-  conditions:
-  - entity: sensor.aircon_state
-    state: "on"
-  card:
-    type: entities
-    entities:
-    - sensor.aircon_mode
-    - sensor.aircon_set_temperature
-    - sensor.aircon_fan_speed
-    - fan.aircon_fan
+
