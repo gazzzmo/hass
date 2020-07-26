@@ -33,3 +33,7 @@ cards:
   - entity: sensor.jess_bedroom_temperature
     name: Temp
 
+- type: entities
+  title: Blinds
+  entities:
+    - cover.jess_blind
