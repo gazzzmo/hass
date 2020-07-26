@@ -30,11 +30,4 @@ cards:
         service: script.turn_on
         service_data:
           entity_id: script.1546773277389
-- type: vertical-stack
-  cards:
-  - type: light
-    entity: light.media_room_lamp
-  - type: entities
-    entities:
-      - sensor.media_room_temp
-      - sensor.media_room_state
+
